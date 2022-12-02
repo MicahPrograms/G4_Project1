@@ -47,44 +47,50 @@ body {
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
-    background: beige;
+    background-color: beige;
+    max-height: 750px;
+    flex-direction: row;
+
+    justify-content: center;
 }
 
 .flex-container > h2, p {
-    width: auto;
-    margin: 10px;
-    text-align: center;
-
     
-}
+    margin: 34px;
+    font-size: 14pt;
+    font-size: 2.1vw;
 
-#about {
-    font-size: 16pt;
-    font-size: 2.5vw;
+    background-color: white;
 }
 
 .left {
-    width: 45%;
-    float: left;
-    text-align: center;
-    height: 800px;
-    line-height: normal;
-    display: inline-block;
-    vertical-align: middle;
+    width: 50%;
+    color:rgb(41, 66, 86);
+    text-align:justify;
+
+    flex-direction: column;
+    justify-content:center;
+}
+
+.about {
+    font-family: monaco Narrow, sans-serif;
+
 }
 
 /* CSS for slideshow by Micah */
 .slideshow-container {
-    padding: 15px;
-    width: 49%;
-    position: relative;
-    margin: auto;
-    max-height: 800px;
-    float: right;
+
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .mySlides {
 display: none;
+max-width: 600px;
+text-align: center;
+
 }
 
 .fade {
@@ -104,3 +110,14 @@ from {opacity: 1}
 to {opacity: 0}
 }
 /* End of slideshow CSS */
+
+/* Footer CSS by Micah */
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background-color: #2596be;
+    text-align: center;
+    color: black;
+    font-size: 14pt;
+}
