@@ -2,7 +2,28 @@ body {
     margin: 0;
 }
 
-/* Top menu banner CSS by Micah*/
+/* Top menu banners CSS by Micah*/
+.topbanner {
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.topbanner a {
+    overflow: hidden;
+    background-color: #ffffff;
+    color: black;
+    padding: 10px;
+    font-size: 18pt;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Blue selection banner */
 .banner {
     overflow: hidden;
     background-color: #2596be;
@@ -47,7 +68,6 @@ body {
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
-    background-color: beige;
     max-height: 750px;
     flex-direction: row;
 
@@ -56,9 +76,9 @@ body {
 
 .flex-container > h2, p {
     
-    margin: 34px;
+    margin: 76px;
     font-size: 14pt;
-    font-size: 2.1vw;
+    font-size: 1.8vw;
 
     background-color: white;
 }
@@ -67,7 +87,7 @@ body {
     width: 50%;
     color:rgb(41, 66, 86);
     text-align:justify;
-
+    margin-top: 6%;
     flex-direction: column;
     justify-content:center;
 }
