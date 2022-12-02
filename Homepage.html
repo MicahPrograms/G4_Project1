@@ -6,16 +6,76 @@
     </head>
 
     <body>
+
+        
         <div class="banner">
-            <a href="Contact">Contact Us</a>
-            <a href="Vacations">Vacation Packages</a>
-            <a href="Registration">Sign Up</a>
+            <a href="Home" class="banner" target="_blank">Home</a>
+            <a href="Contact" class="banner" target="_blank">Contact Us</a>
+            <a href="Vacations" class="banner">Vacation Packages</a>
+            <a href="Registration" class="banner">Sign Up</a>
+                
+            <div class="logo">
+                    <img src="media/Logo.png" class="logo" />
+                    
+                </div>
+            </div>
+        
+        
+        <div class="container">
+            <div class="left">
+                <h2 style="font-size: 28pt; font-size: 3vw; text-decoration: underline;">Our Story</h2>
+                <p id="about">
+                    We are a travel agency started in 1996 that deals with domestic and international travel. Our main office is in Calgary, Alberta and we have a secondary office in Okotoks, Alberta. 
+                    We have 10 amazing travel agents that are all qualified to provide you with the best travel exprience of your life. Currently, we specialize in Mexico vacation plans where you 
+                    will experience the sun, beaches, nature, and plenty of tequila.
+                </p>
+            </div>
+
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                <img src="media/window.png" style="width:100%">
+                </div>
+            
+                <div class="mySlides fade">
+                <img src="media/sharkies.png" style="width:100%">
+                </div>
+            
+                <div class="mySlides fade">
+                <img src="media/yoga.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="media/ancient.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="media/palms.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="media/mountains.png" style="width:100%">
+                </div>
+            </div>
         </div>
 
+        <script>
+            let slideIndex = 0;
+            showSlides();
 
-
-
-
+            function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 7000); // Change image every 7 seconds
+            }
+        </script>
 
 
     </body>
