@@ -3,6 +3,7 @@
 <html>
     <head>
 <link href="G4Styles.css" rel="stylesheet" type="text/css" />
+<script src="creditValidation.js"></script>
 <script>
     function confirm_reset() {
             return confirm("Are you sure you want to reset the form?");
@@ -79,7 +80,7 @@
         <!-- Order form, validation in head section -->
             <form method="post" action="/neworder" class="form">
                 <label for="FirstName">First name: </label> 
-                <input type="number" name="FirstName" id="FirstName" value="0" readonly="readonly" /><br />
+                <input type="text" name="FirstName" id="FirstName" value="" /><br />
                 
                 <label for="LastName">Last name: </label> 
                 <input type="text" name="LastName" id="LastName" value="" /><br />
@@ -97,10 +98,10 @@
                 <input type="text" name="Email" id="Email" value="" /><br />
                 
                 <label for="Credit">Credit Card Number: </label>
-                <input type="text" name="Credit" id="Credit" value="" /><br />
+                <input type="text" name="Credit" id="Credit" value="" onkeyup="cardUpdated()" onchange="cardUpdated()"/><br />
                
                 <label for="AgencyId">Expiry Date: </label>
-                <input type="number" name="AgencyId" id="AgencyId" value="" /><br />
+                <input type="text" name="AgencyId" id="AgencyId" value="" /><br />
                
                 <button type="sumbit" onclick="return validate(this.form)">Submit</button>
                 <button type="reset" onclick="return confirm('Are you sure you want to reset the form?')">Reset</button><br />
