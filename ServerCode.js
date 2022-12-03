@@ -42,10 +42,16 @@ app.get("/packages", (req,res)=>{
 	});
 });
 
+app.get("/", (req, res, err) => {
+    res.render("Homepage");
+});
 
-app.get("/", (req,res)=>{
-    res.render("index");
+app.get("/registration", (req, res, err) => {
+    res.render("Registration");
+});
 
+app.get("/orders", (req, res) => {
+            res.render("orders");   
 });
 
 // app.use("/contact",(req,res)=>{
