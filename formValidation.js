@@ -1,3 +1,65 @@
+function confirm_reset() {
+    return confirm("Are you sure you want to reset the form?");
+}
+//Form validation from Micah
+function validate(myForm)
+{
+    var FirstName = document.getElementById("FirstName");
+    if (FirstName.value == "")
+    {
+        alert("You must provide your first name");
+        FirstName.focus();
+        return false;
+    }
+
+    var LastName = document.getElementById("LastName");
+    if (LastName.value == "")
+    {
+        alert("You must provide your last name");
+        LastName.focus();
+        return false;
+    }
+
+    var HomeAddress = document.getElementById("HomeAddress");
+    if (HomeAddress.value == "")
+    {
+        alert("You must provide your Home Address");
+        HomeAddress.focus();
+        return false;
+    }
+
+    var ProvState = document.getElementById("ProvState");
+    if (ProvState.value == "")
+    {
+        alert("You must provide your Province/State");
+        ProvState.focus();
+        return false;
+    }
+
+    var Country = document.getElementById("Country");
+    if (Country.value == "")
+    {
+        alert("You must provide your Country of residence");
+        Country.focus();
+        return false;
+    }
+
+    var Email = document.getElementById("Email");
+    if (Email.value == "")
+    {
+        alert("You must provide your Email Address (so we can send you spam)");
+        Email.focus();
+        return false;
+    }
+
+    return confirm("Continue submitting?");
+}
+
+
+
+
+
+// Javascript to validate credit card numbers by Micah
 var card_number = document.getElementsByName("Credit")[0].value;
     var card1, card2, card3, card4, card5, card6, card7, card8;
     var sum1, sum2, sum3, sum4, sum5, sum6, sum7, sum8;
@@ -5,7 +67,7 @@ var card_number = document.getElementsByName("Credit")[0].value;
     var final_value, remainder;
     
     function cardUpdated() {
-        console.log(card_number);
+        alert(card_number);
         return(card_number);
     }
 

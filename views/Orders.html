@@ -2,51 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<link href="G4Styles.css" rel="stylesheet" type="text/css" />
-<script src="creditValidation.js"></script>
-<script>
-    function confirm_reset() {
-            return confirm("Are you sure you want to reset the form?");
-        }
-     //Form validation from Micah
-    function validate(myForm)
-    {
-        var AgtFirstName = document.getElementById("AgtFirstName");
-        if (AgtFirstName.value == "")
-        {
-            alert("You must provide your first name");
-            AgtFirstName.focus();
-            return false;
-        }
-
-        var AgtLastName = document.getElementById("AgtLastName");
-        if (AgtLastName.value == "")
-        {
-            alert("You must provide your last name");
-            AgtLastName.focus();
-            return false;
-        }
-
-        var AgencyId = document.getElementById("AgencyId");
-        if (AgencyId.value == "")
-        {
-            alert("You must provide an agency ID");
-            AgencyId.focus();
-            return false;
-        }
-
-        var AgencyId = document.getElementById("AgencyId");
-        if (AgencyId.value != "1" && AgencyId.value != "2")
-        {
-            alert("Agency ID must be 1 or 2.");
-            AgencyId.focus();
-            console.log("Hi Micah");
-            return false;
-        }
-
-        return confirm("Continue submitting?");
-        }
-    </script>
+        <link href="G4Styles.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
@@ -76,7 +32,10 @@
                     <img src="media/Logo.png" class="logo" />
                 </div>
             </div>
-        
+            
+                <script src="jquery-3.6.1.js" type="text/javascript"></script>
+                <script src="formValidation.js" type="text/javascript"></script>
+
         <!-- Order form, validation in head section -->
             <form method="post" action="/neworder" class="form">
                 <label for="FirstName">First name: </label> 
@@ -112,4 +71,5 @@
             <br /><br /><br />
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
     </body>
+    
 </html> 
