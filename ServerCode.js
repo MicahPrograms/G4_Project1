@@ -51,7 +51,19 @@ app.get("/registration", (req, res, err) => {
 });
 
 app.get("/orders", (req, res) => {
-            res.render("orders");   
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+			if (err) throw err;
+			console.log(result);
+			console.log(fields);
+			res.render("orders", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
 });
 
 // app.use("/contact",(req,res)=>{
