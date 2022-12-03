@@ -148,3 +148,26 @@ footer {
     margin-top: 50px;
     margin-bottom: 0;
 }
+
+.form, button {
+    text-shadow: rgb(0, 0, 0);
+    font-size: 14pt;
+    width: 60%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    color: black;
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%
+}
+
+input {
+    text-shadow: rgb(0, 0, 0);
+    font-size: 12pt;
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 8px;
+    box-sizing: border-box;
+    color: black;
+}
