@@ -52,106 +52,56 @@ function validate(myForm)
         return false;
     }
 
-    return confirm("Continue submitting?");
+
+    // - Micah: Comparing credit card number to regular expressions for each majot credit card type to make sure card is valid 
+    var creditCardNum = document.getElementById("Credit").value;
+
+    // Mastercard
+    var regMaster = /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-9]|7(?:[01][0-9]|20))[0-9]{12}$/;
+    var regVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+    var regAMEX = /^3[47][0-9]{13}$/;
+    if(!regMaster.test(creditCardNum) && !regVisa.test(creditCardNum) && !regAMEX.test(creditCardNum))
+    {
+        alert("Please enter a valid credit card number.");
+        Credit.focus();
+        return false;
+    } 
+
+    //Visa
+    /* var regVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+    if(!regVisa.test(creditCardNum))
+    {
+        alert("Please enter a valid credit card number.");
+        Credit.focus();
+        return false;
+    } 
+
+    //American Express
+    var regAMEX = /^3[47][0-9]{13}$/;
+    if(!regAMEX.test(creditCardNum))
+    {
+        alert("Please enter a valid credit card number.");
+        Credit.focus();
+        return false;
+    } */
+    
+    //Expiry date test
+    var regExp = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/;
+    var ExpiryDate = document.getElementById("ExpiryDate").value;
+    if(!regExp.test(ExpiryDate))
+    {
+        alert("Please enter a valid Expiry Date.");
+        ExpiryDate.focus();
+        return false;
+    } 
+
+return confirm("Continue submitting?");
 }
 
 
 
-
-
-// Javascript to validate credit card numbers by Micah
-var card_number = document.getElementsByName("Credit")[0].value;
-    var card1, card2, card3, card4, card5, card6, card7, card8;
-    var sum1, sum2, sum3, sum4, sum5, sum6, sum7, sum8;
-    var card9, card10, card11, card12, card13, card14, card15, card16;
-    var final_value, remainder;
+function cardValidate(){
     
-    function cardUpdated() {
-        alert(card_number);
-        return(card_number);
-    }
-
-    //Multiply the 2nd last, 4th last, 6th last, etc. numbers by 2 and store as new variable.
-    card1 = ((card_number % 100)/10)*2;
-    card2 = ((card_number % 10000)/1000)*2;
-    card3 = ((card_number % 1000000)/100000)*2;
-    card4 = ((card_number % 100000000)/10000000)*2;
-    card5 = ((card_number % 10000000000)/1000000000)*2;
-    card6 = ((card_number % 1000000000000)/100000000000)*2;
-    card7 = ((card_number % 100000000000000)/10000000000000)*2;
-    card8 = ((card_number % 10000000000000000)/1000000000000000)*2;
-
-    //Add the digits of the above variables.
-    sum1 = (card1 / 10) + (card1 % 10);
-    sum2 = (card2 / 10) + (card2 % 10);
-    sum3 = (card3 / 10) + (card3 % 10);
-    sum4 = (card4 / 10) + (card4 % 10);
-    sum5 = (card5 / 10) + (card5 % 10);
-    sum6 = (card6 / 10) + (card6 % 10);
-    sum7 = (card7 / 10) + (card7 % 10);
-    sum8 = (card8 / 10) + (card8 % 10);
-
-    var sum = sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8;
-
-    //Add the above sums of digits 1-8 to the remaining digits that were not used yet in the credit card number.
-    card9 = ((card_number % 10));
-    card10 = ((card_number % 1000)/100);
-    card11 = ((card_number % 100000)/10000);
-    card12 = ((card_number % 10000000)/1000000);
-    card13 = ((card_number % 1000000000)/100000000);
-    card14 = ((card_number % 100000000000)/10000000000);
-    card15 = ((card_number % 10000000000000)/1000000000000);
-    card16 = ((card_number % 1000000000000000)/100000000000000);
-
-    final_value = card9 + card10 + card11 + card12 + card13 + card14 + card15 + card16 + sum;
-    remainder = (final_value % 10);
-
-    //Identifying the type of credit card.
-    var length = 0;
-    var visa = card_number;
-    var amex = card_number;
-    var mastercard = card_number;
-    var card_length = card_number;
-
-    //Length of card
-    while (card_length > 0)
-    {
-        card_length /= 10;
-        length++;
-    }
-
-    //VISA
-        while (visa >= 10)
-        {
-            visa /= 10;
-        }
-
-        if (visa ==4 && (length == 13 || length == 16) && remainder == 0)
-        {
-            printf("VISA\n");
-            return (0);
-        }
-
-        //AMEX
-        while (amex >= 100)
-        {
-            amex /= 10000000000000;
-        }
-
-        if ((amex == 34 || amex == 37) && length == 15 && remainder == 0)
-        {
-            return("AMEX");
-        }
-
-        //Mastercard
-        while (mastercard >= 100)
-        {
-            mastercard /= 100000000000000;
-        }
-
-        if ((mastercard == 51 || mastercard == 52 || mastercard == 53 || mastercard == 54 || mastercard == 55) && length == 16 && remainder == 0)
-        {
-            
-        }
-
     
+} 
+//5415903660275272
