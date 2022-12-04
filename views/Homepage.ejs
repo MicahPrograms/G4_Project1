@@ -1,0 +1,109 @@
+<!-- Author: Micah B.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="G4Styles.css" rel="stylesheet" type="text/css" />
+        <script>
+            function activateHome(){
+                document.getElementById("home").classList.add('active'); 
+            }
+           
+        </script>
+    </head>
+
+    <body>
+        <div class="topbanner">
+            <img src="logo2.jpg" />
+            <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
+                <script>
+                    var quotes = ["“Adventure is worthwhile.” – Aesop", "“Traveling – it leaves you speechless, then turns you into a storyteller.” – Ibn Battuta", 
+                    "“We travel, some of us forever, to seek other places, other lives, other souls.” – Anais Nin", 
+						"“A journey is best measured in friends, rather than miles.” – Tim Cahill", "“I am not the same, having seen the moon shine on the other side of the world.” – Mary Anne Radmacher", 
+						"“The world is a book, and those who do not travel read only one page.” – Saint Augustine", "“Travel is the only thing you buy that makes you richer.” – Anonymous", 
+                    "“Better to see something once than hear about it a thousand times.” – Asian Proverb"];
+					var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+					document.write(randomQuote);
+                </script>
+            </h2>
+        </div>
+
+        <div class="banner" >
+
+            <a href="/" id="home" >Home</a>
+            <a href="/contact" >Contact Us</a>
+            <a href="/packages" >Vacation Packages</a>
+            <a href="/registration" >Sign Up</a>
+            <a href="/login" >Login</a>
+                
+            <div class="logo">      
+                <img src="Logo.png" class="logo" />
+            </div>
+        </div>
+        
+        
+        <div class="flex-container">
+            <div class="left">
+                <h1 style="font-size: 28pt; font-family:monaco Narrow, sans-serif;
+                 text-align: center; text-shadow:2px 2px #d3d3d3; font-size: 2.8vw;">Our Story</h1>
+                <p class="about">
+                    Started in 1996, Travel Experts is a travel agency that deals with domestic and international travel throughout North America. Our main office is in Calgary, Alberta and we have a secondary office in Okotoks, Alberta. 
+                    We have 10 amazing travel agents that are all qualified to provide you with the best travel exprience of your life. Currently, we specialize in Mexico vacation plans where you 
+                    will experience the sun, beaches, nature, and plenty of tequila.
+                </p>
+            </div>
+
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                <img src="window.png" style="width:100%">
+                </div>
+            
+                <div class="mySlides fade">
+                <img src="sharkies.png" style="width:100%">
+                </div>
+            
+                <div class="mySlides fade">
+                <img src="yoga.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="ancient.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="palms.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="mountains.png" style="width:100%">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 7000); // Change image every 7 seconds
+            }
+        </script>
+
+        <h2 id="bot-para">Interested in planning your next vacation? Check out our 
+            <a href="/packages" style="text-decoration: none; color: #92a21a;">Vacation Packages</a>, or 
+            <a href="/contact" target="_blank" style="text-decoration: none; color: #92a21a;">Contact Us</a>
+             for more information on how you can plan your next getaway.</h2>
+
+            <br /><br /><br />
+        <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
+    </body>
+</html> 

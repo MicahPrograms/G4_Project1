@@ -1,0 +1,176 @@
+<!--Author: Tim H-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Registration Form</title>
+        <link href="G4Styles.css" rel="stylesheet" type="text/css">
+        <style>
+            section{
+                display:inline-flex; 
+            }
+            select{
+                width:200px;
+                height:40px;
+            }
+            input[type=text], select{
+                padding:10px 20px;
+                margin: 8px 8px;
+            }
+            input[type=password]{
+                height:40px;
+            }
+            form{
+                border: 5px solid green;
+                overflow: hidden;
+            }
+            button{
+                height:42px;
+                width:72px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Added the top banners (next ~25 lines) - Micah B.-->
+        <div class="topbanner">
+            <img src="logo2.jpg" />
+            <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
+                <script>
+                    var quotes = ["“Adventure is worthwhile.” – Aesop", "“Traveling – it leaves you speechless, then turns you into a storyteller.” – Ibn Battuta", 
+                    "“We travel, some of us forever, to seek other places, other lives, other souls.” – Anais Nin", 
+						"“A journey is best measured in friends, rather than miles.” – Tim Cahill", "“I am not the same, having seen the moon shine on the other side of the world.” – Mary Anne Radmacher", 
+						"“The world is a book, and those who do not travel read only one page.” – Saint Augustine", "“Travel is the only thing you buy that makes you richer.” – Anonymous", 
+                    "“Better to see something once than hear about it a thousand times.” – Asian Proverb"];
+					var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+					document.write(randomQuote);
+                </script>
+            </h2>
+        </div>
+
+        <div class="banner">
+            <a href="/" id="home" >Home</a>
+            <a href="/contact" >Contact Us</a>
+            <a href="/packages" >Vacation Packages</a>
+            <a href="/registration" >Sign Up</a>
+            <a href="/login" >Login</a>
+                
+                <div class="logo">      
+                    <img src="Logo.png" class="logo" />
+                </div>
+            </div>
+
+        <header>
+            <h1>Register your account today</h1>
+            <h2>Plan your next vacation with us</h2>
+        </header>
+        <form method="post" action="bouncer.php">
+            <!--Full Name-->
+            <section class="fullName">
+                <div>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="First name" placeholder="Your name..."
+                        onfocus="inFocus(this,'p1')" onblur="outFocus(this,'p1')"/>
+                        <p id="p1" style="visibility: hidden" >Please Enter First Name</p>
+                </div>
+                <div>
+                    <label for="mname">Middle Initial:</label>
+                    <input type="text" id="lname" name="Middle initial" size="8" maxlength="8" 
+                        placeholder="Your initials..."
+                        onfocus="inFocus(this,'p2')" onblur="outFocus(this,'p2')"/>
+                    <p id="p2" style="visibility: hidden">Please Enter Middle Initials</p>
+                </div>
+                <div>
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="Last name" placeholder="Your last name..."
+                        onfocus="inFocus(this,'p3')" onblur="outFocus(this,'p3')"/>
+                    <p id="p3" style="visibility: hidden">Please Enter Last Name</p>
+                </div>
+            </section>
+            <br>
+            <section> <!--Addres and Postal-->
+                <!--Address-->
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="Address" size="22"
+                        onfocus="inFocus(this,'p4')" onblur="outFocus(this,'p4')"/>
+                    <p id="p4" style="visibility: hidden">Please Enter Address</p>
+                </div> 
+                <!--Postal Code-->
+                <div>
+                    <label for="postal">Postal Code:</label>
+                    <input type="text" id="postal" name="Postal" size="16"
+                        onfocus="inFocus(this,'p5')" onblur="outFocus(this,'p5')"/>
+                    <p id="p5" style="visibility: hidden">Please Enter Postal Code</p>
+                </div>
+            </section>
+            <section> <!--City Province Country-->
+                <!--City-->
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="City" size="25"
+                        onfocus="inFocus(this,'p5')" onblur="outFocus(this,'p5')"/>
+                    <p id="p6" style="visibility: hidden">Please Enter City</p>
+                </div> 
+                <!--Province-->
+                <div>
+                    <label for="province">Province:</label>
+                    <input type="text" id="province" name="Province"
+                        onfocus="inFocus(this,'p6')" onblur="outFocus(this,'p6')"/>
+                    <p id="p7" style="visibility: hidden">Please Enter Province</p>
+                </div> 
+                <!--Country-->
+                <select id="country" name="Country">
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+               </select>
+            </section>
+            <br> <!--Email and phone numbers-->
+            <section>
+                <!--Email-->
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="Email" size="23"
+                        onfocus="inFocus(this,'p8')" onblur="outFocus(this,'p8')"/>
+                    <p id="p8" style="visibility: hidden">Please Enter Email</p>
+                </div> 
+                <!--Home Phone-->
+                <div>
+                    <label for="phone">Home Phone:</label>
+                    <input type="text" id="phone" name="Home Phone"
+                        onfocus="inFocus(this,'p9')" onblur="outFocus(this,'p9')"/>
+                    <p id="p9" style="visibility: hidden">Please Enter Home Phone</p>
+                </div> 
+                <!--Business Phone-->
+                <div>
+                    <label for="busPhone">Business Phone:</label>
+                    <input type="text" id="busPhone" name="Business Phone"
+                        onfocus="inFocus(this,'p10')" onblur="outFocus(this,'p10')"/>
+                    <p id="p10" style="visibility: hidden">Please Enter Business Phone</p>
+                </div> 
+            </section>
+            <br> <!--Username and PW-->
+            <section>
+                <!--User ID-->
+                <div>
+                    <label for="userId">User ID:</label>
+                    <input type="text" id="userId" name="User ID" size="21"
+                        onfocus="inFocus(this,'p10')" onblur="outFocus(this,'p10')"/>
+                    <p id="p10" style="visibility: hidden">Please Enter Username</p>
+                </div> 
+                <!--Password-->
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="Password"
+                        onfocus="inFocus(this,'p10')" onblur="outFocus(this,'p10')"/>
+                    <p id="p10" style="visibility: hidden">Please Enter Password</p>
+                </div> 
+            </section>
+            <br>
+            <!--Submit button-->
+            <button type= "submit" onclick="return confirmSubmit(this.form)">Submit</button>
+			<button type= "reset" onclick="return confirmReset()">Reset</button>
+        </form>
+        <!--link verification script-->
+    
+        <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
+    </body>
+</html>
