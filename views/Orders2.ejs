@@ -47,7 +47,7 @@
             <form method="post" action="/neworder" class="form">
 
                 <label for="Package">Vacation Package: </label>
-                <input type="text" id="package" value="<%= result[3].PkgName + " - $" + result[3].PkgBasePrice %>" readonly="readonly">
+                <input type="text" id="package" value="<%= result[1].PkgName + " - $" + result[1].PkgBasePrice %>" readonly="readonly">
 
                 <label for="FirstName">First name: </label> 
                 <input type="text" name="FirstName" id="FirstName" value="" /><br />
@@ -71,14 +71,16 @@
                 <input type="text" name="Email" id="Email" value="" /><br />
                 
                 <label for="Credit">Credit Card Number: </label>
-                <input type="text" name="Credit" id="Credit" value="" placeholder="No Spaces Between Numbers" onchange="cardIdentify()"/><br />
+                <input type="text" name="Credit" id="Credit" value="" placeholder="No Spaces Between Numbers" onchange="cardValidate()"/><br />
                
                 <label for="ExpiryDate">Expiry Date: </label>
                 <input type="text" name="ExpiryDate" id="ExpiryDate" placeholder="MM/YY" value="" /><br />
                
                 <button type="sumbit" onclick="return validate(this.form)">Order now!</button>
                 <button type="reset" onclick="return confirm('Are you sure you want to reset the form?')">Reset</button><br />
-            </form>        
+            </form>
+
+        
 
             <br /><br /><br />
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>

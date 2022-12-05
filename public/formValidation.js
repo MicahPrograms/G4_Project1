@@ -2,6 +2,32 @@ function confirm_reset() {
     return confirm("Are you sure you want to reset the form?");
 }
 //Form validation from Micah
+
+
+
+var formLength = 10;
+
+function validate(myForm) {
+    console.log("made it into the function");
+
+    for (i=0; i<formLength; i++) {
+        console.log(myForm[i].name);
+
+        if(myForm[i].value == "") {
+            console.log(myForm[i].name + " must have an input.");
+            alert(myForm[i].name + " must have an input.");
+            myForm[i].focus();
+            return false;
+        }
+    }
+
+
+
+
+
+
+
+/*
 function validate(myForm)
 {
     var FirstName = document.getElementById("FirstName");
@@ -52,6 +78,8 @@ function validate(myForm)
         return false;
     }
 
+    */
+
 
     // - Micah: Comparing credit card number to regular expressions for each majot credit card type to make sure card is valid 
     var creditCardNum = document.getElementById("Credit").value;
@@ -62,28 +90,10 @@ function validate(myForm)
     var regAMEX = /^3[47][0-9]{13}$/;
     if(!regMaster.test(creditCardNum) && !regVisa.test(creditCardNum) && !regAMEX.test(creditCardNum))
     {
-        alert("Please enter a valid credit card number.");
+        alert("Please enter a valid credit card number. Remember: no spaces between numbers!");
         Credit.focus();
         return false;
     } 
-
-    //Visa
-    /* var regVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
-    if(!regVisa.test(creditCardNum))
-    {
-        alert("Please enter a valid credit card number.");
-        Credit.focus();
-        return false;
-    } 
-
-    //American Express
-    var regAMEX = /^3[47][0-9]{13}$/;
-    if(!regAMEX.test(creditCardNum))
-    {
-        alert("Please enter a valid credit card number.");
-        Credit.focus();
-        return false;
-    } */
     
     //Expiry date test
     var regExp = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/;
@@ -96,12 +106,26 @@ function validate(myForm)
     } 
 
 return confirm("Continue submitting?");
+
+
+
+
+    function cardIdentify(){
+        var regMaster = /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-9]|7(?:[01][0-9]|20))[0-9]{12}$/;
+        var regVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+        var regAMEX = /^3[47][0-9]{13}$/;
+    
+        if(regMaster.test(creditCardNum)) {
+            alert("Mastercard!");
+            return false;
+        }
+        if(regVisa.test(creditCardNum)) {
+            alert("Visa!");
+            return false;
+        }
+        if(regAMEX.test(creditCardNum)) {
+            alert("American Express!");
+            return false;
+        }
+    } 
 }
-
-
-
-function cardValidate(){
-    
-    
-} 
-//5415903660275272
