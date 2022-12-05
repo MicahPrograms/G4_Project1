@@ -59,12 +59,12 @@ return confirm("Continue submitting?");
             document.getElementById('card').src = "mastercard.png";
             return false;
         }
-        if(regVisa.test(creditCardNum) == true) {
+        if(regVisa.test(creditCardNum)) {
             document.getElementById('card').className = "cardvisible";
             document.getElementById('card').src = "visa.png";
             return false;
         }
-        if(regAMEX.test(creditCardNum) == true) {
+        if(regAMEX.test(creditCardNum)) {
             document.getElementById('card').className = "cardvisible";
             document.getElementById('card').src = "amex.png";
             return false;
