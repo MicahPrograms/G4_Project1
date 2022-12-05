@@ -30,10 +30,8 @@ app.get("/packages", (req,res)=>{
 	var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
 			if (err) throw err;
-			console.log(result);
-			console.log(fields);
 			res.render("packages", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
@@ -41,6 +39,7 @@ app.get("/packages", (req,res)=>{
 		});
 	});
 });
+
 
 app.get("/", (req, res, err) => {
     res.render("Homepage");
