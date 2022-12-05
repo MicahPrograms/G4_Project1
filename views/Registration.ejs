@@ -6,7 +6,9 @@
         <link href="G4Styles.css" rel="stylesheet" type="text/css">
         <style>
             section{
-                display:inline-flex; 
+                display:grid;
+                grid-auto-flow: column;
+                grid-auto-columns: 1fr;
             }
             select{
                 width:200px;
@@ -20,17 +22,19 @@
                 height:40px;
             }
             form{
-                border: 5px solid green;
+                border: 5px solid #2596be;
                 overflow: hidden;
             }
             button{
-                height:42px;
-                width:72px;
+                padding:10px;
+                border-radius:10px;
+                border:none;
+
             }
         </style>
     </head>
     <body>
-        <!-- Added the top banners (next ~25 lines) - Micah B.-->
+        <!-- Added the top banners (lines 33-59) - Micah B.-->
         <div class="topbanner">
             <img src="logo2.jpg" />
             <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
@@ -66,111 +70,120 @@
             <!--Full Name-->
             <section class="fullName">
                 <div>
+                    <p id="p1" style="visibility: hidden" >Please Enter First Name</p>
                     <label for="fname">First Name:</label>
                     <input type="text" id="fname" name="First name" placeholder="Your name..."
                         onfocus="inFocus(this,'p1')" onblur="outFocus(this,'p1')"/>
-                        <p id="p1" style="visibility: hidden" >Please Enter First Name</p>
                 </div>
                 <div>
+                    <p id="p2" style="visibility: hidden">Please Enter Middle Initials</p>
                     <label for="mname">Middle Initial:</label>
-                    <input type="text" id="lname" name="Middle initial" size="8" maxlength="8" 
+                    <input type="text" id="mname" name="Middle initial" size="6" maxlength="8" 
                         placeholder="Your initials..."
                         onfocus="inFocus(this,'p2')" onblur="outFocus(this,'p2')"/>
-                    <p id="p2" style="visibility: hidden">Please Enter Middle Initials</p>
                 </div>
                 <div>
+                    <p id="p3" style="visibility: hidden">Please Enter Last Name</p>
                     <label for="lname">Last Name:</label>
                     <input type="text" id="lname" name="Last name" placeholder="Your last name..."
                         onfocus="inFocus(this,'p3')" onblur="outFocus(this,'p3')"/>
-                    <p id="p3" style="visibility: hidden">Please Enter Last Name</p>
                 </div>
             </section>
             <br>
             <section> <!--Addres and Postal-->
                 <!--Address-->
                 <div>
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="Address" size="22"
-                        onfocus="inFocus(this,'p4')" onblur="outFocus(this,'p4')"/>
                     <p id="p4" style="visibility: hidden">Please Enter Address</p>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="Address" size="22" placeholder="Your address..."
+                        onfocus="inFocus(this,'p4')" onblur="outFocus(this,'p4')"/>
                 </div> 
                 <!--Postal Code-->
                 <div>
-                    <label for="postal">Postal Code:</label>
-                    <input type="text" id="postal" name="Postal" size="16"
-                        onfocus="inFocus(this,'p5')" onblur="outFocus(this,'p5')"/>
                     <p id="p5" style="visibility: hidden">Please Enter Postal Code</p>
+                    <label for="postal">Postal Code:</label>
+                    <input type="text" id="postal" name="Postal" size="16" placeholder="Your postal code..."
+                        onfocus="inFocus(this,'p5')" onblur="outFocus(this,'p5')"/>
                 </div>
             </section>
             <section> <!--City Province Country-->
                 <!--City-->
                 <div>
-                    <label for="city">City:</label>
-                    <input type="text" id="city" name="City" size="25"
-                        onfocus="inFocus(this,'p5')" onblur="outFocus(this,'p5')"/>
                     <p id="p6" style="visibility: hidden">Please Enter City</p>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="City" size="25" placeholder="Your city..."
+                        onfocus="inFocus(this,'p6')" onblur="outFocus(this,'p6')"/>
                 </div> 
                 <!--Province-->
                 <div>
-                    <label for="province">Province:</label>
-                    <input type="text" id="province" name="Province"
-                        onfocus="inFocus(this,'p6')" onblur="outFocus(this,'p6')"/>
                     <p id="p7" style="visibility: hidden">Please Enter Province</p>
+                    <label for="province">Province:</label>
+                    <input type="text" id="province" name="Province" placeholder="Your province..."
+                        onfocus="inFocus(this,'p7')" onblur="outFocus(this,'p7')"/>
                 </div> 
-                <!--Country-->
-                <select id="country" name="Country">
-                    <option value="canada">Canada</option>
-                    <option value="usa">USA</option>
-               </select>
             </section>
+            <!--Country-->
+            <select id="country" name="Country">
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+           </select>
             <br> <!--Email and phone numbers-->
             <section>
                 <!--Email-->
                 <div>
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="Email" size="23"
-                        onfocus="inFocus(this,'p8')" onblur="outFocus(this,'p8')"/>
                     <p id="p8" style="visibility: hidden">Please Enter Email</p>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="Email" size="23" placeholder="Your email..."
+                        onfocus="inFocus(this,'p8')" onblur="outFocus(this,'p8')"/>
                 </div> 
                 <!--Home Phone-->
                 <div>
-                    <label for="phone">Home Phone:</label>
-                    <input type="text" id="phone" name="Home Phone"
-                        onfocus="inFocus(this,'p9')" onblur="outFocus(this,'p9')"/>
                     <p id="p9" style="visibility: hidden">Please Enter Home Phone</p>
+                    <label for="phone">Home Phone:</label>
+                    <input type="text" id="phone" name="Home Phone" placeholder="Your home number..."
+                        onfocus="inFocus(this,'p9')" onblur="outFocus(this,'p9')"/>
                 </div> 
                 <!--Business Phone-->
                 <div>
-                    <label for="busPhone">Business Phone:</label>
-                    <input type="text" id="busPhone" name="Business Phone"
-                        onfocus="inFocus(this,'p10')" onblur="outFocus(this,'p10')"/>
                     <p id="p10" style="visibility: hidden">Please Enter Business Phone</p>
+                    <label for="busPhone">Business Phone:</label>
+                    <input type="text" id="busPhone" name="Business Phone" placeholder="Your work number..."
+                        onfocus="inFocus(this,'p10')" onblur="outFocus(this,'p10')"/>
                 </div> 
             </section>
             <br> <!--Username and PW-->
             <section>
                 <!--User ID-->
                 <div>
+                    <p id="p11" style="visibility: hidden">Please Enter Username</p>
                     <label for="userId">User ID:</label>
-                    <input type="text" id="userId" name="User ID" size="21"
-                        onfocus="inFocus(this,'p10')" onblur="outFocus(this,'p10')"/>
-                    <p id="p10" style="visibility: hidden">Please Enter Username</p>
+                    <input type="text" id="userId" name="User ID" size="21" placeholder="Your username..."
+                        onfocus="inFocus(this,'p11')" onblur="outFocus(this,'p11')"/>
                 </div> 
                 <!--Password-->
                 <div>
+                    <p id="p12" style="visibility: hidden">Please Enter Password</p>
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="Password"
-                        onfocus="inFocus(this,'p10')" onblur="outFocus(this,'p10')"/>
-                    <p id="p10" style="visibility: hidden">Please Enter Password</p>
+                    <input type="password" id="password" name="Password" placeholder="Your password..."
+                        style="height: 46px;"
+                        onfocus="inFocus(this,'p12')" onblur="outFocus(this,'p12')"/>
                 </div> 
             </section>
             <br>
-            <!--Submit button-->
-            <button type= "submit" onclick="return confirmSubmit(this.form)">Submit</button>
-			<button type= "reset" onclick="return confirmReset()">Reset</button>
+            <!--Buttons-->
+            <section style="width:50%; margin-bottom:20px;">
+                <div>
+                    <!--Submit button-->
+                    <button style="background-color: lightskyblue;"type= "submit" onclick="return confirmSubmit(this.form)">Submit</button>
+                </div>
+                <div>
+                    <!--Reset button-->
+                    <button type= "reset" onclick="return confirmReset()">Reset</button>
+                </div>        
+            </section>    
         </form>
-        <!--link verification script-->
-    
+        <!--link registration validation script-->
+        <script src="registrationValidation.js" type="text/javascript"></script>
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
     </body>
 </html>
