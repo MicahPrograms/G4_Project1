@@ -23,10 +23,10 @@ function confirmSubmit(myForm){
         console.log(myForm[i].name);
         // country already has a value selected as default
         // check the value of the name to see if its empty
-        if(myForm[i].name == "country"){
+        if(myForm[i].name == registrationformArray[7]){
             continue;
         }
-        if(myForm[i].name =="busPhone"){
+        if(myForm[i].name == registrationformArray[10]){
             continue;
         }
         else if(myForm[i].value ==""){
@@ -48,7 +48,6 @@ function confirmSubmit(myForm){
     if(document.getElementById("country").value == "canada"){
         // Canada postal code
         var postalRegExp = new RegExp(/^[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]/);
-        alert("canada test");
         if(!postalRegExp.test(myForm.postal.value)){
             return postalAlertInvalid();
         }
@@ -56,7 +55,6 @@ function confirmSubmit(myForm){
     else{
         // USA Zip Code
         var postalRegExp = new RegExp(/(^\d{5}$)|(^\d{9}$)|(^\d{5}-\d{4}$)/);
-        alert("usa test");
         if(!postalRegExp.test(myForm.postal.value)){
             return postalAlertInvalid();
         }
@@ -64,11 +62,8 @@ function confirmSubmit(myForm){
 
 }
 
-postalFormIndex = 4; //current index of where postal code is
 function postalAlertInvalid(){
-    alert("Invalid postal/zip code");
     document.getElementById("postal").focus();
-    alert("return false");
     return false;
 }
 
