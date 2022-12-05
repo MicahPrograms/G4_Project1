@@ -1,4 +1,5 @@
 // Author: Tim H
+
 var registrationFormArray = ["fname","mname","lname","address","postal","city","province","country",
     "email","phone","busphone","userId","password"];
 
@@ -39,13 +40,33 @@ function confirmSubmit(myForm){
         myForm.email.focus();
         return false;
     }
+    alert(myForm.postal.value);
     // validate postal code to be correct format 
-    var postalRegExp = new RegExp(/^[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]/);
-	if(!postalRegExp.test(myForm.postal.value)){
-		alert("Invalid postal code");
-		myForm.postal.focus();
-		return false;
-	}
+    if(document.getElementById("country").value == "canada"){
+        // Canada postal code
+        var postalRegExp = new RegExp(/^[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]/);
+        alert("canada test");
+        if(!postalRegExp.test(myForm.postal.value)){
+            return postalAlertInvalid();
+        }
+    }
+    else{
+        // USA Zip Code
+        var postalRegExp = new RegExp(/(^\d{5}$)|(^\d{9}$)|(^\d{5}-\d{4}$)/);
+        alert("usa test");
+        if(!postalRegExp.test(myForm.postal.value)){
+            return postalAlertInvalid();
+        }
+    }
+
+}
+
+postalFormIndex = 4; //current index of where postal code is
+function postalAlertInvalid(){
+    alert("Invalid postal/zip code");
+    document.getElementById("postal").focus();
+    alert("return false");
+    return false;
 }
 
 // Reset Form
@@ -53,5 +74,22 @@ function confirmReset(){
     if(confirm("Are you sure you want to reset?")){
         alert("input has been cleared");
         document.getElementById("form").reset();
+    }
+}
+
+// Country value changes
+function countryVal(){
+    val = document.getElementById("country").value;
+    // change text of Province to State when USA is chosen
+    // Change text of State to Province when Canada is chosen
+    provinceText = document.getElementById("provLabel");
+    postalText = document.getElementById("postalLabel");
+    if(val == "usa"){
+        provinceText.textContent = "State:"
+        postalText.textContent = "ZIP Code:"
+    }
+    else{
+        provinceText.textContent = "Province:"
+        postalText.textContent = "Postal Code:"
     }
 }
