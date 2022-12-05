@@ -5,7 +5,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
-app.use(express.static("public", { "extensions": ["css", "js"] }));
+app.use(express.static("public", { "extensions": ["css", "js", "php"] }));
 app.use(express.static("media", { "extensions": ["png", "jpg", "gif"] }));
 app.use(bodyparser.urlencoded({ extended: true }));
 
@@ -123,6 +123,22 @@ app.get("/Confirmation", (req, res) => {
 			console.log(result);
 			console.log(fields);
 			res.render("Confirmation", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/contact", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+			if (err) throw err;
+			console.log(result);
+			console.log(fields);
+			res.render("contactpage", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
 			});

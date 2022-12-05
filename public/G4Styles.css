@@ -186,6 +186,11 @@ input {
     margin-bottom: 0px;
 }
 
+#package, #depart, #return, #description, #price {
+    font-size: 16pt;
+    text-align: center;
+}
+
 /*Tim's css start*/
 .sectionForm{
     display:grid;
@@ -227,3 +232,4 @@ select{
     height:30px;
 }
 /*Tim's css end*/
+
