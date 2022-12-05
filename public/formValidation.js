@@ -5,22 +5,21 @@ function confirm_reset() {
 
 
 
-
-var formLength = myForm.length;
+var formLength = 10;
 
 function validate(myForm) {
-console.log(myForm[i].value);
+    console.log("made it into the function");
 
-for (i=0; i<orderFormTotal; i++) {
-    console.log(myForm[i].name);
+    for (i=0; i<formLength; i++) {
+        console.log(myForm[i].name);
 
-    if(myForm[i].value == "") {
-        console.log(myForm[i].name + " must have an input.");
-        alert(myForm[i].name + " must have an input.");
-        myForm[i].focus();
-        return false;
+        if(myForm[i].value == "") {
+            console.log(myForm[i].name + " must have an input.");
+            alert(myForm[i].name + " must have an input.");
+            myForm[i].focus();
+            return false;
+        }
     }
-}
 
 
 
@@ -91,7 +90,7 @@ function validate(myForm)
     var regAMEX = /^3[47][0-9]{13}$/;
     if(!regMaster.test(creditCardNum) && !regVisa.test(creditCardNum) && !regAMEX.test(creditCardNum))
     {
-        alert("Please enter a valid credit card number.");
+        alert("Please enter a valid credit card number. Remember: no spaces between numbers!");
         Credit.focus();
         return false;
     } 
@@ -111,8 +110,22 @@ return confirm("Continue submitting?");
 
 
 
-function cardValidate(){
+    function cardIdentify(){
+        var regMaster = /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-9]|7(?:[01][0-9]|20))[0-9]{12}$/;
+        var regVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+        var regAMEX = /^3[47][0-9]{13}$/;
     
-    
-} 
+        if(regMaster.test(creditCardNum)) {
+            alert("Mastercard!");
+            return false;
+        }
+        if(regVisa.test(creditCardNum)) {
+            alert("Visa!");
+            return false;
+        }
+        if(regAMEX.test(creditCardNum)) {
+            alert("American Express!");
+            return false;
+        }
+    } 
 }
