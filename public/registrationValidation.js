@@ -4,13 +4,13 @@ var registrationFormArray = ["fname","mname","lname","address","postal","city","
 
 // Onfocus
 function inFocus(currentInput, paraId){
-    currentInput.style.background = "#2596be";
+    currentInput.style.background = "lightblue";
     document.getElementById(paraId).style.visibility = "visible";
 }
 
 // OnBlur
 function outFocus(currentInput,paraId){
-    currentInput.style.background = "#2596be";
+    currentInput.style.background = "white";
     document.getElementById(paraId).style.visibility = "hidden";
 }
 
