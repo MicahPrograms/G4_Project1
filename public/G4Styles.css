@@ -169,20 +169,7 @@ input {
     width: 100%;
     padding: 6px 10px;
     margin: 8px 8px;
-    box-sizing: border-box;
     color: black;
-}
-
-select {
-    text-shadow: rgb(0, 0, 0);
-    font-size: 14pt;
-    width: 60%;
-    padding: 6px 10px;
-    margin: 8px 8px;
-    box-sizing: border-box;
-    color: black;
-    display: block;
-    font-family: monaco Narrow, sans-serif;
 }
 
 .cardinvisible {
