@@ -223,4 +223,7 @@ button{
     border-radius:5px;
     transition:.3s;
 }
+select{
+    height:30px;
+}
 /*Tim's css end*/
