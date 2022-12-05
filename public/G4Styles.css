@@ -185,3 +185,42 @@ input {
     visibility: visible;
     margin-bottom: 0px;
 }
+
+/*Tim's css start*/
+.sectionForm{
+    display:grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+}
+
+#submitForm{
+    border: 5px solid #2596be;
+    overflow: hidden;
+}
+
+.submitBtn{
+    background-color:lightblue;
+}
+.submitBtn:hover{
+    background-color:greenyellow;
+}
+.resetBtn:hover{
+    background-color:red;
+}
+
+button{
+    text-shadow: rgb(0, 0, 0);
+    font-size: 14pt;
+    width: 60%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    color: black;
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: monaco Narrow, sans-serif;
+    border:none;
+    border-radius:5px;
+    transition:.3s;
+}
+/*Tim's css end*/
