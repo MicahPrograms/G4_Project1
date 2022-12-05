@@ -185,3 +185,8 @@ input {
     visibility: visible;
     margin-bottom: 0px;
 }
+
+#package, #depart, #return, #description, #price {
+    font-size: 16pt;
+    text-align: center;
+}

@@ -44,28 +44,28 @@
         <!-- Start of confirmation -->
         <div class="form" style="text-align: center;">
             <h1>Your order has been confirmed!</h1>
-            <h2>Thank you for choosing Travel Experts - we hope you enjoy your vacation.</h2>
+            
         </div>
         
-        <table class="form">
-            <tr>
-                <td> Package: <%= result[0].PkgName %></td>
-            </tr>
-            <tr>
-                <label for="depart"> Departure Date: </label>
-                <td id="depart"> Departure Date: <%= result[0].PkgStartDate %></td>
-            </tr>
-            <tr>
-                <td> Return Date: <%= result[0].PkgEndDate %></td>
-            </tr>
-            <tr>
-                <td> Description: <%= result[0].PkgDesc %></td>
-            </tr>
-            <tr>
-                <td> Price: $ <%= result[0].PkgBasePrice %></td>
-            </tr>
-        </table>
+        <div class="form">
+            
+                <label for="package" style="text-decoration: underline"> Package: </label>
+                <p id="package"> <%= result[0].PkgName %></p>
+ 
+                <label for="depart" style="text-decoration: underline"> Departure Date: </label>
+                <p id="depart"><%= result[0].PkgStartDate %></p>
+       
+                <label for="return" style="text-decoration: underline"> Return Date: </label>
+                <p id="return"> <%= result[0].PkgEndDate %></p>
 
+                <label for="description" style="text-decoration: underline"> Description: </label>
+                <p id="description"> <%= result[0].PkgDesc %></p>
+     
+                <label for="price" style="text-decoration: underline"> Price: </label>
+                 <p id="price">$<%= result[0].PkgBasePrice %></p>
+         
+        </div>
+            <h2 class="form" style="font-size:20pt">Thank you for choosing Travel Experts - we hope you enjoy your vacation.</h2>
             <br /><br /><br />
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
     </body>
