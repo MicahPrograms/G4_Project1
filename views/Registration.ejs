@@ -4,34 +4,6 @@
     <head>
         <title> Registration Form</title>
         <link href="G4Styles.css" rel="stylesheet" type="text/css">
-        <style>
-            section{
-                display:grid;
-                grid-auto-flow: column;
-                grid-auto-columns: 1fr;
-            }
-            select{
-                width:200px;
-                height:40px;
-            }
-            input[type=text], select{
-                padding:10px 20px;
-                margin: 8px 8px;
-            }
-            input[type=password]{
-                height:40px;
-            }
-            form{
-                border: 5px solid #2596be;
-                overflow: hidden;
-            }
-            button{
-                padding:10px;
-                border-radius:10px;
-                border:none;
-
-            }
-        </style>
     </head>
     <body>
         <!-- Added the top banners (lines 33-59) - Micah B.-->
@@ -63,12 +35,12 @@
             </div>
 
         <header>
-            <h1>Register your account today</h1>
+            <h1>Register your account today!</h1>
             <h2>Plan your next vacation with us</h2>
         </header>
-        <form method="post" action="bouncer.php">
+        <form id="submitForm" method="post" action="bouncer.php">
             <!--Full Name-->
-            <section class="fullName">
+            <section class="sectionForm">
                 <div>
                     <p id="p1" style="visibility: hidden" >Please Enter First Name</p>
                     <label for="fname">First Name:</label>
@@ -90,7 +62,7 @@
                 </div>
             </section>
             <br>
-            <section> <!--Addres and Postal-->
+            <section class="sectionForm"> <!--Addres and Postal-->
                 <!--Address-->
                 <div>
                     <p id="p4" style="visibility: hidden">Please Enter Address</p>
@@ -106,7 +78,7 @@
                         onfocus="inFocus(this,'p5')" onblur="outFocus(this,'p5')"/>
                 </div>
             </section>
-            <section> <!--City Province Country-->
+            <section class="sectionForm"> <!--City Province Country-->
                 <!--City-->
                 <div>
                     <p id="p6" style="visibility: hidden">Please Enter City</p>
@@ -123,12 +95,17 @@
                 </div> 
             </section>
             <!--Country-->
-            <select id="country" name="Country">
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option>
-           </select>
+            <section class="sectionForm">
+                <div class="flex-container" style="justify-content:left; width:20%;">
+                    <p style="width:20%;">Country:</p>
+                    <select class="sectionForm" id="country" name="Country">
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                    </select>
+                </div>  
+            </section>
             <br> <!--Email and phone numbers-->
-            <section>
+            <section class="sectionForm">
                 <!--Email-->
                 <div>
                     <p id="p8" style="visibility: hidden">Please Enter Email</p>
@@ -152,7 +129,7 @@
                 </div> 
             </section>
             <br> <!--Username and PW-->
-            <section>
+            <section class="sectionForm">
                 <!--User ID-->
                 <div>
                     <p id="p11" style="visibility: hidden">Please Enter Username</p>
@@ -165,20 +142,19 @@
                     <p id="p12" style="visibility: hidden">Please Enter Password</p>
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="Password" placeholder="Your password..."
-                        style="height: 46px;"
                         onfocus="inFocus(this,'p12')" onblur="outFocus(this,'p12')"/>
                 </div> 
             </section>
             <br>
             <!--Buttons-->
-            <section style="width:50%; margin-bottom:20px;">
+            <section class="sectionForm" style="width:50%; margin-bottom:20px;">
                 <div>
                     <!--Submit button-->
-                    <button style="background-color: lightskyblue;"type= "submit" onclick="return confirmSubmit(this.form)">Submit</button>
+                    <button class="submitBtn"type= "submit" onclick="return confirmSubmit(this.form)">Submit</button>
                 </div>
                 <div>
                     <!--Reset button-->
-                    <button type= "reset" onclick="return confirmReset()">Reset</button>
+                    <button class="resetBtn"type= "reset" onclick="return confirmReset()">Reset</button>
                 </div>        
             </section>    
         </form>
