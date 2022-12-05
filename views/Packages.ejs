@@ -1,47 +1,132 @@
 <!DOCTYPE html>
 <header>
   <title>Travel Packages</title>
-  <!--  Main CSS & JavaScript File -->
-  <link href="G4Styles.css" rel="stylesheet" type="text/css"/>
-  <link href="/public/script.js" rel="stylesheet" type="text/js"/>
-
+  <!--  Main CSS  -->
+<link href="G4Styles.css" rel="stylesheet" type="text/css"/>
 </header>
-<body>
-  
-  <table align="center">
-    <tr >
-      <td><img src="logo1.jpg"></td>
-      
-      <td ><nav>
-        <ul class="nav-main">
-          <li class="nav-item"><a href="/">Home</a></li>
-          <li class="nav-item"><a href="/packages">Travel Packages</a></li>
-          <li class="nav-item"><a href="/contact">Contact</a></li>
-          <li class="nav-item"><a href="/register">Register</a></li>
-        </ul>
-      </nav></td>
-    </tr>
-  </table>
-    <img src="Slider2.jpg" alt="Slider" width="100%" height="650">
+<script>
+function CheckCurrentDate() {
+
+var d0 = "<%=result[0].PkgStartDate%>";
+var d1 ="<%=result[1].PkgStartDate%>";
+var d2 = "<%=result[2].PkgStartDate%>";
+var d3 = "<%=result[3].PkgStartDate%>";
+var d4 ="<%=result[5].PkgStartDate%>";
+var Today = new Date();
+
+if(d0< Today)
+{
+     element = document.getElementById('sdate0');
+     element.style.color= '#d31414';
+     element.style.weight = "bold";
+}
+ if (d1<Today)
+{
+  element = document.getElementById('sdate1');
+     element.style.color= '#d31414';
+     element.style.weight = "bold";
+}
+if (d2<Today)
+{
+  element = document.getElementById('sdate2');
+     element.style.color= '#d31414';
+     element.style.weight = "bold";
+}
+if (d3<Today)
+{
+  element = document.getElementById('sdate3');
+     element.style.color= '#d31414';
+     element.style.weight = "bold";
+}
+
+else{
+   
+}
+}
+
+</script>
+
+<body onload="CheckCurrentDate()"> 
+  <div class="topbanner">
+    <img src="logo2.jpg" />
+</div>
+<div class="banner">
+    <a href="Home" class="banner" target="_blank">Home</a>
+    <a href="Contact" class="banner" target="_blank">Contact Us</a>
+    <a href="Packages.ejs" class="banner">Vacation Packages</a>
+    <a href="Registration" class="banner">Sign Up</a>
+    <a href="Login" class="banner">Login</a>
+        
+    <div class="logo">      
+        <img src="Logo.png" class="logo" />
+    </div>
+</div>
+<div class="slider">
+  <img src="Slider2.jpg" alt="Snow" style="width:100%;" height="30%"> 
+  <div class="centered">Discover The World With Travel Experts!</div>
+</div>
+
   <!--MENU-->
-    <body>
-      <div class="flex-container">
+      <div class="flex-container-pack">
+        <div><img src="07.jpg" width="100%" height="100%"></div>
         <div>
-            <img src="01.jpg">
-        </div>
+          <h2><%= result[0].PkgName%></h2>
+          <p><%= result[0].PkgDesc%></p>
+          <p>Package Price:<%= result[0].PkgBasePrice%></p>
+          <p id="sdate0">Package Start Date:<%= result[0].PkgStartDate.getDate() + "/"+  +((result[0].PkgStartDate.getMonth())+1) + "/"+ +result[0].PkgStartDate.getFullYear() %></p>
+          <p>Package End Date:<%= result[0].PkgEndDate.getDate() + "/"+  +((result[0].PkgEndDate.getMonth())+1)+ "/"+ +result[0].PkgEndDate.getFullYear() %></p>
+          <button>Reserve Now</button>
+      </div>
+      <div><img src="05.jpg" width="100%" height="100%"></div>
+      <div>
+        <h2><%= result[1].PkgName%></h2>
+        <p><%= result[1].PkgDesc%></p>
+        <p >Package Price:<%= result[1].PkgBasePrice%></p>
+        <p id="sdate1">Package Start Date:<%= result[1].PkgStartDate.getDate() + "/"+  +((result[1].PkgStartDate.getMonth())+1)+ "/"+ +result[1].PkgStartDate.getFullYear() %></p>
+        <p>Package End Date:<%= result[1].PkgEndDate.getDate() + "/"+  +((result[1].PkgEndDate.getMonth())+1) + "/"+ +result[1].PkgEndDate.getFullYear() %></p>
+        <button>Reserve Now</button>
+    </div>
+      </div>
+      <div class="flex-container-pack">
+        <div><img src="04.jpg" width="100%" height="100%"></div>
         <div>
-          <h2>
-            <p>Package Name:</p>  <%= result[1].PkgName%></h2>
+          <h2><%= result[2].PkgName%></h2>
+          <p><%= result[2].PkgDesc%></p>
+          <p>Package Price:<%= result[2].PkgBasePrice%></p>
+          <p id="sdate2">Package Start Date:<%= result[2].PkgStartDate.getDate() + "/"+  +((result[2].PkgStartDate.getMonth())+1) + "/"+ +result[2].PkgStartDate.getFullYear() %></p>
+          <p>Package End Date:<%= result[2].PkgEndDate.getDate() + "/"+  +((result[2].PkgEndDate.getMonth())+1) + "/"+ +result[2].PkgEndDate.getFullYear() %></p>
+          <button>Reserve Now</button>
       </div>
+      <div><img src="01.jpg" width="100%" height="100%"></div>
+      <div>
+        <h2><%= result[3].PkgName%></h2>
+        <p><%= result[3].PkgDesc%></p>
+        <p>Package Price:<%= result[3].PkgBasePrice%></p>
+        <p id="sdate3">Package Start Date:<%= result[3].PkgStartDate.getDate() + "/"+  +((result[3].PkgStartDate.getMonth())+1) + "/"+ +result[3].PkgStartDate.getFullYear() %></p>
+        <p>Package End Date:<%= result[3].PkgEndDate.getDate() + "/"+  +((result[3].PkgEndDate.getMonth())+1) + "/"+ +result[3].PkgEndDate.getFullYear() %></p>
+        <button>Reserve Now</button>
+    </div>
       </div>
-      <div class="flex-container">
-        <div></div>
-        <div></div>
+      <div class="flex-container-pack">
+        <div><img src="02.jpg" width="100%" height="100%"></div>
+        <div>
+          <h2><%= result[4].PkgName%></h2>
+          <p><%= result[4].PkgDesc%></p>
+          <p>Package Price:<%= result[4].PkgBasePrice%></p>
+          <p id="sdate4">Package Start Date:<%= result[4].PkgStartDate.getDate() + "/"+  +((result[4].PkgStartDate.getMonth())+1)+ "/"+ +result[4].PkgStartDate.getFullYear() %></p>
+          <p>Package End Date:<%= result[4].PkgEndDate.getDate() + "/"+  +((result[4].PkgEndDate.getMonth())+1) + "/"+ +result[4].PkgEndDate.getFullYear() %></p>
+          <button>Reserve Now</button>
       </div>
+      <div><img src="03.jpg" width="100%" height="100%"></div>
+      <div>
+        <h2><%= result[5].PkgName%></h2>
+        <p><%= result[5].PkgDesc%></p>
+        <p>Package Price:<%= result[5].PkgBasePrice%></p>
+        <p id="sdate5">Package Start Date:<%= result[5].PkgStartDate.getDate() + "/"+  +((result[5].PkgStartDate.getMonth())+1) + "/"+ +result[5].PkgStartDate.getFullYear() %></p>
+        <p>Package End Date:<%= result[5].PkgEndDate.getDate() + "/"+  +((result[5].PkgEndDate.getMonth())+1) + "/"+ +result[5].PkgEndDate.getFullYear() %></p>
+        <button>Reserve Now</button>
+    </div>
     </body>
   </html>
-   <footer>
-    <p>Rabab Kazim Copyright@2022</p>
-    <p><a href="mailto:rkazim83@gmail.com">Click here to Email us</a></p>
-  </footer>
-    </body></html>
+  <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
+    </html>

@@ -227,9 +227,54 @@ button{
     border:none;
     border-radius:5px;
     transition:.3s;
+    cursor:pointer;
 }
 select{
     height:30px;
+    width:35%;
 }
 /*Tim's css end*/
 
+/*Rabab Kazim css start*/
+.flex-container-pack {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    margin-top: 20px;
+
+}
+.flex-container-pack > div{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    width: 30%;
+    height: 100%;
+    background-color: #ffffff;
+}
+div.flex-container-Pack h2 {
+    font-size: 20pt;
+}
+.flex-container-pack> p {
+    margin-right: 5%;
+    margin-left: 5%;
+    font-size: 18pt;
+    font-size: 1.5vw;
+}
+.flex-container-pack  button{
+    background-color: #92a21a;
+}
+.slider {
+    position: relative;
+    text-align: center;
+    color: #798611;
+    font-weight: bold;
+    font-size: 80px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .centered {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+/*Rabab Kazim css End*/

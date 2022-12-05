@@ -23,10 +23,10 @@ function confirmSubmit(myForm){
         console.log(myForm[i].name);
         // country already has a value selected as default
         // check the value of the name to see if its empty
-        if(myForm[i].name == "country"){
+        if(myForm[i].name == registrationformArray[7]){
             continue;
         }
-        if(myForm[i].name =="busPhone"){
+        if(myForm[i].name == registrationformArray[10]){
             continue;
         }
         else if(myForm[i].value ==""){
