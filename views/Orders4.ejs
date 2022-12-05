@@ -1,0 +1,97 @@
+<!-- Author: Micah B.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="G4Styles.css" rel="stylesheet" type="text/css" />
+        <script src="jquery-3.6.1.js" type="text/javascript"></script>
+        <script src="formValidation.js" type="text/javascript"></script>
+
+        <!-- <script>
+            var test;
+            var end = "<%= result[0].PkgStartDate %>"
+            var current = "<%= result[0].PkgEndDate %>";
+            if (current < end) {
+                test = "Vacation AVAILABLE";
+            }
+            else {
+                test = "Vacation EXPIRED";
+            }
+            alert(test);
+        </script> -->
+
+    </head>
+
+    <body>
+        <div class="topbanner">
+            <img src="logo2.jpg" />
+            <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
+                <script>
+                    var quotes = ["“Adventure is worthwhile.” – Aesop", "“Traveling – it leaves you speechless, then turns you into a storyteller.” – Ibn Battuta", 
+                    "“We travel, some of us forever, to seek other places, other lives, other souls.” – Anais Nin", 
+						"“A journey is best measured in friends, rather than miles.” – Tim Cahill", "“I am not the same, having seen the moon shine on the other side of the world.” – Mary Anne Radmacher", 
+						"“The world is a book, and those who do not travel read only one page.” – Saint Augustine", "“Travel is the only thing you buy that makes you richer.” – Anonymous", 
+                    "“Better to see something once than hear about it a thousand times.” – Asian Proverb"];
+					var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+					document.write(randomQuote);
+                </script>
+            </h2>
+        </div>
+
+        <div class="banner">
+            <a href="/" id="home" >Home</a>
+            <a href="/contact" >Contact Us</a>
+            <a href="/packages" >Vacation Packages</a>
+            <a href="/registration" >Sign Up</a>
+            <a href="/login" >Login</a>
+                
+                <div class="logo">      
+                    <img src="Logo.png" class="logo" />
+                </div>
+            </div>
+            
+            
+
+        <!-- Order form, validation in head section -->
+            <form method="post" action="/neworder" class="form">
+
+                <label for="Package">Vacation Package: </label>
+                <input type="text" id="package" value="<%= result[3].PkgName + " - $" + result[3].PkgBasePrice %>" readonly="readonly">
+
+                <label for="FirstName">First name: </label> 
+                <input type="text" name="FirstName" id="FirstName" value="" /><br />
+                
+                <label for="LastName">Last name: </label> 
+                <input type="text" name="LastName" id="LastName" value="" /><br />
+                
+                <label for="HomeAddress">Home Address: </label>
+                <input type="text" name="HomeAddress" id="HomeAddress" value="" /><br />
+                
+                <label for="ProvState">Province/State: </label>
+                <input type="text" name="ProvState" id="ProvState" value="" /><br />
+                
+                <label for="Country">Country: </label>
+                <input type="text" name="Country" id="Country" value="" /><br />
+
+                <label for="Postal">Postal/ZIP Code: </label>
+                <input type="text" name="Postal" id="Postal" value="" /><br />
+                
+                <label for="Email">Email Address: </label>
+                <input type="text" name="Email" id="Email" value="" /><br />
+                
+                <label for="Credit">Credit Card Number: </label> 
+                        <img src="mastercard.png" class="cardinvisible" id="card">
+                        
+                <input type="text" name="Credit" id="Credit" value="" placeholder="No Spaces Between Numbers" onchange="cardIdentify()"/><br />
+               
+                <label for="ExpiryDate">Expiry Date: </label>
+                <input type="text" name="ExpiryDate" id="ExpiryDate" placeholder="MM/YY" value="" /><br />
+               
+                <button type="sumbit" onclick="return validate(this.form)">Order now!</button>
+                <button type="reset" onclick="return confirm('Are you sure you want to reset the form?')">Reset</button><br />
+            </form>        
+            
+            <br /><br /><br />
+        <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
+    </body>
+    
+</html> 
