@@ -1,6 +1,6 @@
 // Author: Tim H
 var registrationFormArray = ["fname","mname","lname","address","postal","city","province","country",
-    "email","phone","busphone","userId","password"];
+    "email","phone","busPhone","userId","password"];
 
 // Onfocus
 function inFocus(currentInput, paraId){
@@ -23,6 +23,9 @@ function confirmSubmit(myForm){
         // country already has a value selected as default
         // check the value of the name to see if its empty
         if(myForm[i].name == "country"){
+            continue;
+        }
+        if(myForm[i].name =="busPhone"){
             continue;
         }
         else if(myForm[i].value ==""){
