@@ -1,3 +1,5 @@
+<!-- Author: Rabab Kaz.-->
+
 <!DOCTYPE html>
 <header>
   <title>Travel Packages</title>
@@ -5,48 +7,67 @@
 <link href="G4Styles.css" rel="stylesheet" type="text/css"/>
 </header>
 <script>
-function CheckCurrentDate() {
+// Javascript to check if start date is less then the current date and change it to red
 
-var d0 = "<%=result[0].PkgStartDate%>";
-var d1 ="<%=result[1].PkgStartDate%>";
-var d2 = "<%=result[2].PkgStartDate%>";
-var d3 = "<%=result[3].PkgStartDate%>";
-var d4 ="<%=result[5].PkgStartDate%>";
-var Today = new Date();
+function checkingStartDate()
+{
+var GivenDate0= "<%=result[0].PkgStartDate%>";
+var GivenDate1= "<%=result[1].PkgStartDate%>";
+var GivenDate2= "<%=result[2].PkgStartDate%>";
+var GivenDate3= "<%=result[3].PkgStartDate%>";
+var GivenDate4= "<%=result[4].PkgStartDate%>";
+var GivenDate5= "<%=result[5].PkgStartDate%>";
 
-if(d0< Today)
-{
-     element = document.getElementById('sdate0');
+var CurrentDate = new Date();
+GivenDate0 = new Date(GivenDate0);
+GivenDate1 = new Date(GivenDate1);
+GivenDate2 = new Date(GivenDate2);
+GivenDate3 = new Date(GivenDate3);
+GivenDate4 = new Date(GivenDate4);
+GivenDate5 = new Date(GivenDate5);
+
+
+if(GivenDate0<CurrentDate){
+
+  element = document.getElementById('sdate0');
      element.style.color= '#d31414';
-     element.style.weight = "bold";
+     element.style.fontWeight = 'bold';
 }
- if (d1<Today)
-{
-  element = document.getElementById('sdate1');
-     element.style.color= '#d31414';
-     element.style.weight = "bold";
+if(GivenDate1<CurrentDate){
+
+element = document.getElementById('sdate1');
+   element.style.color= '#d31414';
+   element.style.fontWeight = 'bold';
 }
-if (d2<Today)
-{
-  element = document.getElementById('sdate2');
-     element.style.color= '#d31414';
-     element.style.weight = "bold";
+if(GivenDate2<CurrentDate){
+
+element = document.getElementById('sdate2');
+   element.style.color= '#d31414';
+   element.style.fontWeight = 'bold';
 }
-if (d3<Today)
-{
-  element = document.getElementById('sdate3');
-     element.style.color= '#d31414';
-     element.style.weight = "bold";
+if(GivenDate3<CurrentDate){
+
+element = document.getElementById('sdate3');
+   element.style.color= '#d31414';
+   element.style.fontWeight = 'bold';
+}
+if(GivenDate4<CurrentDate){
+
+element = document.getElementById('sdate4');
+   element.style.color= '#d31414';
+   element.style.fontWeight = 'bold';
+}
+if(GivenDate5<CurrentDate){
+
+element = document.getElementById('sdate5');
+   element.style.color= '#d31414';
+   element.style.fontWeight = 'bold';
 }
 
-else{
-   
 }
-}
-
 </script>
 
-<body onload="CheckCurrentDate()"> 
+<body  onload="checkingStartDate()"> 
   <div class="topbanner">
     <img src="logo2.jpg" />
 </div>
