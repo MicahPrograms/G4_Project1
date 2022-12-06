@@ -101,13 +101,23 @@ function countryVal(){
     // Change text of State to Province when Canada is chosen
     provinceText = document.getElementById("provLabel");
     postalText = document.getElementById("postalLabel");
+    provincePlaceholder = document.getElementById("province");
+    postalPlaceholder = document.getElementById("postal");
+    flagImg = document.getElementById("flagImg");
     if(val == "usa"){
-        provinceText.textContent = "State:"
-        postalText.textContent = "ZIP Code:"
+        provinceText.textContent = "State:";
+        postalText.textContent = "ZIP Code:";
+        provincePlaceholder.placeholder = "Your State...";
+        postalPlaceholder.placeholder = "Your ZIP code...";
+        flagImg.src = "usa";
+
     }
     else{
-        provinceText.textContent = "Province:"
-        postalText.textContent = "Postal Code:"
+        provinceText.textContent = "Province:";
+        postalText.textContent = "Postal Code:";
+        provincePlaceholder.placeholder = "Your Province...";
+        postalPlaceholder.placeholder = "Your Postal code...";
+        flagImg.src = "canada";
     }
 }
 
