@@ -162,7 +162,6 @@ app.get("/getallagents", (req, res)=>{
 	});
 });
 
-
 app.post("/register", function(req, res, next) {
 	console.log(req.body);
 	res.send(req.body);
