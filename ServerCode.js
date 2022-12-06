@@ -3,9 +3,10 @@ const mysql = require("mysql");
 const bodyparser = require("body-parser");
 const app = express();
 
+
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
-app.use(express.static("public", { "extensions": ["css", "js", "php"] }));
+app.use(express.static("public", { "extensions": ["css", "js"] }));
 app.use(express.static("media", { "extensions": ["png", "jpg", "gif"] }));
 app.use(bodyparser.urlencoded({ extended: true }));
 
@@ -145,9 +146,8 @@ app.get("/contact", (req, res) => {
 	});   
 });
 
-// app.use("/contact",(req,res)=>{
-//     res.render("contact");
-// });
-
+app.post("/submit", (req, res, err) => {
+	document.write(res);
+});
 
 
