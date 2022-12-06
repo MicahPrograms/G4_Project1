@@ -1,8 +1,9 @@
+/*Micah's CSS below*/
 body {
     margin: 0;
 }
 
-/* Top menu banners CSS by Micah*/
+/* Top menu banners*/
 .topbanner {
     overflow: hidden;
     background-color: #ffffff;
@@ -22,7 +23,7 @@ body {
     display: flex;
 }
 
-/* Blue selection banner by Micah */
+/* Blue selection banner*/
 .banner {
     overflow: hidden;
     background-color: #2596be;
@@ -45,6 +46,11 @@ body {
 
 .banner a:hover {
     background-color: rgb(27, 57, 75);
+    color: white;
+}
+
+#bot-para a:hover {
+    background-color: rgb(240, 240, 240);
     color: white;
 }
 
@@ -190,6 +196,7 @@ input {
     font-size: 16pt;
     text-align: center;
 }
+/*Micah's CSS end*/
 
 /*Tim's css start*/
 .sectionForm{

@@ -20,8 +20,8 @@ function getConnection()
 {
 	var con = mysql.createConnection({
 		host: "localhost",
-		user: "rabab",
-		password: "rabab123",
+		user: "Micah",
+		password: "Micah3cheese",
 		database: "travelexperts"
 	});
 	return con;
@@ -217,6 +217,31 @@ app.get("/login", (req, res, err) => {
     res.render("login");
 });
 
+app.post("/confirm", (req, res) => {
+    var agtdata = [ req.body.AgtFirstName, req.body.AgtMiddleInitial, req.body.AgtLastName, 
+        req.body.AgtBusPhone, req.body.AgtEmail, req.body.AgtPosition, req.body.AgencyId];
+    var myConnection = getConnection();
+    myConnection.connect((err) => {
+        console.log("working to this point");
+        if (err) throw err;
+        var sql = "INSERT INTO `agents`(`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`) VALUES (0, ?, ?, ?, ?, ?, ?, ?)";
+        console.log("working so far.");
+        console.log(agtdata);
+        myConnection.query({"sql": sql, "values": agtdata}, (err, result) => {
+            if (err) throw err;
+            console.log(result.affectedRows + " record(s) inserted!");
+            if (result.affectedRows > 0) {
+                res.render("Confirmation");
+            }
+            else {
+                res.send("data insert failed :(")
+            }
+            myConnection.end((err) => {
+                if (err) throw err;
+            });
+        });
+    });
+});
 
 // app.use("/contact",(req,res)=>{
 //     res.render("contact");
