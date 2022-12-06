@@ -213,6 +213,9 @@ app.post("/register", function(req, res, next) {
 	res.send(req.body);
 });
 
+app.get("/login", (req, res, err) => {
+    res.render("login");
+});
 
 
 // app.use("/contact",(req,res)=>{

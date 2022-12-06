@@ -6,7 +6,7 @@ var creditCardNum = document.getElementById("Credit").value;
 
 function validate(myForm) {
     console.log("made it into the function");
-    var formLength = 10;
+    var formLength = 11;
     for (i=0; i<formLength; i++) {
         console.log(myForm[i].name);
 
@@ -41,10 +41,15 @@ function validate(myForm) {
         ExpiryDate.focus();
         return false;
     } 
-//Saving vacation package as variable from order form to display on confirmation
-    var selectedPackage = document.getElementById("package").value;
-    alert(selectedPackage);
-   
+
+    var regCVV = /^[0-9]{3,4}$/;
+    var CVVnumber = document.getElementById("CVV").value;
+    if(!regCVV.test(CVVnumber))
+    {
+        alert("Please enter a valid CVV. This is found on the back of your credit card.");
+        CVV.focus();
+        return false;
+    }    
 
     return confirm("Continue submitting?");
 }
