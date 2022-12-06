@@ -114,21 +114,21 @@ app.get("/orders4", (req, res) => {
 	});   
 });
 
-app.get("/Confirmation", (req, res) => {
-    var myConnection = getConnection();
-	myConnection.connect((err)=>{
-		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
-			if (err) throw err;
-			console.log(result);
-			console.log(fields);
-			res.render("Confirmation", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
-				if (err) throw err;
-			});
-		});
-	});   
-});
+// app.get("/Confirmation", (req, res) => {
+//     var myConnection = getConnection();
+// 	myConnection.connect((err)=>{
+// 		if (err) throw err;
+// 		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+// 			if (err) throw err;
+// 			console.log(result);
+// 			console.log(fields);
+// 			res.render("Confirmation", { "result": result, "fields": fields });
+// 			myConnection.end((err)=>{
+// 				if (err) throw err;
+// 			});
+// 		});
+// 	});   
+// });
 
 app.get("/contact", (req, res) => {
     var myConnection = getConnection();
@@ -161,6 +161,14 @@ app.get("/getallagents", (req, res)=>{
 		});
 	});
 });
+
+
+app.post("/register", function(req, res, next) {
+	console.log(req.body);
+	res.send(req.body);
+})
+
+
 // app.use("/contact",(req,res)=>{
 //     res.render("contact");
 // });
