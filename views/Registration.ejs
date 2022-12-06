@@ -38,7 +38,7 @@
             <h1>Register your account today!</h1>
             <h2>Plan your next vacation with us</h2>
         </header>
-        <form id="submitForm" method="post" action="/submit">
+        <form id="submitForm" method="post" action="/register">
             <!--Full Name-->
             <section class="sectionForm">
                 <div>
@@ -169,7 +169,14 @@
                     localStorage.lname = document.getElementById("lname").value;
                     localStorage.address = document.getElementById("address").value;
                     localStorage.postal = document.getElementById("postal)").value;
-                    localStorage.city = document.getElementsByTagName("city").value;
+                    localStorage.city = document.getElementsById("city").value;
+                    localStorage.province = document.getElementsById("province").value;
+                    localStorage.country = document.getElementsById("country").value;
+                    localStorage.email = document.getElementsById("email").value;
+                    localStorage.phone = document.getElementById("phone").value;
+                    localStorage.busPhone = document.getElementById("busPhone").value;
+                    localStorage.userId = document.getElementById("userId").value;
+                    localStorage.password = document.getElementsById("password").value;
                 }
                 document.getElementById("form").submit();
             }
