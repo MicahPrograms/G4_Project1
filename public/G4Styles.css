@@ -260,8 +260,18 @@ div.flex-container-Pack h2 {
     font-size: 18pt;
     font-size: 1.5vw;
 }
-.flex-container-pack  button{
+.flex-container-pack a{
     background-color: #92a21a;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 6px;
+    outline: none;
+    margin-left: 30%;
+    margin-right: 20%;
+    
 }
 .slider {
     position: relative;
@@ -277,4 +287,5 @@ div.flex-container-Pack h2 {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
 /*Rabab Kazim css End*/

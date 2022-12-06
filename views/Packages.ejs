@@ -69,25 +69,31 @@ element = document.getElementById('sdate5');
 
 <body  onload="checkingStartDate()"> 
   <div class="topbanner">
+    <!--Logo on left-->
     <img src="logo2.jpg" />
 </div>
+<!--Menu-->
 <div class="banner">
-    <a href="Home" class="banner" target="_blank">Home</a>
-    <a href="Contact" class="banner" target="_blank">Contact Us</a>
-    <a href="Packages.ejs" class="banner">Vacation Packages</a>
-    <a href="Registration" class="banner">Sign Up</a>
-    <a href="Login" class="banner">Login</a>
-        
+  <a href="/" id="home" >Home</a>
+  <a href="/contact" >Contact Us</a>
+  <a href="/packages" >Vacation Packages</a>
+  <a href="/registration" >Sign Up</a>
+  <a href="/login" >Login</a>
+    
+    <!--logo on right-->
     <div class="logo">      
         <img src="Logo.png" class="logo" />
     </div>
 </div>
+<!--Main Slider-->
+
 <div class="slider">
   <img src="Slider2.jpg" alt="Snow" style="width:100%;" height="30%"> 
   <div class="centered">Discover The World With Travel Experts!</div>
 </div>
-
-  <!--MENU-->
+<!--End Main Slider-->
+  
+<!--Flex Box -->
       <div class="flex-container-pack">
         <div><img src="07.jpg" width="100%" height="100%"></div>
         <div>
@@ -96,7 +102,7 @@ element = document.getElementById('sdate5');
           <p>Package Price:<%= result[0].PkgBasePrice%></p>
           <p id="sdate0">Package Start Date:<%= result[0].PkgStartDate.getDate() + "/"+  +((result[0].PkgStartDate.getMonth())+1) + "/"+ +result[0].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[0].PkgEndDate.getDate() + "/"+  +((result[0].PkgEndDate.getMonth())+1)+ "/"+ +result[0].PkgEndDate.getFullYear() %></p>
-          <button>Reserve Now</button>
+          <a href="/Orders1" class="button">Reserve Now</a>
       </div>
       <div><img src="05.jpg" width="100%" height="100%"></div>
       <div>
@@ -105,7 +111,7 @@ element = document.getElementById('sdate5');
         <p >Package Price:<%= result[1].PkgBasePrice%></p>
         <p id="sdate1">Package Start Date:<%= result[1].PkgStartDate.getDate() + "/"+  +((result[1].PkgStartDate.getMonth())+1)+ "/"+ +result[1].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[1].PkgEndDate.getDate() + "/"+  +((result[1].PkgEndDate.getMonth())+1) + "/"+ +result[1].PkgEndDate.getFullYear() %></p>
-        <button>Reserve Now</button>
+        <a href="/Orders2" class="button">Reserve Now</a>
     </div>
       </div>
       <div class="flex-container-pack">
@@ -116,7 +122,7 @@ element = document.getElementById('sdate5');
           <p>Package Price:<%= result[2].PkgBasePrice%></p>
           <p id="sdate2">Package Start Date:<%= result[2].PkgStartDate.getDate() + "/"+  +((result[2].PkgStartDate.getMonth())+1) + "/"+ +result[2].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[2].PkgEndDate.getDate() + "/"+  +((result[2].PkgEndDate.getMonth())+1) + "/"+ +result[2].PkgEndDate.getFullYear() %></p>
-          <button>Reserve Now</button>
+          <a href="/Orders3" class="button">Reserve Now</a>
       </div>
       <div><img src="01.jpg" width="100%" height="100%"></div>
       <div>
@@ -125,7 +131,7 @@ element = document.getElementById('sdate5');
         <p>Package Price:<%= result[3].PkgBasePrice%></p>
         <p id="sdate3">Package Start Date:<%= result[3].PkgStartDate.getDate() + "/"+  +((result[3].PkgStartDate.getMonth())+1) + "/"+ +result[3].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[3].PkgEndDate.getDate() + "/"+  +((result[3].PkgEndDate.getMonth())+1) + "/"+ +result[3].PkgEndDate.getFullYear() %></p>
-        <button>Reserve Now</button>
+        <a href="/Orders4" class="button">Reserve Now</a>
     </div>
       </div>
       <div class="flex-container-pack">
@@ -136,7 +142,7 @@ element = document.getElementById('sdate5');
           <p>Package Price:<%= result[4].PkgBasePrice%></p>
           <p id="sdate4">Package Start Date:<%= result[4].PkgStartDate.getDate() + "/"+  +((result[4].PkgStartDate.getMonth())+1)+ "/"+ +result[4].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[4].PkgEndDate.getDate() + "/"+  +((result[4].PkgEndDate.getMonth())+1) + "/"+ +result[4].PkgEndDate.getFullYear() %></p>
-          <button>Reserve Now</button>
+          <a href="/Orders5" class="button">Reserve Now</a>
       </div>
       <div><img src="03.jpg" width="100%" height="100%"></div>
       <div>
@@ -145,8 +151,9 @@ element = document.getElementById('sdate5');
         <p>Package Price:<%= result[5].PkgBasePrice%></p>
         <p id="sdate5">Package Start Date:<%= result[5].PkgStartDate.getDate() + "/"+  +((result[5].PkgStartDate.getMonth())+1) + "/"+ +result[5].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[5].PkgEndDate.getDate() + "/"+  +((result[5].PkgEndDate.getMonth())+1) + "/"+ +result[5].PkgEndDate.getFullYear() %></p>
-        <button>Reserve Now</button>
+        <a href="/Orders6" class="button">Reserve Now</a>
     </div>
+    <!--Flex Box End-->
     </body>
   </html>
   <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
