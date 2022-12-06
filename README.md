@@ -3,3 +3,5 @@
 Authors:
 Timothy Huynh, Micah Brown, Dorothy Kwan, Rabab Kazim
 made change here -tim
+These are Micah's changes.
+
