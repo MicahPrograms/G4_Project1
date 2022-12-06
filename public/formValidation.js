@@ -2,7 +2,6 @@ function confirm_reset() {
     return confirm("Are you sure you want to reset the form?");
 }
 //Form validation from Micah
-
 var creditCardNum = document.getElementById("Credit").value;
 
 function validate(myForm) {
@@ -19,8 +18,7 @@ function validate(myForm) {
         }
     }
 
-
-    // - Micah: Comparing credit card number to regular expressions for each majot credit card type to make sure card is valid 
+    // - Micah: Comparing credit card number to regular expressions for each major credit card type to make sure card is valid 
     var creditCardNum = document.getElementById("Credit").value;
 
     // Mastercard
@@ -43,9 +41,12 @@ function validate(myForm) {
         ExpiryDate.focus();
         return false;
     } 
+//Saving vacation package as variable from order form to display on confirmation
+    var selectedPackage = document.getElementById("package").value;
+    alert(selectedPackage);
+   
 
-return confirm("Continue submitting?");
-
+    return confirm("Continue submitting?");
 }
 
     function cardIdentify(){
@@ -69,4 +70,6 @@ return confirm("Continue submitting?");
             document.getElementById('card').src = "amex.png";
             return false;
         }
-    } 
+    
+} 
+

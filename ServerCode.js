@@ -56,8 +56,6 @@ app.get("/orders1", (req, res) => {
 		if (err) throw err;
 		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
 			if (err) throw err;
-			console.log(result);
-			console.log(fields);
 			res.render("orders1", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
@@ -72,8 +70,6 @@ app.get("/orders2", (req, res) => {
 		if (err) throw err;
 		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
 			if (err) throw err;
-			console.log(result);
-			console.log(fields);
 			res.render("orders2", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
@@ -88,8 +84,6 @@ app.get("/orders3", (req, res) => {
 		if (err) throw err;
 		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
 			if (err) throw err;
-			console.log(result);
-			console.log(fields);
 			res.render("orders3", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
@@ -104,8 +98,6 @@ app.get("/orders4", (req, res) => {
 		if (err) throw err;
 		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
 			if (err) throw err;
-			console.log(result);
-			console.log(fields);
 			res.render("orders4", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
@@ -114,20 +106,74 @@ app.get("/orders4", (req, res) => {
 	});   
 });
 
-app.get("/Confirmation", (req, res) => {
+app.get("/orders5", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
 		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
 			if (err) throw err;
-			console.log(result);
-			console.log(fields);
-			res.render("Confirmation", { "result": result, "fields": fields });
+			res.render("orders5", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
 			});
 		});
 	});   
+});
+
+app.get("/orders6", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+			if (err) throw err;
+			res.render("orders6", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/orders7", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+			if (err) throw err;
+			res.render("orders7", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/orders8", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+			if (err) throw err;
+			res.render("orders8", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/Confirmation", (req, res) => {
+     var myConnection = getConnection();
+ 	myConnection.connect((err)=>{
+ 		if (err) throw err;
+ 		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+ 			if (err) throw err;
+ 			res.render("Confirmation", { "result": result, "fields": fields });
+ 			myConnection.end((err)=>{
+ 				if (err) throw err;
+ 			});
+ 		});
+ 	});   
 });
 
 app.get("/contact", (req, res) => {
@@ -161,6 +207,14 @@ app.get("/getallagents", (req, res)=>{
 		});
 	});
 });
+
+app.post("/register", function(req, res, next) {
+	console.log(req.body);
+	res.send(req.body);
+});
+
+
+
 // app.use("/contact",(req,res)=>{
 //     res.render("contact");
 // });
