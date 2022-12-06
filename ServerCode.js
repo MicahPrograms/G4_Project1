@@ -3,9 +3,10 @@ const mysql = require("mysql");
 const bodyparser = require("body-parser");
 const app = express();
 
+
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
-app.use(express.static("public", { "extensions": ["css", "js", "php"] }));
+app.use(express.static("public", { "extensions": ["css", "js"] }));
 app.use(express.static("media", { "extensions": ["png", "jpg", "gif"] }));
 app.use(bodyparser.urlencoded({ extended: true }));
 
@@ -30,10 +31,8 @@ app.get("/packages", (req,res)=>{
 	var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
 			if (err) throw err;
-			console.log(result);
-			console.log(fields);
 			res.render("packages", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
@@ -41,6 +40,7 @@ app.get("/packages", (req,res)=>{
 		});
 	});
 });
+
 
 app.get("/", (req, res, err) => {
     res.render("Homepage");
@@ -146,9 +146,8 @@ app.get("/contact", (req, res) => {
 	});   
 });
 
-// app.use("/contact",(req,res)=>{
-//     res.render("contact");
-// });
-
+app.post("/submit", (req, res, err) => {
+	document.write(res);
+});
 
 
