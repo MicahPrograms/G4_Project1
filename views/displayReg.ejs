@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display</title>
+</head>
+<body onload="setData()">
+    <p id="show">
+    Name: <!-- want to display the name here -->
+    </p>
+    <p id="show2">
+    mname: <!-- want to display the name here -->
+    </p>
+    <p id="show3">
+        mname: <!-- want to display the name here -->
+    </p>
+<script>
+function setData(){
+    if(typeof(localStorage) != "undefined"){
+        document.getElementById("show").innerHTML = localStorage.name;
+        document.getElementById("show2").innerHTML = localStorage.mname;
+        document.getElementById("show3").innerHTML = localStorage.lname;
+    }
+}
+</script>
+</body>
+</html>
