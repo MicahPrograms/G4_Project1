@@ -2,6 +2,7 @@ const express = require("express");
 const mysql = require("mysql");
 const bodyparser = require("body-parser");
 const app = express();
+const quote = require("./public/quotes.js");
 
 
 app.set("view engine", "ejs");
@@ -47,7 +48,7 @@ app.get("/", (req, res, err) => {
 });
 
 app.get("/registration", (req, res, err) => {
-    res.render("Registration");
+    res.render("Registration",{"quote": quote.generateQuote()});
 });
 
 app.get("/orders1", (req, res) => {
