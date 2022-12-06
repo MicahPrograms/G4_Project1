@@ -17,16 +17,15 @@ function outFocus(currentInput,paraId){
 
 // Submit Form
 function confirmSubmit(myForm){
-    console.log(myForm[0].value);
     // Go through inputs and check if its empty
     for(i=0;i<registrationFormArray.length;i++){
-        console.log(myForm[i].name);
         // country already has a value selected as default
         // check the value of the name to see if its empty
-        if(myForm[i].name == registrationformArray[7]){
+        if(myForm[i].id == registrationFormArray[7]){
             continue;
         }
-        if(myForm[i].name == registrationformArray[10]){
+        
+        if(myForm[i].id == registrationFormArray[10] && myForm[i].value ==""){
             continue;
         }
         else if(myForm[i].value ==""){
@@ -36,6 +35,7 @@ function confirmSubmit(myForm){
             return false;
         }
     }
+    alert("made it past for loop");
     // validate email to be correct format
     var emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
     if (!emailRegExp.test(myForm.email.value)){
@@ -43,44 +43,47 @@ function confirmSubmit(myForm){
         myForm.email.focus();
         return false;
     }
-    alert(myForm.postal.value);
     // validate postal code to be correct format 
-    if(document.getElementById("country").value == "canada"){
+    // index 7 is country
+    if(document.getElementById(registrationFormArray[7]).value == "canada"){
         // Canada postal code
         var postalRegExp = new RegExp(/^[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]/);
         if(!postalRegExp.test(myForm.postal.value)){
-            return postalAlertInvalid();
+            alert("Invalid postal code");
+            myForm.postal.focus();
+            return false;
+            //postalAlertInvalid(myForm);
         }
     }
     else{
         // USA Zip Code
         var postalRegExp = new RegExp(/(^\d{5}$)|(^\d{9}$)|(^\d{5}-\d{4}$)/);
         if(!postalRegExp.test(myForm.postal.value)){
-            return postalAlertInvalid();
+            alert("Invalid postal code"); 
+            myForm.postal.focus();
+            return false; 
         }
     }
-    if(typeof(localStorage) != "undefined"){
-        localStorage.name = document.getElementById("name").value;
-        localStorage.mname = document.getElementById("mname").value;
-        localStorage.lname = document.getElementById("lname").value;
-        localStorage.address = document.getElementById("address").value;
-        localStorage.postal = document.getElementById("postal)").value;
-        localStorage.city = document.getElementsById("city").value;
-        localStorage.province = document.getElementsById("province").value;
-        localStorage.country = document.getElementsById("country").value;
-        localStorage.email = document.getElementsById("email").value;
-        localStorage.phone = document.getElementById("phone").value;
-        localStorage.busPhone = document.getElementById("busPhone").value;
-        localStorage.userId = document.getElementById("userId").value;
-        localStorage.password = document.getElementsById("password").value;
-    }
-    document.getElementById("form").submit();
-    return true;
-}
 
-function postalAlertInvalid(){
-    document.getElementById("postal").focus();
-    return false;
+    // validate phone number format
+    var phoneNoRegExp = new RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
+    if(!phoneNoRegExp.test(myForm.phone.value)){
+        alert("Invalid phone number");
+        myForm.phone.focus();
+        return false;
+    }
+    // Check if busphone has been filled in
+    // index 10 = busphone
+    var busPhoneindex = 10;
+    var busPhoneNoRegExp = new RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)
+    if(registrationFormArray[busPhoneindex].name == "busPhone" && registrationFormArray[busPhoneindex].value != ""){
+        if(!busPhoneNoRegExp.test(myForm.busPhone.value)){
+            alert("Invalid Bus Phone Number");
+            myForm.busphone.focus();
+            return false;
+        }
+    }
+    alert("made it to end");
 }
 
 // Reset Form
