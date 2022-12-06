@@ -59,7 +59,23 @@ function confirmSubmit(myForm){
             return postalAlertInvalid();
         }
     }
-
+    if(typeof(localStorage) != "undefined"){
+        localStorage.name = document.getElementById("name").value;
+        localStorage.mname = document.getElementById("mname").value;
+        localStorage.lname = document.getElementById("lname").value;
+        localStorage.address = document.getElementById("address").value;
+        localStorage.postal = document.getElementById("postal)").value;
+        localStorage.city = document.getElementsById("city").value;
+        localStorage.province = document.getElementsById("province").value;
+        localStorage.country = document.getElementsById("country").value;
+        localStorage.email = document.getElementsById("email").value;
+        localStorage.phone = document.getElementById("phone").value;
+        localStorage.busPhone = document.getElementById("busPhone").value;
+        localStorage.userId = document.getElementById("userId").value;
+        localStorage.password = document.getElementsById("password").value;
+    }
+    document.getElementById("form").submit();
+    return true;
 }
 
 function postalAlertInvalid(){
@@ -91,3 +107,4 @@ function countryVal(){
         postalText.textContent = "Postal Code:"
     }
 }
+

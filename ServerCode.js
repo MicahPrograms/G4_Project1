@@ -146,8 +146,4 @@ app.get("/contact", (req, res) => {
 	});   
 });
 
-app.post("/submit", (req, res, err) => {
-	document.write(res);
-});
-
 
