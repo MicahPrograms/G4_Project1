@@ -20,8 +20,8 @@ function getConnection()
 {
 	var con = mysql.createConnection({
 		host: "localhost",
-		user: "Micah",
-		password: "Micah3cheese",
+		user: "rabab",
+		password: "rabab123",
 		database: "travelexperts"
 	});
 	return con;
@@ -54,7 +54,7 @@ app.get("/orders1", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
 			if (err) throw err;
 			res.render("orders1", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
@@ -68,7 +68,7 @@ app.get("/orders2", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
 			if (err) throw err;
 			res.render("orders2", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
@@ -82,7 +82,7 @@ app.get("/orders3", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
 			if (err) throw err;
 			res.render("orders3", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
@@ -96,7 +96,7 @@ app.get("/orders4", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
 			if (err) throw err;
 			res.render("orders4", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
@@ -110,7 +110,7 @@ app.get("/orders5", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
 			if (err) throw err;
 			res.render("orders5", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
@@ -124,7 +124,7 @@ app.get("/orders6", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
 			if (err) throw err;
 			res.render("orders6", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
