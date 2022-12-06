@@ -20,8 +20,8 @@ function getConnection()
 {
 	var con = mysql.createConnection({
 		host: "localhost",
-		user: "Micah",
-		password: "Micah3cheese",
+		user: "Dorothy",
+		password: "Dorothy3cheese",
 		database: "travelexperts"
 	});
 	return con;
