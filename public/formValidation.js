@@ -42,6 +42,7 @@ function validate(myForm) {
         return false;
     } 
 
+    //CVV validation test
     var regCVV = /^[0-9]{3,4}$/;
     var CVVnumber = document.getElementById("CVV").value;
     if(!regCVV.test(CVVnumber))
@@ -54,6 +55,7 @@ function validate(myForm) {
     return confirm("Continue submitting?");
 }
 
+    //Identifies what type of credit card the user inputs and then shows an icon of that card beside field.
     function cardIdentify(){
         var creditCardNum = document.getElementById("Credit").value;
         var regMaster = /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-9]|7(?:[01][0-9]|20))[0-9]{12}$/;
@@ -75,6 +77,5 @@ function validate(myForm) {
             document.getElementById('card').src = "amex.png";
             return false;
         }
-    
-} 
+    } 
 
