@@ -3,9 +3,10 @@
 	<head>
 		<title>Contact Page</title>
 		<link src="G4Styles.css" rel="stylesheet" type="text/css">
+		<link href="/public/script.js" rel="stylesheet" type="text/js"/>
 	</head>
 	<body>
-		 <!-- Added the top banners (lines 8-33) - Micah B.-->
+		 <!-- Added the top banners (lines 8-34) - Micah B.-->
 		 <div class="topbanner">
             <img src="logo2.jpg" />
             <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
@@ -62,7 +63,7 @@
 			</div>
 			<div class="column">
 				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				Michael Scott <br />
+				<p> <%= result[0].AgtFirstName + " " + result[0].AgtLastName%></p><br />
 				<img src="email.png" alt="contact" style="width:5%;"> mscott@travelexperts.ca<br />
 				<img src="phone.png" alt="contact" style="width:5%;"> 403-555-5555 <br />
 			</div>
@@ -75,10 +76,13 @@
 			<div class="column">
 				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
 				Jim Halpert <br />
-				<img src="mail.png" alt="contact" style="width:5%;"> jhalpert@travelexperts.ca <br />
+				<img src="email.png" alt="contact" style="width:5%;"> jhalpert@travelexperts.ca <br />
 				<img src="phone.png" alt="contact" style="width:5%;"> 403-555-5557 <br />
 			</div>
 			<br />
+			<footer>
+				Travel Experts Copyright&copy;2022
+				</footer>
 		</body>
 		<footer>
 		Travel Experts Copyright&copy;2022
