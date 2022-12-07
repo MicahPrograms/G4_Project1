@@ -2,8 +2,7 @@ const express = require("express");
 const mysql = require("mysql");
 const bodyparser = require("body-parser");
 const app = express();
-const quote = require("./public/quotes.js");
-const pkg = require("./public/test.js");
+const quote = require("./public/quotes.js")
 
 
 app.set("view engine", "ejs");
@@ -22,8 +21,8 @@ function getConnection()
 {
 	var con = mysql.createConnection({
 		host: "localhost",
-		user: "Dorothy",
-		password: "Dorothy3cheese",
+		user: "Micah",
+		password: "Micah3cheese",
 		database: "travelexperts"
 	});
 	return con;
@@ -52,13 +51,111 @@ app.get("/registration", (req, res, err) => {
     res.render("Registration",{"quote": quote.generateQuote()});
 });
 
-app.get("/orders", (req, res) => {
+app.get("/orders1", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
 		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
 			if (err) throw err;
-			res.render("orders", { "result": result, "fields": fields, "pkg": pkg.pkgData });
+			res.render("orders1", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/orders2", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
+			if (err) throw err;
+			res.render("orders2", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.post("/orders3", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT `PkgName`FROM packages WHERE PackageId=?", [req.body.pkgId], (err,result,fields)=>{
+			if (err) throw err;
+			res.render("Orders", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/orders4", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
+			if (err) throw err;
+			res.render("orders4", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/orders5", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
+			if (err) throw err;
+			res.render("orders5", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/orders6", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
+			if (err) throw err;
+			res.render("orders6", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/orders7", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+			if (err) throw err;
+			res.render("orders7", { "result": result, "fields": fields });
+			myConnection.end((err)=>{
+				if (err) throw err;
+			});
+		});
+	});   
+});
+
+app.get("/orders8", (req, res) => {
+    var myConnection = getConnection();
+	myConnection.connect((err)=>{
+		if (err) throw err;
+		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+			if (err) throw err;
+			res.render("orders8", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
 			});
