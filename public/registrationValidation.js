@@ -23,8 +23,7 @@ function confirmSubmit(myForm){
         // check the value of the name to see if its empty
         if(myForm[i].id == registrationFormArray[7]){
             continue;
-        }
-        
+        }     
         if(myForm[i].id == registrationFormArray[10] && myForm[i].value ==""){
             continue;
         }
@@ -35,7 +34,6 @@ function confirmSubmit(myForm){
             return false;
         }
     }
-    alert("made it past for loop");
     // validate email to be correct format
     var emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
     if (!emailRegExp.test(myForm.email.value)){
@@ -52,14 +50,13 @@ function confirmSubmit(myForm){
             alert("Invalid postal code");
             myForm.postal.focus();
             return false;
-            //postalAlertInvalid(myForm);
         }
     }
     else{
         // USA Zip Code
         var postalRegExp = new RegExp(/(^\d{5}$)|(^\d{9}$)|(^\d{5}-\d{4}$)/);
         if(!postalRegExp.test(myForm.postal.value)){
-            alert("Invalid postal code"); 
+            alert("Invalid zip code"); 
             myForm.postal.focus();
             return false; 
         }
@@ -83,7 +80,6 @@ function confirmSubmit(myForm){
             return false;
         }
     }
-    alert("made it to end");
 }
 
 // Reset Form
