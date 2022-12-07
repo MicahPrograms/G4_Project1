@@ -8,9 +8,6 @@ const quotes = ["“Adventure is worthwhile.” – Aesop",
 	"“The world is a book, and those who do not travel read only one page.” – Saint Augustine", 
     "“Travel is the only thing you buy that makes you richer.” – Anonymous", 
     "“Better to see something once than hear about it a thousand times.” – Asian Proverb"];
-const variable = 0;
-
-
 
 // Pick random quote
 function getQuote(){

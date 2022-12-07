@@ -92,17 +92,19 @@ element = document.getElementById('sdate5');
   <div class="centered">Discover The World With Travel Experts!</div>
 </div>
 <!--End Main Slider-->
-  
 <!--Flex Box -->
-      <div class="flex-container-pack">
-        <div><img src="07.jpg" width="100%" height="100%"></div>
-        <div>
-          <h2><%= result[0].PkgName%></h2>
+  <div class="flex-container-pack">
+    <div><img src="07.jpg" width="100%" height="100%"></div>
+      <div>
+        <h2><%= result[0].PkgName%></h2>
           <p><%= result[0].PkgDesc%></p>
           <p>Package Price:<%= result[0].PkgBasePrice%></p>
           <p id="sdate0">Package Start Date:<%= result[0].PkgStartDate.getDate() + "/"+  +((result[0].PkgStartDate.getMonth())+1) + "/"+ +result[0].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[0].PkgEndDate.getDate() + "/"+  +((result[0].PkgEndDate.getMonth())+1)+ "/"+ +result[0].PkgEndDate.getFullYear() %></p>
-          <a href="/Orders1" class="button">Reserve Now</a>
+          <form method="post" action="/orders3">
+            <button type="submit">Reserve Now</button>
+            <input type="hidden" name="pkgId" value="<%=result[0].PackageId%>">
+          </form>
       </div>
       <div><img src="05.jpg" width="100%" height="100%"></div>
       <div>
@@ -111,10 +113,13 @@ element = document.getElementById('sdate5');
         <p >Package Price:<%= result[1].PkgBasePrice%></p>
         <p id="sdate1">Package Start Date:<%= result[1].PkgStartDate.getDate() + "/"+  +((result[1].PkgStartDate.getMonth())+1)+ "/"+ +result[1].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[1].PkgEndDate.getDate() + "/"+  +((result[1].PkgEndDate.getMonth())+1) + "/"+ +result[1].PkgEndDate.getFullYear() %></p>
-        <a href="/Orders2" class="button">Reserve Now</a>
-    </div>
+        <form method="post" action="/orders3">
+          <button type="submit">Reserve Now</button>
+          <input type="hidden" name="pkgId" value="<%=result[1].PackageId%>">
+        </form>
       </div>
-      <div class="flex-container-pack">
+  </div>
+    <div class="flex-container-pack">
         <div><img src="04.jpg" width="100%" height="100%"></div>
         <div>
           <h2><%= result[2].PkgName%></h2>
@@ -122,7 +127,10 @@ element = document.getElementById('sdate5');
           <p>Package Price:<%= result[2].PkgBasePrice%></p>
           <p id="sdate2">Package Start Date:<%= result[2].PkgStartDate.getDate() + "/"+  +((result[2].PkgStartDate.getMonth())+1) + "/"+ +result[2].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[2].PkgEndDate.getDate() + "/"+  +((result[2].PkgEndDate.getMonth())+1) + "/"+ +result[2].PkgEndDate.getFullYear() %></p>
-          <a href="/Orders3" class="button">Reserve Now</a>
+          <form method="post" action="/orders3">
+            <button type="submit">Reserve Now</button>
+            <input type="hidden" name="pkgId" value="<%=result[2].PackageId%>">
+          </form>
       </div>
       <div><img src="01.jpg" width="100%" height="100%"></div>
       <div>
@@ -131,10 +139,13 @@ element = document.getElementById('sdate5');
         <p>Package Price:<%= result[3].PkgBasePrice%></p>
         <p id="sdate3">Package Start Date:<%= result[3].PkgStartDate.getDate() + "/"+  +((result[3].PkgStartDate.getMonth())+1) + "/"+ +result[3].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[3].PkgEndDate.getDate() + "/"+  +((result[3].PkgEndDate.getMonth())+1) + "/"+ +result[3].PkgEndDate.getFullYear() %></p>
-        <a href="/Orders4" class="button">Reserve Now</a>
-    </div>
+        <form method="post" action="/orders3">
+          <button type="submit">Reserve Now</button>
+          <input type="hidden" name="pkgId" value="<%=result[3].PackageId%>">
+        </form>
       </div>
-      <div class="flex-container-pack">
+    </div>
+    <div class="flex-container-pack">
         <div><img src="02.jpg" width="100%" height="100%"></div>
         <div>
           <h2><%= result[4].PkgName%></h2>
@@ -142,7 +153,10 @@ element = document.getElementById('sdate5');
           <p>Package Price:<%= result[4].PkgBasePrice%></p>
           <p id="sdate4">Package Start Date:<%= result[4].PkgStartDate.getDate() + "/"+  +((result[4].PkgStartDate.getMonth())+1)+ "/"+ +result[4].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[4].PkgEndDate.getDate() + "/"+  +((result[4].PkgEndDate.getMonth())+1) + "/"+ +result[4].PkgEndDate.getFullYear() %></p>
-          <a href="/Orders5" class="button">Reserve Now</a>
+          <form method="post" action="/orders3">
+            <button type="submit">Reserve Now</button>
+            <input type="hidden" name="pkgId" value="<%=result[4].PackageId%>">
+          </form>
       </div>
       <div><img src="03.jpg" width="100%" height="100%"></div>
       <div>
@@ -151,7 +165,10 @@ element = document.getElementById('sdate5');
         <p>Package Price:<%= result[5].PkgBasePrice%></p>
         <p id="sdate5">Package Start Date:<%= result[5].PkgStartDate.getDate() + "/"+  +((result[5].PkgStartDate.getMonth())+1) + "/"+ +result[5].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[5].PkgEndDate.getDate() + "/"+  +((result[5].PkgEndDate.getMonth())+1) + "/"+ +result[5].PkgEndDate.getFullYear() %></p>
-        <a href="/Orders6" class="button">Reserve Now</a>
+        <form method="post" action="/orders3">
+          <button type="submit">Reserve Now</button>
+          <input type="hidden" name="pkgId" value="<%=result[5].PackageId%>">
+        </form>
     </div>
     <!--Flex Box End-->
     </body>
