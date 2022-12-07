@@ -2,6 +2,7 @@ const express = require("express");
 const mysql = require("mysql");
 const bodyparser = require("body-parser");
 const app = express();
+const quote = require("./public/quotes.js")
 
 
 app.set("view engine", "ejs");
