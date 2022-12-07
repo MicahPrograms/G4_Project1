@@ -78,13 +78,13 @@ app.get("/orders2", (req, res) => {
 	});   
 });
 
-app.get("/orders3", (req, res) => {
+app.post("/orders3", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
+		myConnection.query("SELECT `PkgName`FROM packages WHERE PackageId=?", [req.body.pkgId], (err,result,fields)=>{
 			if (err) throw err;
-			res.render("orders3", { "result": result, "fields": fields });
+			res.render("Orders", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
 			});
