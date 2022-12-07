@@ -1,8 +1,9 @@
+/*Micah's CSS below*/
 body {
     margin: 0;
 }
 
-/* Top menu banners CSS by Micah*/
+/* Top menu banners*/
 .topbanner {
     overflow: hidden;
     background-color: #ffffff;
@@ -22,7 +23,7 @@ body {
     display: flex;
 }
 
-/* Blue selection banner by Micah */
+/* Blue selection banner*/
 .banner {
     overflow: hidden;
     background-color: #2596be;
@@ -45,6 +46,11 @@ body {
 
 .banner a:hover {
     background-color: rgb(27, 57, 75);
+    color: white;
+}
+
+#bot-para a:hover {
+    background-color: rgb(240, 240, 240);
     color: white;
 }
 
@@ -190,6 +196,7 @@ input {
     font-size: 16pt;
     text-align: center;
 }
+/*Micah's CSS end*/
 
 /*Tim's css start*/
 .sectionForm{
@@ -260,8 +267,18 @@ div.flex-container-Pack h2 {
     font-size: 18pt;
     font-size: 1.5vw;
 }
-.flex-container-pack  button{
+.flex-container-pack a{
     background-color: #92a21a;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 6px;
+    outline: none;
+    margin-left: 30%;
+    margin-right: 20%;
+    
 }
 .slider {
     position: relative;
@@ -277,4 +294,5 @@ div.flex-container-Pack h2 {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
 /*Rabab Kazim css End*/

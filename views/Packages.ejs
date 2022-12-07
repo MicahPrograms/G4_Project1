@@ -1,72 +1,100 @@
+<!-- Author: Rabab Kaz.-->
+
 <!DOCTYPE html>
 <header>
   <title>Travel Packages</title>
   <!--  Main CSS  -->
 <link href="G4Styles.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-3.6.1.js" type="text/javascript"></script>
+<script src="test.js" type="text/javascript"></script>
 </header>
 <script>
-function CheckCurrentDate() {
+// Javascript to check if start date is less then the current date and change it to red
 
-var d0 = "<%=result[0].PkgStartDate%>";
-var d1 ="<%=result[1].PkgStartDate%>";
-var d2 = "<%=result[2].PkgStartDate%>";
-var d3 = "<%=result[3].PkgStartDate%>";
-var d4 ="<%=result[5].PkgStartDate%>";
-var Today = new Date();
+function checkingStartDate()
+{
+  var GivenDate0= "<%=result[0].PkgStartDate%>";
+  var GivenDate1= "<%=result[1].PkgStartDate%>";
+  var GivenDate2= "<%=result[2].PkgStartDate%>";
+  var GivenDate3= "<%=result[3].PkgStartDate%>";
+  var GivenDate4= "<%=result[4].PkgStartDate%>";
+  var GivenDate5= "<%=result[5].PkgStartDate%>";
 
-if(d0< Today)
-{
-     element = document.getElementById('sdate0');
-     element.style.color= '#d31414';
-     element.style.weight = "bold";
-}
- if (d1<Today)
-{
+  var CurrentDate = new Date();
+  GivenDate0 = new Date(GivenDate0);
+  GivenDate1 = new Date(GivenDate1);
+  GivenDate2 = new Date(GivenDate2);
+  GivenDate3 = new Date(GivenDate3);
+  GivenDate4 = new Date(GivenDate4);
+  GivenDate5 = new Date(GivenDate5);
+
+
+  if(GivenDate0<CurrentDate){
+
+    element = document.getElementById('sdate0');
+      element.style.color= '#d31414';
+      element.style.fontWeight = 'bold';
+  }
+  if(GivenDate1<CurrentDate){
+
   element = document.getElementById('sdate1');
-     element.style.color= '#d31414';
-     element.style.weight = "bold";
-}
-if (d2<Today)
-{
+    element.style.color= '#d31414';
+    element.style.fontWeight = 'bold';
+  }
+  if(GivenDate2<CurrentDate){
+
   element = document.getElementById('sdate2');
-     element.style.color= '#d31414';
-     element.style.weight = "bold";
-}
-if (d3<Today)
-{
+    element.style.color= '#d31414';
+    element.style.fontWeight = 'bold';
+  }
+  if(GivenDate3<CurrentDate){
+
   element = document.getElementById('sdate3');
-     element.style.color= '#d31414';
-     element.style.weight = "bold";
-}
+    element.style.color= '#d31414';
+    element.style.fontWeight = 'bold';
+  }
+  if(GivenDate4<CurrentDate){
 
-else{
-   
-}
-}
+  element = document.getElementById('sdate4');
+    element.style.color= '#d31414';
+    element.style.fontWeight = 'bold';
+  }
+  if(GivenDate5<CurrentDate){
 
+  element = document.getElementById('sdate5');
+    element.style.color= '#d31414';
+    element.style.fontWeight = 'bold';
+  }
+}
 </script>
 
-<body onload="CheckCurrentDate()"> 
+<body  onload="checkingStartDate()"> 
   <div class="topbanner">
+    <!--Logo on left-->
     <img src="logo2.jpg" />
 </div>
+<!--Menu-->
 <div class="banner">
-    <a href="Home" class="banner" target="_blank">Home</a>
-    <a href="Contact" class="banner" target="_blank">Contact Us</a>
-    <a href="Packages.ejs" class="banner">Vacation Packages</a>
-    <a href="Registration" class="banner">Sign Up</a>
-    <a href="Login" class="banner">Login</a>
-        
+  <a href="/" id="home" >Home</a>
+  <a href="/contact" >Contact Us</a>
+  <a href="/packages" >Vacation Packages</a>
+  <a href="/registration" >Sign Up</a>
+  <a href="/login" >Login</a>
+    
+    <!--logo on right-->
     <div class="logo">      
         <img src="Logo.png" class="logo" />
     </div>
 </div>
+<!--Main Slider-->
+
 <div class="slider">
   <img src="Slider2.jpg" alt="Snow" style="width:100%;" height="30%"> 
   <div class="centered">Discover The World With Travel Experts!</div>
 </div>
-
-  <!--MENU-->
+<!--End Main Slider-->
+  
+<!--Flex Box -->
       <div class="flex-container-pack">
         <div><img src="07.jpg" width="100%" height="100%"></div>
         <div>
@@ -75,7 +103,7 @@ else{
           <p>Package Price:<%= result[0].PkgBasePrice%></p>
           <p id="sdate0">Package Start Date:<%= result[0].PkgStartDate.getDate() + "/"+  +((result[0].PkgStartDate.getMonth())+1) + "/"+ +result[0].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[0].PkgEndDate.getDate() + "/"+  +((result[0].PkgEndDate.getMonth())+1)+ "/"+ +result[0].PkgEndDate.getFullYear() %></p>
-          <button>Reserve Now</button>
+          <a href="/Orders" class="button" id="0" onclick="processClick(this.id)">Reserve Now</a>
       </div>
       <div><img src="05.jpg" width="100%" height="100%"></div>
       <div>
@@ -84,7 +112,7 @@ else{
         <p >Package Price:<%= result[1].PkgBasePrice%></p>
         <p id="sdate1">Package Start Date:<%= result[1].PkgStartDate.getDate() + "/"+  +((result[1].PkgStartDate.getMonth())+1)+ "/"+ +result[1].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[1].PkgEndDate.getDate() + "/"+  +((result[1].PkgEndDate.getMonth())+1) + "/"+ +result[1].PkgEndDate.getFullYear() %></p>
-        <button>Reserve Now</button>
+        <a href="/Orders" class="button" id="1" onclick="processClick(this.id)">Reserve Now</a>
     </div>
       </div>
       <div class="flex-container-pack">
@@ -95,7 +123,7 @@ else{
           <p>Package Price:<%= result[2].PkgBasePrice%></p>
           <p id="sdate2">Package Start Date:<%= result[2].PkgStartDate.getDate() + "/"+  +((result[2].PkgStartDate.getMonth())+1) + "/"+ +result[2].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[2].PkgEndDate.getDate() + "/"+  +((result[2].PkgEndDate.getMonth())+1) + "/"+ +result[2].PkgEndDate.getFullYear() %></p>
-          <button>Reserve Now</button>
+          <a href="/Orders" class="button" id="2" onclick="processClick(this.id)">Reserve Now</a>
       </div>
       <div><img src="01.jpg" width="100%" height="100%"></div>
       <div>
@@ -104,7 +132,7 @@ else{
         <p>Package Price:<%= result[3].PkgBasePrice%></p>
         <p id="sdate3">Package Start Date:<%= result[3].PkgStartDate.getDate() + "/"+  +((result[3].PkgStartDate.getMonth())+1) + "/"+ +result[3].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[3].PkgEndDate.getDate() + "/"+  +((result[3].PkgEndDate.getMonth())+1) + "/"+ +result[3].PkgEndDate.getFullYear() %></p>
-        <button>Reserve Now</button>
+        <a href="/Orders" class="button" id="3" onclick="processClick(this.id)">Reserve Now</a>
     </div>
       </div>
       <div class="flex-container-pack">
@@ -115,7 +143,7 @@ else{
           <p>Package Price:<%= result[4].PkgBasePrice%></p>
           <p id="sdate4">Package Start Date:<%= result[4].PkgStartDate.getDate() + "/"+  +((result[4].PkgStartDate.getMonth())+1)+ "/"+ +result[4].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[4].PkgEndDate.getDate() + "/"+  +((result[4].PkgEndDate.getMonth())+1) + "/"+ +result[4].PkgEndDate.getFullYear() %></p>
-          <button>Reserve Now</button>
+          <a href="/Orders" class="button" id="4" onclick="processClick(this.id)">Reserve Now</a>
       </div>
       <div><img src="03.jpg" width="100%" height="100%"></div>
       <div>
@@ -124,8 +152,10 @@ else{
         <p>Package Price:<%= result[5].PkgBasePrice%></p>
         <p id="sdate5">Package Start Date:<%= result[5].PkgStartDate.getDate() + "/"+  +((result[5].PkgStartDate.getMonth())+1) + "/"+ +result[5].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[5].PkgEndDate.getDate() + "/"+  +((result[5].PkgEndDate.getMonth())+1) + "/"+ +result[5].PkgEndDate.getFullYear() %></p>
-        <button>Reserve Now</button>
+        <a href="/Orders" class="button" id="5" onclick="processClick(this.id)">Reserve Now</a>
     </div>
+    <!--Flex Box End-->
+    <script src="test.js" type="text/javascript"></script>
     </body>
   </html>
   <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
