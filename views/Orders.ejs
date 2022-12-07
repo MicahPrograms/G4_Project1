@@ -7,9 +7,37 @@
         <script src="formValidation.js" type="text/javascript"></script>
 
         <script>
-       
-        </script>
 
+            alert("made it to head script");
+
+            const nameString0 = "<%= result[0].PkgName %>";
+            const nameString1 = "<%= result[1].PkgName %>";
+            const nameString2 = "<%= result[2].PkgName %>";
+            const nameString3 = "<%= result[3].PkgName %>";
+            const nameString4 = "<%= result[4].PkgName %>";
+            const nameString5 = "<%= result[5].PkgName %>";
+
+            const priceString0 = "<%= result[0].PkgBasePrice %>";
+            const priceString1 = "<%= result[1].PkgBasePrice %>";
+            const priceString2 = "<%= result[2].PkgBasePrice %>";
+            const priceString3 = "<%= result[3].PkgBasePrice %>";
+            const priceString4 = "<%= result[4].PkgBasePrice %>";
+            const priceString5 = "<%= result[5].PkgBasePrice %>";
+            
+            const pkgStrings = ["<%= result[0].PkgName %> - $ <%= result[0].PkgBasePrice %>", "<%= result[1].PkgName %> - $ <%= result[1].PkgBasePrice %>", 
+            "<%= result[2].PkgName %> - $ <%= result[2].PkgBasePrice %>", "<%= result[3].PkgName %> - $ <%= result[3].PkgBasePrice %>", 
+            "<%= result[4].PkgName %> - $ <%= result[4].PkgBasePrice %>", "<%= result[5].PkgName %> - $ <%= result[5].PkgBasePrice %>"];
+
+
+            let packageIndex = localStorage.getItem("packageNumber");
+       
+            alert(pkgStrings[packageIndex]);
+            var pkgFinal = pkgStrings[packageIndex];
+            alert(pkgFinal);
+            
+            
+            
+        </script>
 
     </head>
 
@@ -41,18 +69,11 @@
                 </div>
             </div>
             
-                
-
         <!-- Order form, validation in head section -->
-            <form method="post" action="/neworder" class="form">
+            <form method="get" action="/confirmation" class="form">
 
-                <label for="Package">Select Vacation Package: </label>
-                <select id="Package" name="Package"> 
-                   <option> <%= result[0].PkgName%> </option>
-                   <option> <%= result[1].PkgName%> </option>
-                   <option> <%= result[2].PkgName%> </option>
-                   <option> <%= result[3].PkgName%> </option>
-                </select> <br />
+                <label for="package">Vacation Package: </label>
+                <input type="text" id="package" value="" readonly="readonly">
 
                 <label for="FirstName">First name: </label> 
                 <input type="text" name="FirstName" id="FirstName" value="" /><br />
@@ -68,24 +89,30 @@
                 
                 <label for="Country">Country: </label>
                 <input type="text" name="Country" id="Country" value="" /><br />
+
+                <label for="Postal">Postal/ZIP Code: </label>
+                <input type="text" name="Postal" id="Postal" value="" /><br />
                 
                 <label for="Email">Email Address: </label>
                 <input type="text" name="Email" id="Email" value="" /><br />
                 
-                <label for="Credit">Credit Card Number: </label>
-                <input type="text" name="Credit" id="Credit" value="" placeholder="9999 9999 9999 9999" onchange="cardValidate()"/><br />
+                <label for="Credit">Credit Card Number: </label> 
+                        <img src="mastercard.png" class="cardinvisible" id="card">
+                        
+                <input type="text" name="Credit" id="Credit" value="" placeholder="No Spaces Between Numbers" onchange="cardIdentify()"/><br />
                
                 <label for="ExpiryDate">Expiry Date: </label>
                 <input type="text" name="ExpiryDate" id="ExpiryDate" placeholder="MM/YY" value="" /><br />
                
-                <button type="sumbit" onclick="return validate(this.form)">Submit</button>
+                <label for="CVV">CVV (on back of card): </label>
+                <input type="text" name="CVV" id="CVV" placeholder="123" value="" /><br />
+                
+                <button type="sumbit" onclick="return validate(this.form)" onclick="return savePackage()">Order now!</button>
                 <button type="reset" onclick="return confirm('Are you sure you want to reset the form?')">Reset</button><br />
-            </form>
-
-        
-
+            </form>        
+            
             <br /><br /><br />
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
     </body>
-    
-</html> 
+
+</html>
