@@ -3,41 +3,8 @@
 <html>
     <head>
         <link href="G4Styles.css" rel="stylesheet" type="text/css" />
-        <script src="jquery-3.6.1.js" type="text/javascript"></script>
-        <script src="formValidation.js" type="text/javascript"></script>
+        <!-- <script src="jquery-3.6.1.js" type="text/javascript"></script> -->
 
-        <script>
-
-            alert("made it to head script");
-
-            const nameString0 = "<%= result[0].PkgName %>";
-            const nameString1 = "<%= result[1].PkgName %>";
-            const nameString2 = "<%= result[2].PkgName %>";
-            const nameString3 = "<%= result[3].PkgName %>";
-            const nameString4 = "<%= result[4].PkgName %>";
-            const nameString5 = "<%= result[5].PkgName %>";
-
-            const priceString0 = "<%= result[0].PkgBasePrice %>";
-            const priceString1 = "<%= result[1].PkgBasePrice %>";
-            const priceString2 = "<%= result[2].PkgBasePrice %>";
-            const priceString3 = "<%= result[3].PkgBasePrice %>";
-            const priceString4 = "<%= result[4].PkgBasePrice %>";
-            const priceString5 = "<%= result[5].PkgBasePrice %>";
-            
-            const pkgStrings = ["<%= result[0].PkgName %> - $ <%= result[0].PkgBasePrice %>", "<%= result[1].PkgName %> - $ <%= result[1].PkgBasePrice %>", 
-            "<%= result[2].PkgName %> - $ <%= result[2].PkgBasePrice %>", "<%= result[3].PkgName %> - $ <%= result[3].PkgBasePrice %>", 
-            "<%= result[4].PkgName %> - $ <%= result[4].PkgBasePrice %>", "<%= result[5].PkgName %> - $ <%= result[5].PkgBasePrice %>"];
-
-
-            let packageIndex = localStorage.getItem("packageNumber");
-       
-            alert(pkgStrings[packageIndex]);
-            var pkgFinal = pkgStrings[packageIndex];
-            alert(pkgFinal);
-            
-            
-            
-        </script>
 
     </head>
 
@@ -73,7 +40,8 @@
             <form method="get" action="/confirmation" class="form">
 
                 <label for="package">Vacation Package: </label>
-                <input type="text" id="package" value="" readonly="readonly">
+                <input type="text" name="Package" id="Package" 
+                value="<%=result[0].PkgName%>" readonly="readonly" /><br/>
 
                 <label for="FirstName">First name: </label> 
                 <input type="text" name="FirstName" id="FirstName" value="" /><br />
@@ -110,10 +78,8 @@
                 <button type="sumbit" onclick="return validate(this.form)" onclick="return savePackage()">Order now!</button>
                 <button type="reset" onclick="return confirm('Are you sure you want to reset the form?')">Reset</button><br />
             </form>        
+            
 
-            <script>
-                document.getElementById("package").value = pkgStrings[packageIndex];
-            </script>
             
             <br /><br /><br />
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
