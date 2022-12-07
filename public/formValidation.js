@@ -1,6 +1,7 @@
 function confirm_reset() {
     return confirm("Are you sure you want to reset the form?");
 }
+
 //Form validation from Micah
 var creditCardNum = document.getElementById("Credit").value;
 

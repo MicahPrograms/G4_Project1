@@ -6,7 +6,7 @@
 		<link href="/public/script.js" rel="stylesheet" type="text/js"/>
 	</head>
 	<body>
-		 <!-- Added the top banners (lines 8-34) - Micah B.-->
+		 <!-- Added the top banners (lines 8-35) - Micah B.-->
 		 <div class="topbanner">
             <img src="logo2.jpg" />
             <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
@@ -32,8 +32,9 @@
                 <div class="logo">      
                     <img src="Logo.png" class="logo" />
                 </div>
-            </div>
-			<style> 
+        </div>
+
+		<style> 
 			div {
 			background-color: rgba(211, 211, 211, 0.137);
 			width: 150px;
@@ -50,8 +51,9 @@
 				.column {
 					width: 100%;
 				}
-				}
+			}
 		</style>
+
 		<h1>Where to find us?</h1>
 		<h2>Get in touch with one of our agents today:</h2>
 			<div class="column">
@@ -61,30 +63,71 @@
 				Calgary, Alberta <br />
 				Q1Q 1Q1 <br />
 			</div>
+
 			<div class="column">
 				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p> <%= result[0].AgtFirstName + " " + result[0].AgtLastName%></p><br />
-				<img src="email.png" alt="contact" style="width:5%;"> mscott@travelexperts.ca<br />
-				<img src="phone.png" alt="contact" style="width:5%;"> 403-555-5555 <br />
+				<p><%= result[0].AgtFirstName + " " + result[0].AgtLastName%></p>
+				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[0].AgtEmail%></p><br />
+				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[0].AgtBusPhone%></p><br />
 			</div>
+
 			<div class="column">
 				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				Dwight Schrute <br />
-				<img src="email.png" alt="contact" style="width:5%;"> dschrute@travelexperts.ca<br />
-				<img src="phone.png" alt="contact" style="width:5%;"> 403-555-5556 <br />
+				<p> <%= result[1].AgtFirstName + " " + result[1].AgtLastName%></p>
+				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[1].AgtEmail%></p><br />
+				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[1].AgtBusPhone%></p><br />
 			</div>
+
 			<div class="column">
 				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				Jim Halpert <br />
-				<img src="email.png" alt="contact" style="width:5%;"> jhalpert@travelexperts.ca <br />
-				<img src="phone.png" alt="contact" style="width:5%;"> 403-555-5557 <br />
+				<p><%= result[2].AgtFirstName + " " + result[2].AgtLastName%></p>
+				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[2].AgtEmail%></p> <br />
+				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[2].AgtBusPhone%></p> <br />
 			</div>
-			<br />
+
+			<div class="column">
+				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
+				<p><%= result[3].AgtFirstName + " " + result[3].AgtLastName%></p>
+				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[3].AgtEmail%></p> <br />
+				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[3].AgtBusPhone%></p> <br />
+			</div>
+
+			<div class="column">
+				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
+				<p><%= result[4].AgtFirstName + " " + result[4].AgtLastName%></p>
+				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[4].AgtEmail%></p> <br />
+				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[4].AgtBusPhone%></p> <br />
+			</div>
+
+			<div class="column">
+				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
+				<p><%= result[5].AgtFirstName + " " + result[5].AgtLastName%></p>
+				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[5].AgtEmail%></p> <br />
+				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[5].AgtBusPhone%></p> <br />
+			</div>
+
+			<div class="column">
+				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
+				<p><%= result[6].AgtFirstName + " " + result[6].AgtLastName%></p>
+				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[6].AgtEmail%></p> <br />
+				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[6].AgtBusPhone%></p> <br />
+			</div>
+
+			<div class="column">
+				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
+				<p><%= result[7].AgtFirstName + " " + result[7].AgtLastName%></p>
+				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[7].AgtEmail%></p> <br />
+				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[7].AgtBusPhone%></p> <br />
+			</div>
+
+			<div class="column">
+				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
+				<p><%= result[8].AgtFirstName + " " + result[8].AgtLastName%></p>
+				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[8].AgtEmail%></p> <br />
+				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[8].AgtBusPhone%></p> <br />
+			</div>
 			<footer>
 				Travel Experts Copyright&copy;2022
-				</footer>
+			</footer>
 		</body>
-		<footer>
-		Travel Experts Copyright&copy;2022
-		</footer>
-		</html>
+    </html>
