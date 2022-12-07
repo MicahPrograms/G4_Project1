@@ -1,15 +1,59 @@
 <!DOCTYPE html>
 <html>
-	<head>
+	<header>
 		<title>Contact Page</title>
-		<link src="G4Styles.css" rel="stylesheet" type="text/css">
-		<link href="/public/script.js" rel="stylesheet" type="text/js"/>
-	</head>
+		<link href="G4Styles.css" rel="stylesheet" type="text/css">
+		<style>
+			.container {
+				position: relative;
+				text-align: left;
+				color: white;
+				font-size: 25pt;
+			}
+
+			.bottom-left {
+				position: absolute;
+				bottom:60px;
+				left: 40px;
+			}
+
+			.top-left {
+				position: absolute;
+				top: 10px;
+				left: 600px;
+			}
+
+			.top-right {
+				position: absolute;
+				top: 30px;
+				right: 16px;
+			}
+
+			.bottom-right {
+				position: absolute;
+				bottom: 20px;
+				right: 16px;
+			}
+
+			.centered {
+				position: absolute;
+				top: 50%;
+				left: 60%;
+				transform: translate(-50%, -50%);
+			}
+			.rightcolumn {
+				float: right;
+				width: 70%;
+				background-color: #f1f1f1af;
+				padding-left: 20px;
+				transform: translate(5%, 55%);
+			}
+		</style>
+	</header>
 	<body>
-		 <!-- Added the top banners (lines 8-35) - Micah B.-->
-		 <div class="topbanner">
-            <img src="logo2.jpg" />
-            <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
+		<div class="topbanner">
+			<img src="logo2.jpg" />
+			<h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
                 <script>
                     var quotes = ["“Adventure is worthwhile.” – Aesop", "“Traveling – it leaves you speechless, then turns you into a storyteller.” – Ibn Battuta", 
                     "“We travel, some of us forever, to seek other places, other lives, other souls.” – Anais Nin", 
@@ -20,53 +64,121 @@
 					document.write(randomQuote);
                 </script>
             </h2>
-        </div>
+		</div>
 
-        <div class="banner">
-            <a href="/" id="home" >Home</a>
+		<div class="banner">
+			<a href="/" id="home" >Home</a>
             <a href="/contact" >Contact Us</a>
             <a href="/packages" >Vacation Packages</a>
             <a href="/registration" >Sign Up</a>
             <a href="/login" >Login</a>
-                
-                <div class="logo">      
-                    <img src="Logo.png" class="logo" />
-                </div>
-        </div>
+				
+			<div class="logo">      
+				<img src="Logo.png" class="logo" />
+			</div>
+		</div>
+		<div class="top-left">
+			
+		</div>
 
-		<style> 
-			div {
-			background-color: rgba(211, 211, 211, 0.137);
-			width: 150px;
-			border: 15px solid #2596be;
-			padding: 50px;
-			margin: 20px;
-			 }
-		  .column {
-			float: Left;
-			width: 15%;
-			padding: 15px;
-			}
-			@media screen and (max-width:600px) {
-				.column {
-					width: 100%;
-				}
-			}
-		</style>
-
-		<h1>Where to find us?</h1>
-		<h2>Get in touch with one of our agents today:</h2>
-			<div class="column">
-				<img src="officezipper.jpg" alt="contact" style="width:100%;">
-				Find us at <br />
-				1234 A Real Street NW <br />
-				Calgary, Alberta <br />
-				Q1Q 1Q1 <br />
+		<div class="container">
+			<img src="office.jpg" alt="Snow" style="width:100%;" height="50%"> 
+			<div class="top-left">
+				<h1>Get in touch today!</h1>	
+			</div>
+			<!-- <div class="bottom-right">
+				Find us at:<br />
+					1234 A Real Street NW <br />
+					Calgary, Alberta <br />
+					Q1Q 1Q1 <br />
+			</div> -->
+			<div class="bottom-left">
+				<div class="column">
+					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
+					Janet Delton<br />
+					<img src="email.png" alt="contact" style="width:3%;">janet.delton@travelexperts.com<br />
+					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7801<br />
+				</div>
+				<br />
+				<div class="column">
+					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
+					Judy Lisle<br />
+					<img src="email.png" alt="contact" style="width:3%;">judy.lisle@travelexperts.com<br />
+					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7802<br />
+				</div>
+				<br />
+				<div class="column">
+					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
+					Dennis Reynolds<br />
+					<img src="email.png" alt="contact" style="width:3%;">dennis.reynolds@travelexperts.com<br />
+					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7843<br />
+				</div>
+				<br />
+				<div class="column">
+					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
+					John Coville<br />
+					<img src="email.png" alt="contact" style="width:3%;">john.coville@travelexperts.com<br />
+					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7823<br />
+				</div>
 			</div>
 
-			<div class="column">
+			<div class="centered">
+				<div class="column">
+					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
+					Fred Smith<br />
+					<img src="email.png" alt="contact" style="width:3%;">fred@travelexperts.com<br />
+					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-5555<br />
+				</div>
+				<br />
+				<div class="column">
+					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
+					Bruce Dixon<br />
+					<img src="email.png" alt="contact" style="width:3%;">bruce.dixon@travelexperts.com<br />
+					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7867<br />
+				</div>	
+				<br />
+				<div class="column">
+					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
+					Beverly Jones<br />
+					<img src="email.png" alt="contact" style="width:3%;">beverly.jones@travelexperts.com<br />
+					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7812<br />
+				</div>	
+				<br />
+				<div class="column">
+					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
+					Jane Merrill<br />
+					<img src="email.png" alt="contact" style="width:3%;">jane.merrill@travelexperts.com<br />
+					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7868<br />
+				</div>	
+				
+		</div>
+		</div>
+		<div class="top-right">
+			<div class="rightcolumn">
+				<div class="card">
+				<h2>Find us at: </h2>
+				<img src="cubicles.jpg" style="height:100px;">
+					Calgary Office:<br />
+					1234 A Real Street NW <br />
+					Calgary, Alberta <br />
+					Q1Q 1Q1 <br />
+					<br />
+					<br />
+				<img src="meeting.jpg" style="height:100px;"></div>
+					Okotoks Office:<br />
+					5678 Another Real Street<br />
+					Okotoks, Alberta <br />
+					Z1Z 1Z1 <br />
+					<br />
+				</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+			<!-- <div class="column">
 				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p><%= result[0].AgtFirstName + " " + result[0].AgtLastName%></p>
+				<p><%=result[0].AgtFirstName + " " + result[0].AgtLastName%></p>
 				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[0].AgtEmail%></p><br />
 				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[0].AgtBusPhone%></p><br />
 			</div>
@@ -118,14 +230,9 @@
 				<p><%= result[7].AgtFirstName + " " + result[7].AgtLastName%></p>
 				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[7].AgtEmail%></p> <br />
 				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[7].AgtBusPhone%></p> <br />
-			</div>
-
-			<div class="column">
-				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p><%= result[8].AgtFirstName + " " + result[8].AgtLastName%></p>
-				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[8].AgtEmail%></p> <br />
-				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[8].AgtBusPhone%></p> <br />
-			</div>
+			</div> -->
+		
+		
 			<footer>
 				Travel Experts Copyright&copy;2022
 			</footer>
