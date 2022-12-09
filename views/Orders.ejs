@@ -5,7 +5,30 @@
         <link href="G4Styles.css" rel="stylesheet" type="text/css" />
         <script src="jquery-3.6.1.js" type="text/javascript"></script>
         <script src="formValidation.js" type="text/javascript"></script>
+        <script>
+            var base = "<%=result[0].PkgBasePrice%>";
 
+            
+            var totalPrice;
+
+            function totPrice(members){
+                var basePrice = parseInt(base);
+                var totalP = (basePrice*members);
+
+                document.getElementById("totalPrice").value = ("$" + totalP);
+            }
+            console.log("hi");
+
+            var members, dropdown;
+    
+            function findMembers(){
+                var dropdown = document.getElementById("members");
+                var members = dropdown.value;
+                totPrice(members);
+                
+            };
+        </script>
+      
     </head>
 
     <body>
@@ -40,46 +63,51 @@
             <form method="get" action="/confirmation" class="form">
 
                 <label for="package">Vacation Package: </label>
+                <img src="check.png" class="checkvisible">
                 <input type="text" name="Package" id="Package" 
-                value="<%=result[0].PkgName%>" readonly="readonly" /><br/>
+                value="<%=result[0].PkgName + " - $" + result[0].PkgBasePrice + " per guest"%>" readonly="readonly" /><br/>
+                
+                <label for="members">Number of travellers: </label>
+                <img src="check.png" class="checkvisible"><br />
+                
+                <select id="members" name="members" onchange="findMembers()" >
+                    <% for(var i=1; i<21; i++) {%>
+                        <option>
+                        <%= i %>
+                        </option>
+                    <% } %>
+                </select>
+                
+                <br />
+                
+                <label for="totalPrice">Total price: </label>
+                    <img src="check.png" class="checkvisible">
+                <input type="text" name="totalPrice" id="totalPrice" 
+                value="<%="$" + result[0].PkgBasePrice%>" readonly="readonly" /><br/>
 
                 <label for="FirstName">First name: </label> 
-                <input type="text" name="FirstName" id="FirstName" value="" /><br />
+                    <img src="check.png" class="checkinvisible" id="check1">
+                <input type="text" name="FirstName" id="FirstName" value="" onchange="checkInput1(this.form)"/><br />
                 
                 <label for="LastName">Last name: </label> 
-                <input type="text" name="LastName" id="LastName" value="" /><br />
-                
-                <label for="HomeAddress">Home Address: </label>
-                <input type="text" name="HomeAddress" id="HomeAddress" value="" /><br />
-                
-                <label for="ProvState">Province/State: </label>
-                <input type="text" name="ProvState" id="ProvState" value="" /><br />
-                
-                <label for="Country">Country: </label>
-                <input type="text" name="Country" id="Country" value="" /><br />
-
-                <label for="Postal">Postal/ZIP Code: </label>
-                <input type="text" name="Postal" id="Postal" value="" /><br />
-                
-                <label for="Email">Email Address: </label>
-                <input type="text" name="Email" id="Email" value="" /><br />
+                    <img src="check.png" class="checkinvisible" id="check2">
+                <input type="text" name="LastName" id="LastName" value="" onchange="checkInput2(this.form)" /><br />
                 
                 <label for="Credit">Credit Card Number: </label> 
-                        <img src="mastercard.png" class="cardinvisible" id="card">
-                        
+                    <img src="mastercard.png" class="cardinvisible" id="card">        
                 <input type="text" maxlength="16" name="Credit" id="Credit" value="" placeholder="No Spaces Between Numbers" onchange="cardIdentify()"/><br />
                
                 <label for="ExpiryDate">Expiry Date: </label>
-                <input type="text" name="ExpiryDate" id="ExpiryDate" placeholder="MM/YY" value="" /><br />
+                    <img src="check.png" class="checkinvisible" id="check3">
+                <input type="text" name="ExpiryDate" id="ExpiryDate" placeholder="MM/YY" value="" onchange="checkInput3(this.form)"/><br />
                
                 <label for="CVV">CVV (on back of card): </label>
-                <input type="text" maxlength="4" name="CVV" id="CVV" placeholder="123(4)" value="" /><br />
+                <img src="check.png" class="checkinvisible" id="check4">
+                <input type="text" maxlength="4" name="CVV" id="CVV" placeholder="123(4)" value="" onchange="checkInput4(this.form)"/><br />
                 
                 <button type="sumbit" onclick="return validate(this.form)" onclick="return savePackage()">Order now!</button>
                 <button type="reset" onclick="return confirm('Are you sure you want to reset the form?')">Reset</button><br />
             </form>        
-            
-
             
             <br /><br /><br />
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>

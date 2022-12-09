@@ -7,7 +7,7 @@ var creditCardNum = document.getElementById("Credit").value;
 
 function validate(myForm) {
     console.log("made it into the function");
-    var formLength = 11;
+    var formLength = 8;
     for (i=0; i<formLength; i++) {
         console.log(myForm[i].name);
 
@@ -78,5 +78,53 @@ function validate(myForm) {
             document.getElementById('card').src = "amex.png";
             return false;
         }
+        if(!regMaster.test(creditCardNum) && !regVisa.test(creditCardNum) && !regAMEX.test(creditCardNum)) {
+            document.getElementById('card').className = "cardinvisible";
+        }
     } 
 
+    // Function that checks if a field has an input in the form, 
+    // if it does it displays a green check mark
+function checkInput1(myForm) {
+    if (myForm[3].value != "") {
+        document.getElementById("check1").className = "checkvisible";
+        return false;
+    }
+    if (myForm[3].value == "") {
+        document.getElementById("check1").className = "checkinvisible";
+        return false;
+    }
+}
+
+function checkInput2(myForm) {
+    if (myForm[4].value != "") {
+        document.getElementById("check2").className = "checkvisible";
+        return false;
+    }
+    if (myForm[4].value == "") {
+        document.getElementById("check2").className = "checkinvisible";
+        return false;
+    }
+}
+
+function checkInput3(myForm) {
+        if (myForm[6].value != "") {
+            document.getElementById("check3").className = "checkvisible";
+            return false;
+        }
+        if (myForm[6].value == "") {
+            document.getElementById("check3").className = "checkinvisible";
+            return false;
+        }
+}
+
+function checkInput4(myForm) {
+        if (myForm[7].value != "") {
+            document.getElementById("check4").className = "checkvisible";
+            return false;
+        }
+        if (myForm[7].value == "") {
+            document.getElementById("check4").className = "checkinvisible";
+            return false;
+        }
+}    
