@@ -70,8 +70,18 @@ function checkingStartDate()
 
 <body  onload="checkingStartDate()"> 
   <div class="topbanner">
-    <!--Logo on left-->
     <img src="logo2.jpg" />
+    <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
+        <script>
+            var quotes = ["“Adventure is worthwhile.” – Aesop", "“Traveling – it leaves you speechless, then turns you into a storyteller.” – Ibn Battuta", 
+            "“We travel, some of us forever, to seek other places, other lives, other souls.” – Anais Nin", 
+    "“A journey is best measured in friends, rather than miles.” – Tim Cahill", "“I am not the same, having seen the moon shine on the other side of the world.” – Mary Anne Radmacher", 
+    "“The world is a book, and those who do not travel read only one page.” – Saint Augustine", "“Travel is the only thing you buy that makes you richer.” – Anonymous", 
+            "“Better to see something once than hear about it a thousand times.” – Asian Proverb"];
+  var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  document.write(randomQuote);
+        </script>
+    </h2>
 </div>
 <!--Menu-->
 <div class="banner">
@@ -86,6 +96,8 @@ function checkingStartDate()
         <img src="Logo.png" class="logo" />
     </div>
 </div>
+
+
 <!--Main Slider-->
 
 <div class="slider">
@@ -102,7 +114,7 @@ function checkingStartDate()
           <p>Package Price:<%= result[0].PkgBasePrice%></p>
           <p id="sdate0">Package Start Date:<%= result[0].PkgStartDate.getDate() + "/"+  +((result[0].PkgStartDate.getMonth())+1) + "/"+ +result[0].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[0].PkgEndDate.getDate() + "/"+  +((result[0].PkgEndDate.getMonth())+1)+ "/"+ +result[0].PkgEndDate.getFullYear() %></p>
-          <form method="post" action="/orders3">
+          <form method="post" action="/orders">
             <button type="submit">Reserve Now</button>
             <input type="hidden" name="pkgId" value="<%=result[0].PackageId%>">
           </form>
@@ -114,7 +126,7 @@ function checkingStartDate()
         <p >Package Price:<%= result[1].PkgBasePrice%></p>
         <p id="sdate1">Package Start Date:<%= result[1].PkgStartDate.getDate() + "/"+  +((result[1].PkgStartDate.getMonth())+1)+ "/"+ +result[1].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[1].PkgEndDate.getDate() + "/"+  +((result[1].PkgEndDate.getMonth())+1) + "/"+ +result[1].PkgEndDate.getFullYear() %></p>
-        <form method="post" action="/orders3">
+        <form method="post" action="/orders">
           <button type="submit">Reserve Now</button>
           <input type="hidden" name="pkgId" value="<%=result[1].PackageId%>">
         </form>
@@ -129,7 +141,7 @@ function checkingStartDate()
           <p>Package Price:<%= result[2].PkgBasePrice%></p>
           <p id="sdate2">Package Start Date:<%= result[2].PkgStartDate.getDate() + "/"+  +((result[2].PkgStartDate.getMonth())+1) + "/"+ +result[2].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[2].PkgEndDate.getDate() + "/"+  +((result[2].PkgEndDate.getMonth())+1) + "/"+ +result[2].PkgEndDate.getFullYear() %></p>
-          <form method="post" action="/orders3">
+          <form method="post" action="/orders">
             <button type="submit">Reserve Now</button>
             <input type="hidden" name="pkgId" value="<%=result[2].PackageId%>">
           </form>
@@ -141,7 +153,7 @@ function checkingStartDate()
         <p>Package Price:<%= result[3].PkgBasePrice%></p>
         <p id="sdate3">Package Start Date:<%= result[3].PkgStartDate.getDate() + "/"+  +((result[3].PkgStartDate.getMonth())+1) + "/"+ +result[3].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[3].PkgEndDate.getDate() + "/"+  +((result[3].PkgEndDate.getMonth())+1) + "/"+ +result[3].PkgEndDate.getFullYear() %></p>
-        <form method="post" action="/orders3">
+        <form method="post" action="/orders">
           <button type="submit">Reserve Now</button>
           <input type="hidden" name="pkgId" value="<%=result[3].PackageId%>">
         </form>
@@ -156,7 +168,7 @@ function checkingStartDate()
           <p>Package Price:<%= result[4].PkgBasePrice%></p>
           <p id="sdate4">Package Start Date:<%= result[4].PkgStartDate.getDate() + "/"+  +((result[4].PkgStartDate.getMonth())+1)+ "/"+ +result[4].PkgStartDate.getFullYear() %></p>
           <p>Package End Date:<%= result[4].PkgEndDate.getDate() + "/"+  +((result[4].PkgEndDate.getMonth())+1) + "/"+ +result[4].PkgEndDate.getFullYear() %></p>
-          <form method="post" action="/orders3">
+          <form method="post" action="/orders">
             <button type="submit">Reserve Now</button>
             <input type="hidden" name="pkgId" value="<%=result[4].PackageId%>">
           </form>
@@ -168,7 +180,7 @@ function checkingStartDate()
         <p>Package Price:<%= result[5].PkgBasePrice%></p>
         <p id="sdate5">Package Start Date:<%= result[5].PkgStartDate.getDate() + "/"+  +((result[5].PkgStartDate.getMonth())+1) + "/"+ +result[5].PkgStartDate.getFullYear() %></p>
         <p>Package End Date:<%= result[5].PkgEndDate.getDate() + "/"+  +((result[5].PkgEndDate.getMonth())+1) + "/"+ +result[5].PkgEndDate.getFullYear() %></p>
-        <form method="post" action="/orders3">
+        <form method="post" action="/orders">
           <button type="submit">Reserve Now</button>
           <input type="hidden" name="pkgId" value="<%=result[5].PackageId%>">
         </form>
