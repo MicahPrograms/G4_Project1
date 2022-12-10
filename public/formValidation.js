@@ -5,14 +5,25 @@ function confirm_reset() {
 //Form validation from Micah
 var creditCardNum = document.getElementById("Credit").value;
 
+function validateLogin(myForm) {
+    var formLength = 2;
+    for (i=0; i<2; i++) {
+
+        if(myForm[i].value == "") {
+            alert(myForm[i].name + " must have an input.");
+            myForm[i].focus();
+            return false;
+        }
+    }
+    return confirm("Continue submitting?");
+}
+
 function validate(myForm) {
-    console.log("made it into the function");
-    var formLength = 8;
+    var formLength = 10;
     for (i=0; i<formLength; i++) {
         console.log(myForm[i].name);
 
         if(myForm[i].value == "") {
-            console.log(myForm[i].name + " must have an input.");
             alert(myForm[i].name + " must have an input.");
             myForm[i].focus();
             return false;

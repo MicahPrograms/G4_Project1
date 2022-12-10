@@ -8,16 +8,14 @@
         <script>
             var base = "<%=result[0].PkgBasePrice%>";
 
-            
             var totalPrice;
 
             function totPrice(members){
                 var basePrice = parseInt(base);
                 var totalP = (basePrice*members);
 
-                document.getElementById("totalPrice").value = ("$" + totalP);
+                document.getElementById("totalPrice").value = ("$" + totalP + ".00");
             }
-            console.log("hi");
 
             var members, dropdown;
     
@@ -27,6 +25,8 @@
                 totPrice(members);
                 
             };
+            
+            
         </script>
       
     </head>
@@ -58,6 +58,9 @@
                     <img src="Logo.png" class="logo" />
                 </div>
             </div>
+
+            <h1 style="font-size: 28pt; font-family:monaco Narrow, sans-serif;
+                 text-align: center; text-shadow:2px 2px #a2a2a2; font-size: 2.8vw;" id="bot-para">Please complete the form below to confirm your booking:</h1>
             
         <!-- Order form, validation in head section -->
             <form method="get" action="/confirmation" class="form">
@@ -83,7 +86,17 @@
                 <label for="totalPrice">Total price: </label>
                     <img src="check.png" class="checkvisible">
                 <input type="text" name="totalPrice" id="totalPrice" 
-                value="<%="$" + result[0].PkgBasePrice%>" readonly="readonly" /><br/>
+                value="<%="$" + result[0].PkgBasePrice + ".00"%>" readonly="readonly" /><br/>
+
+                <label for="startDate">Start date: </label>
+                    <img src="check.png" class="checkvisible">
+                <input type="text" name="startDate" id="startDate" 
+                value="<%=result[0].PkgStartDate%>" readonly="readonly" /><br/>
+
+                <label for="endDate">End date: </label>
+                    <img src="check.png" class="checkvisible">
+                <input type="text" name="endDate" id="endDate" 
+                value="<%=result[0].PkgEndDate%>" readonly="readonly" /><br/>
 
                 <label for="FirstName">First name: </label> 
                     <img src="check.png" class="checkinvisible" id="check1">
@@ -105,7 +118,7 @@
                 <img src="check.png" class="checkinvisible" id="check4">
                 <input type="text" maxlength="4" name="CVV" id="CVV" placeholder="123(4)" value="" onchange="checkInput4(this.form)"/><br />
                 
-                <button type="sumbit" onclick="return validate(this.form)" onclick="return savePackage()">Order now!</button>
+                <button type="sumbit" onclick="return validate(this.form)">Order now!</button>
                 <button type="reset" onclick="return confirm('Are you sure you want to reset the form?')">Reset</button><br />
             </form>        
             
