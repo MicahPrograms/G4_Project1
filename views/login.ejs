@@ -36,20 +36,21 @@
                 </div>
             </div>
 
-        <h1 style="text-align: center; margin-top:40px; margin-bottom:40px;">Please login to place an order</h1>
+            <h1 style="font-size: 28pt; font-family:monaco Narrow, sans-serif;
+            text-align: center; text-shadow:2px 2px #d3d3d3; font-size: 2.8vw; color:rgb(41, 66, 86); margin-top: 50px; margin-bottom: 50px;">Please log in to place an order</h1>
         
         <form method="post" action="/purgatory" class="formLogin">
 
-            <label for="Username/Email">Username/E-mail: </label> 
+            <label for="email" >E-mail address: </label> 
                 <img src="check.png" class="checkinvisible" id="check1">
-            <input type="text" name="Username/Email" id="Username/Email" value="" onchange="checkInput1(this.form)"/><br />
+            <input type="text" name="Email" id="email" value="" class="logInput" onchange="checkLog1(this.form)"/><br />
             
             <label for="Password">Password: </label> 
                 <img src="check.png" class="checkinvisible" id="check2">
-            <input type="password" name="Password" id="Password" value="" onchange="checkInput2(this.form)" /><br />
+            <input type="password" name="Password" id="Password" class="logInput" value="" onchange="checkLog2(this.form)" /><br />
             
-            <button type="sumbit" onclick="return validateLogin(this.form)" >Login</button>
-            <a href="/registration" style="text-decoration: none;"><button type="button">Create Account</button></a><br />
+            <button type="sumbit" onclick="return validateLogin(this.form)" class="logBtn">Login</button>
+            <button type="button" class="regBtn" onclick="window.location.href='/registration';">Create Account</button><br />
         </form>        
             
             <br /><br /><br />

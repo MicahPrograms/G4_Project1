@@ -1,3 +1,4 @@
+// unless marked otherwise, all code is by Micah
 function confirm_reset() {
     return confirm("Are you sure you want to reset the form?");
 }
@@ -14,6 +15,13 @@ function validateLogin(myForm) {
             myForm[i].focus();
             return false;
         }
+    }
+    // Took this email regular expression from Tim's code
+    var emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+    if (!emailRegExp.test(myForm.email.value)){
+        alert("Invalid e-mail address.");
+        myForm.email.focus();
+        return false;
     }
     return confirm("Continue submitting?");
 }
@@ -138,4 +146,26 @@ function checkInput4(myForm) {
             document.getElementById("check4").className = "checkinvisible";
             return false;
         }
+}    
+
+function checkLog1(myForm) {
+    if (myForm[0].value != "") {
+        document.getElementById("check1").className = "checkvisible";
+        return false;
+    }
+    if (myForm[0].value == "") {
+        document.getElementById("check1").className = "checkinvisible";
+        return false;
+    }
+}
+
+function checkLog2(myForm) {
+    if (myForm[1].value != "") {
+        document.getElementById("check2").className = "checkvisible";
+        return false;
+    }
+    if (myForm[1].value == "") {
+        document.getElementById("check2").className = "checkinvisible";
+        return false;
+    }
 }    
