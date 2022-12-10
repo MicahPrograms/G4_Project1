@@ -169,6 +169,27 @@ footer {
     font-family: monaco Narrow, sans-serif;
 }
 
+#countdown {
+    font-size: 30pt;
+    font-family: monaco Narrow, sans-serif;
+    text-align: center;
+    text-shadow: #92a21a;
+}
+
+.formLogin {
+    text-shadow: rgb(0, 0, 0);
+    font-size: 14pt;
+    width: 40%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    color: black;
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-family: monaco Narrow, sans-serif;
+}
+
 #members {
     font-size: 12pt;
     width: 100%;
@@ -200,15 +221,15 @@ input {
 }
 
 .checkinvisible {
-    height: 24px;
-    width: 24px;
+    height: 18px;
+    width: 18px;
     visibility: hidden;
     margin-bottom: 0px;
 }
 
 .checkvisible {
-    height: 24px;
-    width: 24px;
+    height: 18px;
+    width: 18px;
     visibility: visible;
     margin-bottom: 0px;
 }

@@ -6,9 +6,13 @@
         <script src="jquery-3.6.1.js" type="text/javascript"></script>
         <script src="formValidation.js" type="text/javascript"></script>
 
+        <script>
+            var timer = document
+        </script>
+
     </head>
 
-    <body>
+    <body onload="return timer">
         <div class="topbanner">
             <img src="logo2.jpg" />
             <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
@@ -36,21 +40,24 @@
                 </div>
             </div>
 
-        <h1 style="text-align: center; margin-top:40px; margin-bottom:40px;">Please login to place an order</h1>
-        
-        <form method="post" action="/purgatory" class="formLogin">
+        <script>
+            var s = 8;
+            var countdown = setInterval(function() {
+                parseInt(s);
+                s--;
+                document.getElementById("countdown").innerHTML = s;
+            }, 1000)
 
-            <label for="Username/Email">Username/E-mail: </label> 
-                <img src="check.png" class="checkinvisible" id="check1">
-            <input type="text" name="Username/Email" id="Username/Email" value="" onchange="checkInput1(this.form)"/><br />
-            
-            <label for="Password">Password: </label> 
-                <img src="check.png" class="checkinvisible" id="check2">
-            <input type="password" name="Password" id="Password" value="" onchange="checkInput2(this.form)" /><br />
-            
-            <button type="sumbit" onclick="return validateLogin(this.form)" >Login</button>
-            <a href="/registration" style="text-decoration: none;"><button type="button">Create Account</button></a><br />
-        </form>        
+
+            var timer = setTimeout(function() {
+                window.location.assign("http://localhost:8000/")
+            }, 8000); 
+        </script>
+
+        <div class="formLogin">
+            <h1 style="text-align: center; margin-top:40px; margin-bottom:40px;">Thank you for signing in! You will be redirected to the homepage in <div id="countdown">8 
+            </div>seconds... brace yourself!</h1>
+        </div>
             
             <br /><br /><br />
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
