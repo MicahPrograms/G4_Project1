@@ -167,6 +167,7 @@ footer {
     margin-left: 20%;
     margin-right: 20%;
     font-family: monaco Narrow, sans-serif;
+    text-align: center;
 }
 
 #countdown {
@@ -188,6 +189,8 @@ footer {
     margin-left: 30%;
     margin-right: 30%;
     font-family: monaco Narrow, sans-serif;
+    border-radius: 30px;
+    text-align: center;
 }
 
 #members {
@@ -201,6 +204,16 @@ input {
     text-shadow: rgb(0, 0, 0);
     font-size: 14pt;
     width: 100%;
+    padding: 6px 10px;
+    margin: 8px 8px;
+    color: black;
+}
+
+.logInput {
+    text-shadow: rgb(0, 0, 0);
+    font-size: 14pt;
+
+    width: 80%;
     padding: 6px 10px;
     margin: 8px 8px;
     color: black;
@@ -260,6 +273,20 @@ input {
 }
 .resetBtn:hover{
     background-color:red;
+}
+
+.logBtn{
+    background-color:rgb(215, 215, 215);
+}
+.logBtn:hover{
+    background-color:rgb(189, 234, 168);
+}
+
+.regBtn{
+    background-color:rgb(215, 215, 215);
+}
+.regBtn:hover{
+    background-color:rgb(255, 246, 181);
 }
 
 button{
