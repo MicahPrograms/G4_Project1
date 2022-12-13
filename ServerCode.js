@@ -185,13 +185,13 @@ app.get("/contact", (req, res) => {
 			if (err) throw err;
 			myConnection.query("SELECT * FROM agents WHERE AgencyId= 2", (err,okAgents)=>{
 				if (err) throw err;
-			myConnection.query("SELECT * FROM agencies", (err1,result1,fields1)=>{
+			myConnection.query("SELECT * FROM agencies", (err1,agencies,fields1)=>{
 				if (err1) throw err1;
 				console.log(calAgents);
 				console.log(okAgents);
-				console.log(result1);
+				console.log(agencies);
 				console.log(fields1);
-				res.render("contactpage", { "calAgents": calAgents, "okAgents": okAgents, "result1": result1, "fields1": fields1 });
+				res.render("contactpage", { "calAgents": calAgents, "okAgents": okAgents, "agencies": agencies, "fields1": fields1 });
 				
 				myConnection.end((err)=>{
 				if (err) throw err;
