@@ -368,3 +368,87 @@ div.flex-container-Pack h2 {
   }
 
 /*Rabab Kazim css End*/
+
+
+/* Dorothy K CSS Start*/
+
+div.agent-container {
+    text-align: left;
+    color: rgb(27, 57, 75);
+}
+
+.agent-list {
+    position: relative;
+    top: 250px;
+}
+
+.flex-container-left {
+    width: 45%;
+    display: flex;
+    float: left;
+    height: 700px;
+    align-items: baseline;
+    background-color: #f1f1f1af;
+}
+
+.office-left{
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+
+.agencyaddress-left {
+    float:right;
+    padding: 20px;
+}
+
+.agent-header {
+    position: absolute;
+    top: 200px;
+}
+
+.flex-container-right {
+    width: 45%;
+    display: flex;
+    float: right;
+    height: 700px;
+    align-items: baseline;
+    background-color: #f1f1f1af;
+}
+
+.office-right{
+    position: absolute;
+    top: 20px;
+    right: 300px;
+}
+
+.agencyaddress-right {
+    float:right;
+    padding: 20px;
+}
+
+div.agencies-container {
+    display: inline-block;
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+}
+
+.title-heading {
+    position: absolute;
+    width: 100%;
+    top: 18%;
+    left: 2%;
+    font-size: 30pt;
+    font-size: 1.5VW;
+}
+
+.on-image {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    color: rgb(27, 57, 75);
+}
+
+/* Dorothy K CSS End*/
