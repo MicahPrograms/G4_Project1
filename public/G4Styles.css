@@ -240,16 +240,19 @@ select{
     display: flex;
     flex-direction: row;
     background-color: #ffffff;
+    justify-content: center;
     margin-top: 20px;
+
 
 }
 .flex-container-pack > div{
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 0px;
     margin-bottom: 30px;
     width: 30%;
     height: 100%;
     background-color: #ffffff;
+    
 }
 div.flex-container-Pack h2 {
     font-size: 20pt;
@@ -278,7 +281,7 @@ div.flex-container-Pack h2 {
     text-align: center;
     color: #798611;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 60px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   .centered {

@@ -1,10 +1,12 @@
 <!-- Author: Rabab Kaz.-->
 
 <!DOCTYPE html>
-<header>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Packages</title>
   <!--  Main CSS  -->
 <link href="G4Styles.css" rel="stylesheet" type="text/css"/>
+<<<<<<< Updated upstream
 </header>
 <script>
 // Javascript to check if start date is less then the current date and change it to red
@@ -65,9 +67,19 @@ element = document.getElementById('sdate5');
 }
 
 }
+=======
+<script src="jquery-3.6.1.js" type="text/javascript"></script>
+
+</head>
+<script>
+// Declare an array object for array of images
+var DestinationImage=["07.jpg","05.jpg","04.jpg","01.jpg","02.jpg","03.jpg"];
+var i=0;
+
+>>>>>>> Stashed changes
 </script>
 
-<body  onload="checkingStartDate()"> 
+<body> 
   <div class="topbanner">
     <!--Logo on left-->
     <img src="logo2.jpg" />
@@ -88,10 +100,11 @@ element = document.getElementById('sdate5');
 <!--Main Slider-->
 
 <div class="slider">
-  <img src="Slider2.jpg" alt="Snow" style="width:100%;" height="30%"> 
+  <img src="Slider2.jpg"  style="width:100%;" height="30%"> 
   <div class="centered">Discover The World With Travel Experts!</div>
 </div>
 <!--End Main Slider-->
+<<<<<<< Updated upstream
   
 <!--Flex Box -->
       <div class="flex-container-pack">
@@ -154,6 +167,54 @@ element = document.getElementById('sdate5');
         <a href="/Orders6" class="button">Reserve Now</a>
     </div>
     <!--Flex Box End-->
+=======
+
+
+<!--ForEach Loop for data from Database-->
+<%	result.forEach((package,key)=>{ %>
+  
+<!--Flex Box -->
+<form method ="post" action="/Orders">
+      <div class="flex-container-pack">
+       
+        <script>
+        
+
+            document.write("<div><img src='" + DestinationImage[i]+"' /></div>");
+            
+        </script>
+
+      
+        <div>
+          <h2><%= package.PkgName%></h2>
+          <p><%= package.PkgDesc%></p>
+          <p>Package Price:<%= package.PkgBasePrice%></p>
+          <p id="sdate<%=key %>" class="sDate0">Package Start Date:<%= package.PkgStartDate.getDate() + "/"+  +((package.PkgStartDate.getMonth())+1) + "/"+ +package.PkgStartDate.getFullYear() %></p>
+          <p>Package End Date:<%= package.PkgEndDate.getDate() + "/"+  +((package.PkgEndDate.getMonth())+1)+ "/"+ +package.PkgEndDate.getFullYear() %></p>
+            <form method ="post" action="/Orders">
+             <button type="submit">Reserve Now</button>
+             <input type="hidden" name="pkgId" value="<%=result.PackageId%>"></input>
+             </form>
+      </div>
+      <script>
+        var GivenDate= "<%=package.PkgStartDate%>";
+        GivenDate = new Date(GivenDate);
+        var CurrentDate = new Date();
+        if(GivenDate<CurrentDate){
+         
+       
+                           element= document.getElementById("sdate<%= key %>");
+                             element.style.color= '#d31414';
+                              element.style.fontWeight = 'bold';
+       }
+         i++;                     
+       
+         </script>
+
+      </div>
+      <%	});	%>  
+   
+>>>>>>> Stashed changes
     </body>
   </html>
   <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
