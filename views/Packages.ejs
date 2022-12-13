@@ -1,87 +1,25 @@
 <!-- Author: Rabab Kaz.-->
 
 <!DOCTYPE html>
-<header>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Packages</title>
   <!--  Main CSS  -->
 <link href="G4Styles.css" rel="stylesheet" type="text/css"/>
 <script src="jquery-3.6.1.js" type="text/javascript"></script>
-<script src="test.js" type="text/javascript"></script>
-</header>
+
+</head>
 <script>
-// Javascript to check if start date is less then the current date and change it to red
+// Declare an array object for array of images
+var DestinationImage=["07.jpg","05.jpg","04.jpg","01.jpg","02.jpg","03.jpg"];
+var i=0;
 
-function checkingStartDate()
-{
-  var GivenDate0= "<%=result[0].PkgStartDate%>";
-  var GivenDate1= "<%=result[1].PkgStartDate%>";
-  var GivenDate2= "<%=result[2].PkgStartDate%>";
-  var GivenDate3= "<%=result[3].PkgStartDate%>";
-  var GivenDate4= "<%=result[4].PkgStartDate%>";
-  var GivenDate5= "<%=result[5].PkgStartDate%>";
-
-  var CurrentDate = new Date();
-  GivenDate0 = new Date(GivenDate0);
-  GivenDate1 = new Date(GivenDate1);
-  GivenDate2 = new Date(GivenDate2);
-  GivenDate3 = new Date(GivenDate3);
-  GivenDate4 = new Date(GivenDate4);
-  GivenDate5 = new Date(GivenDate5);
-
-
-  if(GivenDate0<CurrentDate){
-
-    element = document.getElementById('sdate0');
-      element.style.color= '#d31414';
-      element.style.fontWeight = 'bold';
-  }
-  if(GivenDate1<CurrentDate){
-
-  element = document.getElementById('sdate1');
-    element.style.color= '#d31414';
-    element.style.fontWeight = 'bold';
-  }
-  if(GivenDate2<CurrentDate){
-
-  element = document.getElementById('sdate2');
-    element.style.color= '#d31414';
-    element.style.fontWeight = 'bold';
-  }
-  if(GivenDate3<CurrentDate){
-
-  element = document.getElementById('sdate3');
-    element.style.color= '#d31414';
-    element.style.fontWeight = 'bold';
-  }
-  if(GivenDate4<CurrentDate){
-
-  element = document.getElementById('sdate4');
-    element.style.color= '#d31414';
-    element.style.fontWeight = 'bold';
-  }
-  if(GivenDate5<CurrentDate){
-
-  element = document.getElementById('sdate5');
-    element.style.color= '#d31414';
-    element.style.fontWeight = 'bold';
-  }
-}
 </script>
 
-<body  onload="checkingStartDate()"> 
+<body> 
   <div class="topbanner">
+    <!--Logo on left-->
     <img src="logo2.jpg" />
-    <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
-        <script>
-            var quotes = ["“Adventure is worthwhile.” – Aesop", "“Traveling – it leaves you speechless, then turns you into a storyteller.” – Ibn Battuta", 
-            "“We travel, some of us forever, to seek other places, other lives, other souls.” – Anais Nin", 
-    "“A journey is best measured in friends, rather than miles.” – Tim Cahill", "“I am not the same, having seen the moon shine on the other side of the world.” – Mary Anne Radmacher", 
-    "“The world is a book, and those who do not travel read only one page.” – Saint Augustine", "“Travel is the only thing you buy that makes you richer.” – Anonymous", 
-            "“Better to see something once than hear about it a thousand times.” – Asian Proverb"];
-  var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  document.write(randomQuote);
-        </script>
-    </h2>
 </div>
 <!--Menu-->
 <div class="banner">
@@ -96,97 +34,59 @@ function checkingStartDate()
         <img src="Logo.png" class="logo" />
     </div>
 </div>
-
-
 <!--Main Slider-->
 
 <div class="slider">
-  <img src="Slider2.jpg" alt="Snow" style="width:100%;" height="30%"> 
+  <img src="Slider2.jpg"  style="width:100%;" height="30%"> 
   <div class="centered">Discover The World With Travel Experts!</div>
 </div>
 <!--End Main Slider-->
+
+
+<!--ForEach Loop for data from Database-->
+<%	result.forEach((package,key)=>{ %>
+  
 <!--Flex Box -->
-  <div class="flex-container-pack">
-    <div><img src="07.jpg" width="100%" height="100%"></div>
-      <div>
-        <h2><%= result[0].PkgName%></h2>
-          <p><%= result[0].PkgDesc%></p>
-          <p>Package Price:<%= result[0].PkgBasePrice%></p>
-          <p id="sdate0">Package Start Date:<%= result[0].PkgStartDate.getDate() + "/"+  +((result[0].PkgStartDate.getMonth())+1) + "/"+ +result[0].PkgStartDate.getFullYear() %></p>
-          <p>Package End Date:<%= result[0].PkgEndDate.getDate() + "/"+  +((result[0].PkgEndDate.getMonth())+1)+ "/"+ +result[0].PkgEndDate.getFullYear() %></p>
-          <form method="post" action="/orders">
-            <button type="submit">Reserve Now</button>
-            <input type="hidden" name="pkgId" value="<%=result[0].PackageId%>">
-          </form>
-      </div>
-      <div><img src="05.jpg" width="100%" height="100%"></div>
-      <div>
-        <h2><%= result[1].PkgName%></h2>
-        <p><%= result[1].PkgDesc%></p>
-        <p >Package Price:<%= result[1].PkgBasePrice%></p>
-        <p id="sdate1">Package Start Date:<%= result[1].PkgStartDate.getDate() + "/"+  +((result[1].PkgStartDate.getMonth())+1)+ "/"+ +result[1].PkgStartDate.getFullYear() %></p>
-        <p>Package End Date:<%= result[1].PkgEndDate.getDate() + "/"+  +((result[1].PkgEndDate.getMonth())+1) + "/"+ +result[1].PkgEndDate.getFullYear() %></p>
-        <form method="post" action="/orders">
-          <button type="submit">Reserve Now</button>
-          <input type="hidden" name="pkgId" value="<%=result[1].PackageId%>">
-        </form>
-    </div>
-      </div>
-  </div>
-    <div class="flex-container-pack">
-        <div><img src="04.jpg" width="100%" height="100%"></div>
+<form method ="post" action="/Orders">
+      <div class="flex-container-pack">
+       
+        <script>
+        
+
+            document.write("<div><img src='" + DestinationImage[i]+"' /></div>");
+            
+        </script>
+
+      
         <div>
-          <h2><%= result[2].PkgName%></h2>
-          <p><%= result[2].PkgDesc%></p>
-          <p>Package Price:<%= result[2].PkgBasePrice%></p>
-          <p id="sdate2">Package Start Date:<%= result[2].PkgStartDate.getDate() + "/"+  +((result[2].PkgStartDate.getMonth())+1) + "/"+ +result[2].PkgStartDate.getFullYear() %></p>
-          <p>Package End Date:<%= result[2].PkgEndDate.getDate() + "/"+  +((result[2].PkgEndDate.getMonth())+1) + "/"+ +result[2].PkgEndDate.getFullYear() %></p>
-          <form method="post" action="/orders">
-            <button type="submit">Reserve Now</button>
-            <input type="hidden" name="pkgId" value="<%=result[2].PackageId%>">
-          </form>
+          <h2><%= package.PkgName%></h2>
+          <p><%= package.PkgDesc%></p>
+          <p>Package Price:<%= package.PkgBasePrice%></p>
+          <p id="sdate<%=key %>" class="sDate0">Package Start Date:<%= package.PkgStartDate.getDate() + "/"+  +((package.PkgStartDate.getMonth())+1) + "/"+ +package.PkgStartDate.getFullYear() %></p>
+          <p>Package End Date:<%= package.PkgEndDate.getDate() + "/"+  +((package.PkgEndDate.getMonth())+1)+ "/"+ +package.PkgEndDate.getFullYear() %></p>
+            <form method ="post" action="/Orders">
+             <button type="submit">Reserve Now</button>
+             <input type="hidden" name="pkgId" value="<%=result.PackageId%>"></input>
+             </form>
       </div>
-      <div><img src="01.jpg" width="100%" height="100%"></div>
-      <div>
-        <h2><%= result[3].PkgName%></h2>
-        <p><%= result[3].PkgDesc%></p>
-        <p>Package Price:<%= result[3].PkgBasePrice%></p>
-        <p id="sdate3">Package Start Date:<%= result[3].PkgStartDate.getDate() + "/"+  +((result[3].PkgStartDate.getMonth())+1) + "/"+ +result[3].PkgStartDate.getFullYear() %></p>
-        <p>Package End Date:<%= result[3].PkgEndDate.getDate() + "/"+  +((result[3].PkgEndDate.getMonth())+1) + "/"+ +result[3].PkgEndDate.getFullYear() %></p>
-        <form method="post" action="/orders">
-          <button type="submit">Reserve Now</button>
-          <input type="hidden" name="pkgId" value="<%=result[3].PackageId%>">
-        </form>
-    </div>
+      <script>
+        var GivenDate= "<%=package.PkgStartDate%>";
+        GivenDate = new Date(GivenDate);
+        var CurrentDate = new Date();
+        if(GivenDate<CurrentDate){
+         
+       
+                           element= document.getElementById("sdate<%= key %>");
+                             element.style.color= '#d31414';
+                              element.style.fontWeight = 'bold';
+       }
+         i++;                     
+       
+         </script>
+
       </div>
-    </div>
-    <div class="flex-container-pack">
-        <div><img src="02.jpg" width="100%" height="100%"></div>
-        <div>
-          <h2><%= result[4].PkgName%></h2>
-          <p><%= result[4].PkgDesc%></p>
-          <p>Package Price:<%= result[4].PkgBasePrice%></p>
-          <p id="sdate4">Package Start Date:<%= result[4].PkgStartDate.getDate() + "/"+  +((result[4].PkgStartDate.getMonth())+1)+ "/"+ +result[4].PkgStartDate.getFullYear() %></p>
-          <p>Package End Date:<%= result[4].PkgEndDate.getDate() + "/"+  +((result[4].PkgEndDate.getMonth())+1) + "/"+ +result[4].PkgEndDate.getFullYear() %></p>
-          <form method="post" action="/orders">
-            <button type="submit">Reserve Now</button>
-            <input type="hidden" name="pkgId" value="<%=result[4].PackageId%>">
-          </form>
-      </div>
-      <div><img src="03.jpg" width="100%" height="100%"></div>
-      <div>
-        <h2><%= result[5].PkgName%></h2>
-        <p><%= result[5].PkgDesc%></p>
-        <p>Package Price:<%= result[5].PkgBasePrice%></p>
-        <p id="sdate5">Package Start Date:<%= result[5].PkgStartDate.getDate() + "/"+  +((result[5].PkgStartDate.getMonth())+1) + "/"+ +result[5].PkgStartDate.getFullYear() %></p>
-        <p>Package End Date:<%= result[5].PkgEndDate.getDate() + "/"+  +((result[5].PkgEndDate.getMonth())+1) + "/"+ +result[5].PkgEndDate.getFullYear() %></p>
-        <form method="post" action="/orders">
-          <button type="submit">Reserve Now</button>
-          <input type="hidden" name="pkgId" value="<%=result[5].PackageId%>">
-        </form>
-    </div>
-    <!--Flex Box End-->
-    <script src="test.js" type="text/javascript"></script>
+      <%	});	%>  
+   
     </body>
   </html>
   <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
