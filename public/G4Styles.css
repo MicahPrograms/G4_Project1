@@ -299,6 +299,7 @@ div.flex-container-Pack h2 {
 
 
 /* Dorothy K CSS Start*/
+
 div.agent-container {
     text-align: left;
     color: rgb(27, 57, 75);
@@ -373,7 +374,9 @@ div.agencies-container {
 
 .on-image {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 5%;
     color: rgb(27, 57, 75);
 }
+
+/* Dorothy K CSS End*/

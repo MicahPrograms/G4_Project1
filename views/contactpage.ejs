@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</header>
 	<body>
-		<!-- Top Banner and banner by Micah -->
+		<!-- Top Banner and banner by Micah lines 12-37-->
 		<div class="topbanner">
 			<img src="logo2.jpg" />
 			<h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
@@ -39,11 +39,21 @@
 		<div class="agent-container">
 			<img src="beach.jpg" alt="Snow" style="width:100%;" height="50%"> 
 			<div class="title-heading">
-				<h1>Get in touch today!</h1>	
+				<h1>Get in Touch Today!</h1>	
 			</div>
 			<div class="on-image">
 				<div>
 					<div class="flex-container-left">
+						<div class="office-left">
+							<img src="cubicles.jpg" style="height:200px;">
+							<div class="agencyaddress-left">
+								<%= agencies[0].AgncyCity + " Office" %><br />
+								<%= agencies[0].AgncyAddress %><br />
+								<%= agencies[0].AgncyCity + ", " + agencies[0].AgncyProv %><br />
+								<%= agencies[0].AgncyPostal %><br />
+								<%= "Phone: " + agencies[0].AgncyPhone%><br />
+							</div>
+						</div>
 						<h2 class="agent-header"> Calgary Team</h2>	
 						<table class="agent-list">
 							<% for(var i=0; i < calAgents.length; i++) 
@@ -64,16 +74,6 @@
 								<% } %>
 							<% } %>
 						</table>
-						<div class="office-left">
-							<img src="cubicles.jpg" style="height:200px;">
-							<div class="agencyaddress-left">
-								<%= agencies[0].AgncyCity + " Office" %><br />
-								<%= agencies[0].AgncyAddress %><br />
-								<%= agencies[0].AgncyCity + ", " + agencies[0].AgncyProv %><br />
-								<%= agencies[0].AgncyPostal %><br />
-								<%= "Phone: " + agencies[0].AgncyPhone%><br />
-							</div>
-						</div>
 					</div>
 					<div class="flex-container-right">
 						<div class="office-right">
