@@ -21,8 +21,8 @@ function getConnection()
 {
 	var con = mysql.createConnection({
 		host: "localhost",
-		user: "Micah",
-		password: "Micah3cheese",
+		user: "Dorothy",
+		password: "Dorothy3cheese",
 		database: "travelexperts"
 	});
 	return con;
@@ -177,37 +177,63 @@ app.get("/Confirmation", (req, res) => {
  	});   
 });
 
+// app.get("/contact", (req, res) => {
+//     var myConnection = getConnection();
+// 	myConnection.connect((err)=>{
+// 		if (err) throw err;
+// 		myConnection.query("SELECT * FROM agents WHERE AgencyId= 1", (err,result,fields)=>{
+// 			if (err) throw err;
+// 			//console.log(result);
+// 			console.log(fields);
+// 			res.render("contactpage", { "result": result, "fields": fields });
+// 			myConnection.end((err)=>{
+// 				if (err) throw err;
+// 			});
+// 		});
+// 	});   
+// });
+
 app.get("/contact", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
+		myConnection.query("SELECT * FROM agents WHERE AgencyId= 1", (err,calAgents)=>{
 			if (err) throw err;
-			console.log(result);
-			console.log(fields);
-			res.render("contactpage", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
+			myConnection.query("SELECT * FROM agents WHERE AgencyId= 2", (err,okAgents)=>{
 				if (err) throw err;
+			myConnection.query("SELECT * FROM agencies", (err1,result1,fields1)=>{
+				if (err1) throw err1;
+				console.log(calAgents);
+				console.log(okAgents);
+				console.log(result1);
+				console.log(fields1);
+				res.render("contactpage", { "calAgents": calAgents, "okAgents": okAgents, "result1": result1, "fields1": fields1 });
+				
+				myConnection.end((err)=>{
+				if (err) throw err;
+					});
+				});
 			});
 		});
 	});   
 });
 
-app.get("/getallagents", (req, res)=>{
-	var myConnection = getConnection();
-	myConnection.connect((err)=>{
-		if (err) throw err;
-		myConnection.query("SELECT * FROM agents", (err, result, fields)=>{
-			if (err) throw err;
-			console.log(result);
-			console.log(fields);
-			res.render("contactpage", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
-				if (err) throw err;
-			});
-		});
-	});
-});
+
+// app.get("/contact", (req, res) => {
+//     var myConnection = getConnection();
+// 	myConnection.connect((err)=>{
+// 		if (err) throw err;
+// 		myConnection.query("SELECT * FROM agencies", (err,result,fields)=>{
+// 			if (err) throw err;
+// 			console.log(result);
+// 			console.log(fields);
+// 			res.render("contactpage", { "result": result, "fields": fields });
+// 			myConnection.end((err)=>{
+// 				if (err) throw err;
+// 			});
+// 		});
+// 	});   
+// });
 
 app.post("/register", function(req, res, next) {
 	console.log(req.body);

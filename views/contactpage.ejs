@@ -1,56 +1,14 @@
+<!-- Author: Dorothy K.-->
+
 <!DOCTYPE html>
 <html>
 	<header>
 		<title>Contact Page</title>
 		<link href="G4Styles.css" rel="stylesheet" type="text/css">
-		<style>
-			.container {
-				position: relative;
-				text-align: left;
-				color: white;
-				font-size: 25pt;
-			}
-
-			.bottom-left {
-				position: absolute;
-				bottom:60px;
-				left: 40px;
-			}
-
-			.top-left {
-				position: absolute;
-				top: 10px;
-				left: 600px;
-			}
-
-			.top-right {
-				position: absolute;
-				top: 30px;
-				right: 16px;
-			}
-
-			.bottom-right {
-				position: absolute;
-				bottom: 20px;
-				right: 16px;
-			}
-
-			.centered {
-				position: absolute;
-				top: 50%;
-				left: 60%;
-				transform: translate(-50%, -50%);
-			}
-			.rightcolumn {
-				float: right;
-				width: 70%;
-				background-color: #f1f1f1af;
-				padding-left: 20px;
-				transform: translate(5%, 55%);
-			}
-		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</header>
 	<body>
+		<!-- Top Banner and banner by Micah -->
 		<div class="topbanner">
 			<img src="logo2.jpg" />
 			<h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
@@ -77,161 +35,85 @@
 				<img src="Logo.png" class="logo" />
 			</div>
 		</div>
-		<div class="top-left">
-			
-		</div>
 
-		<div class="container">
-			<img src="office.jpg" alt="Snow" style="width:100%;" height="50%"> 
-			<div class="top-left">
+		<div class="agent-container">
+			<img src="beach.jpg" alt="Snow" style="width:100%;" height="50%"> 
+			<div class="title-heading">
 				<h1>Get in touch today!</h1>	
 			</div>
-			<!-- <div class="bottom-right">
-				Find us at:<br />
-					1234 A Real Street NW <br />
-					Calgary, Alberta <br />
-					Q1Q 1Q1 <br />
-			</div> -->
-			<div class="bottom-left">
-				<div class="column">
-					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
-					Janet Delton<br />
-					<img src="email.png" alt="contact" style="width:3%;">janet.delton@travelexperts.com<br />
-					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7801<br />
-				</div>
-				<br />
-				<div class="column">
-					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
-					Judy Lisle<br />
-					<img src="email.png" alt="contact" style="width:3%;">judy.lisle@travelexperts.com<br />
-					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7802<br />
-				</div>
-				<br />
-				<div class="column">
-					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
-					Dennis Reynolds<br />
-					<img src="email.png" alt="contact" style="width:3%;">dennis.reynolds@travelexperts.com<br />
-					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7843<br />
-				</div>
-				<br />
-				<div class="column">
-					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
-					John Coville<br />
-					<img src="email.png" alt="contact" style="width:3%;">john.coville@travelexperts.com<br />
-					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7823<br />
+			<div class="on-image">
+				<div>
+					<div class="flex-container-left">
+						<h2 class="agent-header"> Calgary Team</h2>	
+						<table class="agent-list">
+							<% for(var i=0; i < calAgents.length; i++) 
+							{ %>
+								<% if (i %3 == 0) 
+								{ %>
+									<tr>
+								<% } %>
+								<td class="column">
+									<img src="contacticon75.png" alt="contact" style="width:10%;"><br />
+									<%=calAgents[i].AgtFirstName + " " + calAgents[i].AgtLastName%><br />
+									<img src="email.png" alt="contact" style="width:5%;"><%= " " + calAgents[i].AgtEmail%><br />
+									<img src="phone.png" alt="contact" style="width:5%;"><%= " " + calAgents[i].AgtBusPhone%><br />
+									<br />
+								</td>
+								<%if (i %3 == 2) { %>
+									</tr>
+								<% } %>
+							<% } %>
+						</table>
+					</div>
+					<div class="flex-container-right">
+						<h2 class="agent-header">Okotoks Team</h2>
+						<table class="agent-list">
+							<% for(var i=0; i < okAgents.length; i++) 
+							{ %>
+								<% if (i %3 == 0) 
+								{ %>
+									<tr>
+								<% } %>
+								<td class="column">
+									<img src="contacticon75.png" alt="contact" style="width:10%;"><br />
+									<%=okAgents[i].AgtFirstName + " " + okAgents[i].AgtLastName%><br />
+									<img src="email.png" alt="contact" style="width:5%;"><%= " " + okAgents[i].AgtEmail%><br />
+									<img src="phone.png" alt="contact" style="width:5%;"><%= " " + okAgents[i].AgtBusPhone%><br />
+									<br />
+								</td>
+								<%if (i %3 == 2) { %>
+									</tr>
+								<% } %>
+							<% } %>
+						</table>
+					</div>
 				</div>
 			</div>
-
-			<div class="centered">
-				<div class="column">
-					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
-					Fred Smith<br />
-					<img src="email.png" alt="contact" style="width:3%;">fred@travelexperts.com<br />
-					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-5555<br />
-				</div>
-				<br />
-				<div class="column">
-					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
-					Bruce Dixon<br />
-					<img src="email.png" alt="contact" style="width:3%;">bruce.dixon@travelexperts.com<br />
-					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7867<br />
-				</div>	
-				<br />
-				<div class="column">
-					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
-					Beverly Jones<br />
-					<img src="email.png" alt="contact" style="width:3%;">beverly.jones@travelexperts.com<br />
-					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7812<br />
-				</div>	
-				<br />
-				<div class="column">
-					<img src="contacticon75.png" alt="contact" style="width:5%;"><br />
-					Jane Merrill<br />
-					<img src="email.png" alt="contact" style="width:3%;">jane.merrill@travelexperts.com<br />
-					<img src="phone.png" alt="contact" style="width:3%;">(403) 210-7868<br />
-				</div>	
-				
 		</div>
-		</div>
-		<div class="top-right">
+		
+		<div class="right">
 			<div class="rightcolumn">
 				<div class="card">
 				<h2>Find us at: </h2>
 				<img src="cubicles.jpg" style="height:100px;">
-					Calgary Office:<br />
-					1234 A Real Street NW <br />
-					Calgary, Alberta <br />
-					Q1Q 1Q1 <br />
+					<%= result1[0].AgncyCity + " Office" %><br />
+					<%= result1[0].AgncyAddress %><br />
+					<%= result1[0].AgncyCity + ", " + result1[0].AgncyProv %><br />
+					<%= result1[0].AgncyPostal %><br />
+					<%= "Phone: " + result1[0].AgncyPhone%><br />
 					<br />
 					<br />
-				<img src="meeting.jpg" style="height:100px;"></div>
-					Okotoks Office:<br />
-					5678 Another Real Street<br />
-					Okotoks, Alberta <br />
-					Z1Z 1Z1 <br />
+				<img src="meeting.jpg" style="height:100px;">
+					<%= result1[1].AgncyCity + " Office" %><br />
+					<%= result1[1].AgncyAddress %><br />
+					<%= result1[1].AgncyCity + ", " + result1[1].AgncyProv %><br />
+					<%= result1[1].AgncyPostal %><br />
+					<%= "Phone: " + result1[1].AgncyPhone%><br />
 					<br />
-				</div>
+					<br />
 				</div>
 			</div>
 		</div>
-		</div>
-		
-			<!-- <div class="column">
-				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p><%=result[0].AgtFirstName + " " + result[0].AgtLastName%></p>
-				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[0].AgtEmail%></p><br />
-				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[0].AgtBusPhone%></p><br />
-			</div>
-
-			<div class="column">
-				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p> <%= result[1].AgtFirstName + " " + result[1].AgtLastName%></p>
-				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[1].AgtEmail%></p><br />
-				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[1].AgtBusPhone%></p><br />
-			</div>
-
-			<div class="column">
-				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p><%= result[2].AgtFirstName + " " + result[2].AgtLastName%></p>
-				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[2].AgtEmail%></p> <br />
-				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[2].AgtBusPhone%></p> <br />
-			</div>
-
-			<div class="column">
-				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p><%= result[3].AgtFirstName + " " + result[3].AgtLastName%></p>
-				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[3].AgtEmail%></p> <br />
-				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[3].AgtBusPhone%></p> <br />
-			</div>
-
-			<div class="column">
-				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p><%= result[4].AgtFirstName + " " + result[4].AgtLastName%></p>
-				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[4].AgtEmail%></p> <br />
-				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[4].AgtBusPhone%></p> <br />
-			</div>
-
-			<div class="column">
-				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p><%= result[5].AgtFirstName + " " + result[5].AgtLastName%></p>
-				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[5].AgtEmail%></p> <br />
-				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[5].AgtBusPhone%></p> <br />
-			</div>
-
-			<div class="column">
-				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p><%= result[6].AgtFirstName + " " + result[6].AgtLastName%></p>
-				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[6].AgtEmail%></p> <br />
-				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[6].AgtBusPhone%></p> <br />
-			</div>
-
-			<div class="column">
-				<img src="contacticon50.png" alt="contact" style="width:50%;"><br />
-				<p><%= result[7].AgtFirstName + " " + result[7].AgtLastName%></p>
-				<img src="email.png" alt="contact" style="width:5%;"><p><%= result[7].AgtEmail%></p> <br />
-				<img src="phone.png" alt="contact" style="width:5%;"><p><%= result[7].AgtBusPhone%></p> <br />
-			</div> -->
-		
 		
 			<footer>
 				Travel Experts Copyright&copy;2022
