@@ -1,3 +1,4 @@
+// unless marked otherwise, all code is by Micah
 function confirm_reset() {
     return confirm("Are you sure you want to reset the form?");
 }
@@ -5,14 +6,32 @@ function confirm_reset() {
 //Form validation from Micah
 var creditCardNum = document.getElementById("Credit").value;
 
+function validateLogin(myForm) {
+    var formLength = 2;
+    for (i=0; i<2; i++) {
+
+        if(myForm[i].value == "") {
+            alert(myForm[i].name + " must have an input.");
+            myForm[i].focus();
+            return false;
+        }
+    }
+    // Took this email regular expression from Tim's code
+    var emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+    if (!emailRegExp.test(myForm.email.value)){
+        alert("Invalid e-mail address.");
+        myForm.email.focus();
+        return false;
+    }
+    return confirm("Continue submitting?");
+}
+
 function validate(myForm) {
-    console.log("made it into the function");
-    var formLength = 11;
+    var formLength = 10;
     for (i=0; i<formLength; i++) {
         console.log(myForm[i].name);
 
         if(myForm[i].value == "") {
-            console.log(myForm[i].name + " must have an input.");
             alert(myForm[i].name + " must have an input.");
             myForm[i].focus();
             return false;
@@ -78,5 +97,75 @@ function validate(myForm) {
             document.getElementById('card').src = "amex.png";
             return false;
         }
+        if(!regMaster.test(creditCardNum) && !regVisa.test(creditCardNum) && !regAMEX.test(creditCardNum)) {
+            document.getElementById('card').className = "cardinvisible";
+        }
     } 
 
+    // Function that checks if a field has an input in the form, 
+    // if it does it displays a green check mark
+function checkInput1(myForm) {
+    if (myForm[3].value != "") {
+        document.getElementById("check1").className = "checkvisible";
+        return false;
+    }
+    if (myForm[3].value == "") {
+        document.getElementById("check1").className = "checkinvisible";
+        return false;
+    }
+}
+
+function checkInput2(myForm) {
+    if (myForm[4].value != "") {
+        document.getElementById("check2").className = "checkvisible";
+        return false;
+    }
+    if (myForm[4].value == "") {
+        document.getElementById("check2").className = "checkinvisible";
+        return false;
+    }
+}
+
+function checkInput3(myForm) {
+        if (myForm[6].value != "") {
+            document.getElementById("check3").className = "checkvisible";
+            return false;
+        }
+        if (myForm[6].value == "") {
+            document.getElementById("check3").className = "checkinvisible";
+            return false;
+        }
+}
+
+function checkInput4(myForm) {
+        if (myForm[7].value != "") {
+            document.getElementById("check4").className = "checkvisible";
+            return false;
+        }
+        if (myForm[7].value == "") {
+            document.getElementById("check4").className = "checkinvisible";
+            return false;
+        }
+}    
+
+function checkLog1(myForm) {
+    if (myForm[0].value != "") {
+        document.getElementById("check1").className = "checkvisible";
+        return false;
+    }
+    if (myForm[0].value == "") {
+        document.getElementById("check1").className = "checkinvisible";
+        return false;
+    }
+}
+
+function checkLog2(myForm) {
+    if (myForm[1].value != "") {
+        document.getElementById("check2").className = "checkvisible";
+        return false;
+    }
+    if (myForm[1].value == "") {
+        document.getElementById("check2").className = "checkinvisible";
+        return false;
+    }
+}    

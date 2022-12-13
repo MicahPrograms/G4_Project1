@@ -6,9 +6,13 @@
         <script src="jquery-3.6.1.js" type="text/javascript"></script>
         <script src="formValidation.js" type="text/javascript"></script>
 
+        <script>
+            var timer = document
+        </script>
+
     </head>
 
-    <body>
+    <body onload="return timer">
         <div class="topbanner">
             <img src="logo2.jpg" />
             <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
@@ -36,22 +40,24 @@
                 </div>
             </div>
 
-            <h1 style="font-size: 28pt; font-family:monaco Narrow, sans-serif;
-            text-align: center; text-shadow:2px 2px #d3d3d3; font-size: 2.8vw; color:rgb(41, 66, 86); margin-top: 50px; margin-bottom: 50px;">Please log in to place an order</h1>
-        
-        <form method="post" action="/purgatory" class="formLogin">
+        <script>
+            var s = 5;
+            var countdown = setInterval(function() {
+                parseInt(s);
+                s--;
+                document.getElementById("countdown").innerHTML = s;
+            }, 1000)
 
-            <label for="email" >E-mail address: </label> 
-                <img src="check.png" class="checkinvisible" id="check1">
-            <input type="text" name="Email" id="email" value="" class="logInput" onchange="checkLog1(this.form)"/><br />
-            
-            <label for="Password">Password: </label> 
-                <img src="check.png" class="checkinvisible" id="check2">
-            <input type="password" name="Password" id="Password" class="logInput" value="" onchange="checkLog2(this.form)" /><br />
-            
-            <button type="sumbit" onclick="return validateLogin(this.form)" class="logBtn">Login</button>
-            <button type="button" class="regBtn" onclick="window.location.href='/registration';">Create Account</button><br />
-        </form>        
+
+            var timer = setTimeout(function() {
+                window.location.assign("http://localhost:8000/")
+            }, 5000); 
+        </script>
+
+        <div class="formLogin">
+            <h1 style="text-align: center; margin-top:40px; margin-bottom:40px;">Thank you for signing in! You will be redirected to the homepage in <div id="countdown">5 
+            </div>seconds... brace yourself!</h1>
+        </div>
             
             <br /><br /><br />
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>

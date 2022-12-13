@@ -79,7 +79,7 @@ body {
     margin-right: 10%;
     margin-left: 10%;
     font-size: 18pt;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
 }
 
 .left {
@@ -138,7 +138,7 @@ footer {
     background-color: #92a21a;
     text-align: center;
     color: black;
-    font-size: 14pt;
+    font-size: 16pt;
 }
 
 #bot-para {
@@ -167,12 +167,53 @@ footer {
     margin-left: 20%;
     margin-right: 20%;
     font-family: monaco Narrow, sans-serif;
+    text-align: center;
+}
+
+#countdown {
+    font-size: 30pt;
+    font-family: monaco Narrow, sans-serif;
+    text-align: center;
+    text-shadow: #92a21a;
+}
+
+.formLogin {
+    text-shadow: rgb(0, 0, 0);
+    font-size: 14pt;
+    width: 40%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    color: black;
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-family: monaco Narrow, sans-serif;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#members {
+    font-size: 12pt;
+    width: 100%;
+    padding: 2px 10px;
+    margin: 8px;
 }
 
 input {
     text-shadow: rgb(0, 0, 0);
     font-size: 14pt;
     width: 100%;
+    padding: 6px 10px;
+    margin: 8px 8px;
+    color: black;
+}
+
+.logInput {
+    text-shadow: rgb(0, 0, 0);
+    font-size: 14pt;
+
+    width: 80%;
     padding: 6px 10px;
     margin: 8px 8px;
     color: black;
@@ -188,6 +229,20 @@ input {
 .cardvisible {
     height: 24px;
     width: 32px;
+    visibility: visible;
+    margin-bottom: 0px;
+}
+
+.checkinvisible {
+    height: 18px;
+    width: 18px;
+    visibility: hidden;
+    margin-bottom: 0px;
+}
+
+.checkvisible {
+    height: 18px;
+    width: 18px;
     visibility: visible;
     margin-bottom: 0px;
 }
@@ -220,6 +275,20 @@ input {
     background-color:red;
 }
 
+.logBtn{
+    background-color:rgb(215, 215, 215);
+}
+.logBtn:hover{
+    background-color:rgb(189, 234, 168);
+}
+
+.regBtn{
+    background-color:rgb(215, 215, 215);
+}
+.regBtn:hover{
+    background-color:rgb(255, 246, 181);
+}
+
 button{
     text-shadow: rgb(0, 0, 0);
     font-size: 14pt;
@@ -247,16 +316,19 @@ select{
     display: flex;
     flex-direction: row;
     background-color: #ffffff;
+    justify-content: center;
     margin-top: 20px;
+
 
 }
 .flex-container-pack > div{
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 0px;
     margin-bottom: 30px;
     width: 30%;
     height: 100%;
     background-color: #ffffff;
+    
 }
 div.flex-container-Pack h2 {
     font-size: 20pt;
@@ -285,7 +357,7 @@ div.flex-container-Pack h2 {
     text-align: center;
     color: #798611;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 60px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   .centered {
