@@ -6,7 +6,7 @@
         <link href="G4Styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <!-- Added the top banners (lines 33-59) - Micah B.-->
+        <!-- Added the top banners (lines 10-28) - Micah B.-->
         <div class="topbanner">
             <img src="logo2.jpg" />
             <h2 style="font-weight: 100; font-style: italic; float: right; margin-right: 100px;" >
@@ -96,13 +96,14 @@
             </section>
             <!--Country-->
             <section class="sectionForm">
-                <div style="justify-content:left; width:20%;">
+                <div style="justify-content:left; width:30%; padding:5%;">
                     <label for="country">Country:</label>
-                    <select class="sectionForm" id="country" name="Country" onchange="countryVal()">
+                    <img id="flagImg" src="canada" alt="flag" style="height:24px; width:32px;"> 
+                    <select class="sectionForm" id="country" name="Country" onchange="countryVal()" style="width:80px;">
                         <option value="canada">Canada</option>
                         <option value="usa">USA</option>
                     </select>
-                </div>  
+                </div> 
             </section>
             <br> <!--Email and phone numbers-->
             <section class="sectionForm">
@@ -117,7 +118,7 @@
                 <div>
                     <p id="p9" style="visibility: hidden">Please Enter Home Phone</p>
                     <label for="phone">Home Phone:</label>
-                    <input type="text" id="phone" name="Home Phone" placeholder="Your home number..."
+                    <input type="text" id="phone" name="Home Phone" placeholder="4031234567..."
                         onfocus="inFocus(this,'p9')" onblur="outFocus(this,'p9')"/>
                 </div> 
                 <!--Business Phone-->

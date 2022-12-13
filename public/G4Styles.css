@@ -1,8 +1,9 @@
+/*Micah's CSS below*/
 body {
     margin: 0;
 }
 
-/* Top menu banners CSS by Micah*/
+/* Top menu banners*/
 .topbanner {
     overflow: hidden;
     background-color: #ffffff;
@@ -22,7 +23,7 @@ body {
     display: flex;
 }
 
-/* Blue selection banner by Micah */
+/* Blue selection banner*/
 .banner {
     overflow: hidden;
     background-color: #2596be;
@@ -45,6 +46,11 @@ body {
 
 .banner a:hover {
     background-color: rgb(27, 57, 75);
+    color: white;
+}
+
+#bot-para a:hover {
+    background-color: rgb(240, 240, 240);
     color: white;
 }
 
@@ -73,7 +79,7 @@ body {
     margin-right: 10%;
     margin-left: 10%;
     font-size: 18pt;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
 }
 
 .left {
@@ -132,7 +138,7 @@ footer {
     background-color: #92a21a;
     text-align: center;
     color: black;
-    font-size: 14pt;
+    font-size: 16pt;
 }
 
 #bot-para {
@@ -161,12 +167,53 @@ footer {
     margin-left: 20%;
     margin-right: 20%;
     font-family: monaco Narrow, sans-serif;
+    text-align: center;
+}
+
+#countdown {
+    font-size: 30pt;
+    font-family: monaco Narrow, sans-serif;
+    text-align: center;
+    text-shadow: #92a21a;
+}
+
+.formLogin {
+    text-shadow: rgb(0, 0, 0);
+    font-size: 14pt;
+    width: 40%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    color: black;
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-family: monaco Narrow, sans-serif;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#members {
+    font-size: 12pt;
+    width: 100%;
+    padding: 2px 10px;
+    margin: 8px;
 }
 
 input {
     text-shadow: rgb(0, 0, 0);
     font-size: 14pt;
     width: 100%;
+    padding: 6px 10px;
+    margin: 8px 8px;
+    color: black;
+}
+
+.logInput {
+    text-shadow: rgb(0, 0, 0);
+    font-size: 14pt;
+
+    width: 80%;
     padding: 6px 10px;
     margin: 8px 8px;
     color: black;
@@ -186,10 +233,25 @@ input {
     margin-bottom: 0px;
 }
 
+.checkinvisible {
+    height: 18px;
+    width: 18px;
+    visibility: hidden;
+    margin-bottom: 0px;
+}
+
+.checkvisible {
+    height: 18px;
+    width: 18px;
+    visibility: visible;
+    margin-bottom: 0px;
+}
+
 #package, #depart, #return, #description, #price {
     font-size: 16pt;
     text-align: center;
 }
+/*Micah's CSS end*/
 
 /*Tim's css start*/
 .sectionForm{
@@ -211,6 +273,20 @@ input {
 }
 .resetBtn:hover{
     background-color:red;
+}
+
+.logBtn{
+    background-color:rgb(215, 215, 215);
+}
+.logBtn:hover{
+    background-color:rgb(189, 234, 168);
+}
+
+.regBtn{
+    background-color:rgb(215, 215, 215);
+}
+.regBtn:hover{
+    background-color:rgb(255, 246, 181);
 }
 
 button{

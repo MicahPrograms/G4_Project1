@@ -5,12 +5,31 @@
         <link href="G4Styles.css" rel="stylesheet" type="text/css" />
         <script src="jquery-3.6.1.js" type="text/javascript"></script>
         <script src="formValidation.js" type="text/javascript"></script>
-
         <script>
-       
+            // Micah wrote these scripts, but Tim was the brains behind them.
+            var base = "<%=result[0].PkgBasePrice%>";
+
+            var totalPrice;
+
+            function totPrice(members){
+                var basePrice = parseInt(base);
+                var totalP = (basePrice*members);
+
+                document.getElementById("totalPrice").value = ("$" + totalP + ".00");
+            }
+
+            var members, dropdown;
+    
+            function findMembers(){
+                var dropdown = document.getElementById("members");
+                var members = dropdown.value;
+                totPrice(members);
+                
+            };
+            
+            
         </script>
-
-
+      
     </head>
 
     <body>
@@ -40,52 +59,72 @@
                     <img src="Logo.png" class="logo" />
                 </div>
             </div>
+
+            <h1 style="font-size: 28pt; font-family:monaco Narrow, sans-serif;
+                 text-align: center; text-shadow:2px 2px #a2a2a2; font-size: 2.8vw;" id="bot-para">Please complete the form below to confirm your booking:</h1>
             
-                
-
         <!-- Order form, validation in head section -->
-            <form method="post" action="/neworder" class="form">
+            <form method="get" action="/confirmation" class="form">
 
-                <label for="Package">Select Vacation Package: </label>
-                <select id="Package" name="Package"> 
-                   <option> <%= result[0].PkgName%> </option>
-                   <option> <%= result[1].PkgName%> </option>
-                   <option> <%= result[2].PkgName%> </option>
-                   <option> <%= result[3].PkgName%> </option>
-                </select> <br />
+                <label for="package">Vacation Package: </label>
+                <img src="check.png" class="checkvisible">
+                <input type="text" name="Package" id="Package" 
+                value="<%=result[0].PkgName + " - $" + result[0].PkgBasePrice + " per guest"%>" readonly="readonly" /><br/>
+                
+                <label for="members">Number of travellers: </label>
+                <img src="check.png" class="checkvisible"><br />
+                
+                <select id="members" name="members" onchange="findMembers()" >
+                    <% for(var i=1; i<21; i++) {%>
+                        <option>
+                        <%= i %>
+                        </option>
+                    <% } %>
+                </select>
+                
+                <br />
+                
+                <label for="totalPrice">Total price: </label>
+                    <img src="check.png" class="checkvisible">
+                <input type="text" name="totalPrice" id="totalPrice" 
+                value="<%="$" + result[0].PkgBasePrice + ".00"%>" readonly="readonly" /><br/>
+
+                <label for="startDate">Start date: </label>
+                    <img src="check.png" class="checkvisible">
+                <input type="text" name="startDate" id="startDate" 
+                value="<%=result[0].PkgStartDate%>" readonly="readonly" /><br/>
+
+                <label for="endDate">End date: </label>
+                    <img src="check.png" class="checkvisible">
+                <input type="text" name="endDate" id="endDate" 
+                value="<%=result[0].PkgEndDate%>" readonly="readonly" /><br/>
 
                 <label for="FirstName">First name: </label> 
-                <input type="text" name="FirstName" id="FirstName" value="" /><br />
+                    <img src="check.png" class="checkinvisible" id="check1">
+                <input type="text" name="FirstName" id="FirstName" value="" onchange="checkInput1(this.form)"/><br />
                 
                 <label for="LastName">Last name: </label> 
-                <input type="text" name="LastName" id="LastName" value="" /><br />
+                    <img src="check.png" class="checkinvisible" id="check2">
+                <input type="text" name="LastName" id="LastName" value="" onchange="checkInput2(this.form)" /><br />
                 
-                <label for="HomeAddress">Home Address: </label>
-                <input type="text" name="HomeAddress" id="HomeAddress" value="" /><br />
-                
-                <label for="ProvState">Province/State: </label>
-                <input type="text" name="ProvState" id="ProvState" value="" /><br />
-                
-                <label for="Country">Country: </label>
-                <input type="text" name="Country" id="Country" value="" /><br />
-                
-                <label for="Email">Email Address: </label>
-                <input type="text" name="Email" id="Email" value="" /><br />
-                
-                <label for="Credit">Credit Card Number: </label>
-                <input type="text" name="Credit" id="Credit" value="" placeholder="9999 9999 9999 9999" onchange="cardValidate()"/><br />
+                <label for="Credit">Credit Card Number: </label> 
+                    <img src="mastercard.png" class="cardinvisible" id="card">        
+                <input type="text" maxlength="16" name="Credit" id="Credit" value="" placeholder="No Spaces Between Numbers" onchange="cardIdentify()"/><br />
                
                 <label for="ExpiryDate">Expiry Date: </label>
-                <input type="text" name="ExpiryDate" id="ExpiryDate" placeholder="MM/YY" value="" /><br />
+                    <img src="check.png" class="checkinvisible" id="check3">
+                <input type="text" name="ExpiryDate" id="ExpiryDate" placeholder="MM/YY" value="" onchange="checkInput3(this.form)"/><br />
                
-                <button type="sumbit" onclick="return validate(this.form)">Submit</button>
-                <button type="reset" onclick="return confirm('Are you sure you want to reset the form?')">Reset</button><br />
-            </form>
-
-        
-
+                <label for="CVV">CVV (on back of card): </label>
+                <img src="check.png" class="checkinvisible" id="check4">
+                <input type="text" maxlength="4" name="CVV" id="CVV" placeholder="123(4)" value="" onchange="checkInput4(this.form)"/><br />
+                
+                <button type="sumbit" onclick="return validate(this.form)" class="submitBtn">Order now!</button>
+                <button type="reset" onclick="return confirm('Are you sure you want to reset the form?')" class="resetBtn">Reset</button><br />
+            </form>        
+            
             <br /><br /><br />
         <footer>Copyright &copy; 2022 Travel Experts Inc.</footer>
     </body>
-    
-</html> 
+
+</html>

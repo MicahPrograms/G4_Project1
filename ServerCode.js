@@ -2,6 +2,7 @@ const express = require("express");
 const mysql = require("mysql");
 const bodyparser = require("body-parser");
 const app = express();
+const quote = require("./public/quotes.js")
 
 
 app.set("view engine", "ejs");
@@ -20,8 +21,8 @@ function getConnection()
 {
 	var con = mysql.createConnection({
 		host: "localhost",
-		user: "rabab",
-		password: "rabab123",
+		user: "Micah",
+		password: "Micah3cheese",
 		database: "travelexperts"
 	});
 	return con;
@@ -47,114 +48,17 @@ app.get("/", (req, res, err) => {
 });
 
 app.get("/registration", (req, res, err) => {
-    res.render("Registration");
+    res.render("Registration",{"quote": quote.generateQuote()});
 });
 
-app.get("/orders1", (req, res) => {
+app.post("/orders", (req, res) => {
+	var pkgData = [req.body.PkgName, req.body.PkgBasePrice, req.body.PkgStartDate, req.body.PkgEndDate, req.body.members]
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
+		myConnection.query("SELECT PkgName, PkgBasePrice, PkgStartDate, PkgEndDate FROM packages WHERE PackageId=?", [req.body.pkgId], (err,result,fields)=>{
 			if (err) throw err;
-			res.render("orders1", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
-				if (err) throw err;
-			});
-		});
-	});   
-});
-
-app.get("/orders2", (req, res) => {
-    var myConnection = getConnection();
-	myConnection.connect((err)=>{
-		if (err) throw err;
-		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
-			if (err) throw err;
-			res.render("orders2", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
-				if (err) throw err;
-			});
-		});
-	});   
-});
-
-app.get("/orders3", (req, res) => {
-    var myConnection = getConnection();
-	myConnection.connect((err)=>{
-		if (err) throw err;
-		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
-			if (err) throw err;
-			res.render("orders3", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
-				if (err) throw err;
-			});
-		});
-	});   
-});
-
-app.get("/orders4", (req, res) => {
-    var myConnection = getConnection();
-	myConnection.connect((err)=>{
-		if (err) throw err;
-		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
-			if (err) throw err;
-			res.render("orders4", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
-				if (err) throw err;
-			});
-		});
-	});   
-});
-
-app.get("/orders5", (req, res) => {
-    var myConnection = getConnection();
-	myConnection.connect((err)=>{
-		if (err) throw err;
-		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
-			if (err) throw err;
-			res.render("orders5", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
-				if (err) throw err;
-			});
-		});
-	});   
-});
-
-app.get("/orders6", (req, res) => {
-    var myConnection = getConnection();
-	myConnection.connect((err)=>{
-		if (err) throw err;
-		myConnection.query("SELECT * FROM `packages` WHERE `PkgEndDate` >= CURRENT_DATE", (err,result,fields)=>{
-			if (err) throw err;
-			res.render("orders6", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
-				if (err) throw err;
-			});
-		});
-	});   
-});
-
-app.get("/orders7", (req, res) => {
-    var myConnection = getConnection();
-	myConnection.connect((err)=>{
-		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
-			if (err) throw err;
-			res.render("orders7", { "result": result, "fields": fields });
-			myConnection.end((err)=>{
-				if (err) throw err;
-			});
-		});
-	});   
-});
-
-app.get("/orders8", (req, res) => {
-    var myConnection = getConnection();
-	myConnection.connect((err)=>{
-		if (err) throw err;
-		myConnection.query("SELECT * FROM packages", (err,result,fields)=>{
-			if (err) throw err;
-			res.render("orders8", { "result": result, "fields": fields });
+			res.render("Orders", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
 				if (err) throw err;
 			});
@@ -217,6 +121,35 @@ app.get("/login", (req, res, err) => {
     res.render("login");
 });
 
+app.post("/purgatory", (req, res, err) => {
+    res.render("Purgatory");
+});
+
+app.post("/confirm", (req, res) => {
+    var agtdata = [ req.body.AgtFirstName, req.body.AgtMiddleInitial, req.body.AgtLastName, 
+        req.body.AgtBusPhone, req.body.AgtEmail, req.body.AgtPosition, req.body.AgencyId];
+    var myConnection = getConnection();
+    myConnection.connect((err) => {
+        console.log("working to this point");
+        if (err) throw err;
+        var sql = "INSERT INTO `agents`(`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`) VALUES (0, ?, ?, ?, ?, ?, ?, ?)";
+        console.log("working so far.");
+        console.log(agtdata);
+        myConnection.query({"sql": sql, "values": agtdata}, (err, result) => {
+            if (err) throw err;
+            console.log(result.affectedRows + " record(s) inserted!");
+            if (result.affectedRows > 0) {
+                res.render("Confirmation");
+            }
+            else {
+                res.send("data insert failed :(")
+            }
+            myConnection.end((err) => {
+                if (err) throw err;
+            });
+        });
+    });
+});
 
 // app.use("/contact",(req,res)=>{
 //     res.render("contact");
