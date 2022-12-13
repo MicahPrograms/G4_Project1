@@ -47,7 +47,7 @@ var i=0;
 <%	result.forEach((package,key)=>{ %>
   
 <!--Flex Box -->
-<form method ="post" action="/Orders">
+<form method ="post" action="/orders">
       <div class="flex-container-pack">
        
         <script>
@@ -66,7 +66,7 @@ var i=0;
           <p>Package End Date:<%= package.PkgEndDate.getDate() + "/"+  +((package.PkgEndDate.getMonth())+1)+ "/"+ +package.PkgEndDate.getFullYear() %></p>
             <form method ="post" action="/Orders">
              <button type="submit">Reserve Now</button>
-             <input type="hidden" name="pkgId" value="<%=result.PackageId%>"></input>
+             <input type="hidden" name="pkgId" value="<%=package.PackageId%>"></input>
              </form>
       </div>
       <script>

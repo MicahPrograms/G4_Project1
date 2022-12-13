@@ -52,11 +52,11 @@ app.get("/registration", (req, res, err) => {
 });
 
 app.post("/orders", (req, res) => {
-	var pkgData = [req.body.PkgName, req.body.PkgBasePrice, req.body.PkgStartDate, req.body.PkgEndDate, req.body.members]
+	var pkgData = [req.body.PkgName, req.body.PkgBasePrice, req.body.PkgStartDate, req.body.PkgEndDate, req.body.members];
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
 		if (err) throw err;
-		myConnection.query("SELECT PkgName, PkgBasePrice, PkgStartDate, PkgEndDate FROM packages WHERE PackageId=?", [req.body.pkgId], (err,result,fields)=>{
+		myConnection.query("SELECT `PkgName`, `PkgBasePrice`, `PkgStartDate`, `PkgEndDate` FROM packages WHERE PackageId=?", [req.body.pkgId], (err,result,fields)=>{
 			if (err) throw err;
 			res.render("Orders", { "result": result, "fields": fields });
 			myConnection.end((err)=>{
