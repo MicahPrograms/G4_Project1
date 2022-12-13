@@ -306,30 +306,52 @@ div.agent-container {
 
 .agent-list {
     position: relative;
-    top: 50px;
+    top: 250px;
 }
 
 .flex-container-left {
     width: 45%;
     display: flex;
     float: left;
-    height: 500px;
+    height: 700px;
     align-items: baseline;
     background-color: #f1f1f1af;
 }
 
+.office-left{
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+
+.agencyaddress-left {
+    float:right;
+    padding: 20px;
+}
+
 .agent-header {
     position: absolute;
-    top: 0px;
+    top: 200px;
 }
 
 .flex-container-right {
     width: 45%;
     display: flex;
     float: right;
-    height: 500px;
+    height: 700px;
     align-items: baseline;
     background-color: #f1f1f1af;
+}
+
+.office-right{
+    position: absolute;
+    top: 20px;
+    right: 300px;
+}
+
+.agencyaddress-right {
+    float:right;
+    padding: 20px;
 }
 
 div.agencies-container {
@@ -349,23 +371,9 @@ div.agencies-container {
     font-size: 1.5VW;
 }
 
-.right {
-    position: absolute;
-    top: 30px;
-    right: 16px;
-}
-
 .on-image {
     position: absolute;
     top: 50%;
     left: 5%;
-    /* transform: translate(-50%, -50%); */
     color: rgb(27, 57, 75);
-}
-.rightcolumn {
-    float: right;
-    width: 70%;
-    background-color: #f1f1f1af;
-    padding-left: 20px;
-    transform: translate(5%, 55%);
 }
