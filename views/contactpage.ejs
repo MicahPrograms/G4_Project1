@@ -48,7 +48,7 @@
 						<table class="agent-list">
 							<% for(var i=0; i < calAgents.length; i++) 
 							{ %>
-								<% if (i %3 == 0) 
+								<% if (i %2 == 0) 
 								{ %>
 									<tr>
 								<% } %>
@@ -59,7 +59,7 @@
 									<img src="phone.png" alt="contact" style="width:5%;"><%= " " + calAgents[i].AgtBusPhone%><br />
 									<br />
 								</td>
-								<%if (i %3 == 2) { %>
+								<%if (i %2 == 1) { %>
 									</tr>
 								<% } %>
 							<% } %>
@@ -70,7 +70,7 @@
 						<table class="agent-list">
 							<% for(var i=0; i < okAgents.length; i++) 
 							{ %>
-								<% if (i %3 == 0) 
+								<% if (i %2 == 0) 
 								{ %>
 									<tr>
 								<% } %>
@@ -81,7 +81,7 @@
 									<img src="phone.png" alt="contact" style="width:5%;"><%= " " + okAgents[i].AgtBusPhone%><br />
 									<br />
 								</td>
-								<%if (i %3 == 2) { %>
+								<%if (i %2 == 1) { %>
 									</tr>
 								<% } %>
 							<% } %>

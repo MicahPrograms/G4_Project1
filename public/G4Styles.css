@@ -313,7 +313,7 @@ div.agent-container {
     width: 45%;
     display: flex;
     float: left;
-    height: 300px;
+    height: 500px;
     align-items: baseline;
     background-color: #f1f1f1af;
 }
@@ -327,7 +327,7 @@ div.agent-container {
     width: 45%;
     display: flex;
     float: right;
-    height: 300px;
+    height: 500px;
     align-items: baseline;
     background-color: #f1f1f1af;
 }
