@@ -177,22 +177,6 @@ app.get("/Confirmation", (req, res) => {
  	});   
 });
 
-// app.get("/contact", (req, res) => {
-//     var myConnection = getConnection();
-// 	myConnection.connect((err)=>{
-// 		if (err) throw err;
-// 		myConnection.query("SELECT * FROM agents WHERE AgencyId= 1", (err,result,fields)=>{
-// 			if (err) throw err;
-// 			//console.log(result);
-// 			console.log(fields);
-// 			res.render("contactpage", { "result": result, "fields": fields });
-// 			myConnection.end((err)=>{
-// 				if (err) throw err;
-// 			});
-// 		});
-// 	});   
-// });
-
 app.get("/contact", (req, res) => {
     var myConnection = getConnection();
 	myConnection.connect((err)=>{
@@ -218,22 +202,6 @@ app.get("/contact", (req, res) => {
 	});   
 });
 
-
-// app.get("/contact", (req, res) => {
-//     var myConnection = getConnection();
-// 	myConnection.connect((err)=>{
-// 		if (err) throw err;
-// 		myConnection.query("SELECT * FROM agencies", (err,result,fields)=>{
-// 			if (err) throw err;
-// 			console.log(result);
-// 			console.log(fields);
-// 			res.render("contactpage", { "result": result, "fields": fields });
-// 			myConnection.end((err)=>{
-// 				if (err) throw err;
-// 			});
-// 		});
-// 	});   
-// });
 
 app.post("/register", function(req, res, next) {
 	console.log(req.body);
@@ -269,10 +237,3 @@ app.post("/confirm", (req, res) => {
         });
     });
 });
-
-// app.use("/contact",(req,res)=>{
-//     res.render("contact");
-// });
-
-
-
